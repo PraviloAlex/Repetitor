@@ -1,0 +1,1470 @@
+[
+  {
+    "id": "geo_001",
+    "topicId": "geometria",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuál es el perímetro de un cuadrado con lado de 5 cm?",
+      "ru": "Каков периметр квадрата со стороной 5 см?"
+    },
+    "options": null,
+    "answer": "20",
+    "explanation": {
+      "es": "Perímetro del cuadrado = 4 × lado = 4 × 5 = 20 cm.",
+      "ru": "Периметр квадрата = 4 × сторона = 4 × 5 = 20 см."
+    },
+    "hint": {
+      "es": "Un cuadrado tiene 4 lados iguales. P = 4 × lado.",
+      "ru": "У квадрата 4 равные стороны. P = 4 × сторона."
+    },
+    "skillTags": [
+      "perimeter_square"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El perímetro es 4 × lado: 4 × 5 = 20. El área sería lado²: 5 × 5 = 25.",
+      "ru": "Периметр = 4 × сторона: 4 × 5 = 20. Площадь = 5² = 25."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "training"
+  },
+  {
+    "id": "geo_002",
+    "topicId": "geometria",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuál es el área de un cuadrado con lado de 6 cm?",
+      "ru": "Какова площадь квадрата со стороной 6 см?"
+    },
+    "options": null,
+    "answer": "36",
+    "explanation": {
+      "es": "Área del cuadrado = lado × lado = 6 × 6 = 36 cm².",
+      "ru": "Площадь квадрата = сторона × сторона = 6 × 6 = 36 см²."
+    },
+    "hint": {
+      "es": "Área del cuadrado = lado².",
+      "ru": "Площадь квадрата = сторона²."
+    },
+    "skillTags": [
+      "area_square"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El área del cuadrado es lado × lado: 6 × 6 = 36. El perímetro sería 4 × 6 = 24.",
+      "ru": "Площадь квадрата = сторона × сторона: 6 × 6 = 36. Периметр = 4 × 6 = 24."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_003",
+    "topicId": "geometria",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un rectángulo tiene 8 cm de largo y 3 cm de ancho. ¿Cuál es su área?",
+      "ru": "Прямоугольник имеет длину 8 см и ширину 3 см. Какова его площадь?"
+    },
+    "options": null,
+    "answer": "24",
+    "explanation": {
+      "es": "Área del rectángulo = largo × ancho = 8 × 3 = 24 cm².",
+      "ru": "Площадь прямоугольника = длина × ширина = 8 × 3 = 24 см²."
+    },
+    "hint": {
+      "es": "Área = largo × ancho.",
+      "ru": "Площадь = длина × ширина."
+    },
+    "skillTags": [
+      "area_rectangle"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El área del rectángulo es largo × ancho: 8 × 3 = 24, no 8 + 3 = 11.",
+      "ru": "Площадь прямоугольника = длина × ширина: 8 × 3 = 24. Не складывай стороны."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_004",
+    "topicId": "geometria",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un rectángulo tiene 7 cm de largo y 4 cm de ancho. ¿Cuál es su perímetro?",
+      "ru": "Прямоугольник имеет длину 7 см и ширину 4 см. Каков его периметр?"
+    },
+    "options": null,
+    "answer": "22",
+    "explanation": {
+      "es": "P = 2 × (largo + ancho) = 2 × (7 + 4) = 2 × 11 = 22 cm.",
+      "ru": "P = 2 × (длина + ширина) = 2 × (7 + 4) = 2 × 11 = 22 см."
+    },
+    "hint": {
+      "es": "P = 2 × (largo + ancho).",
+      "ru": "P = 2 × (длина + ширина)."
+    },
+    "skillTags": [
+      "perimeter_rectangle"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El perímetro suma los 4 lados: 7 + 4 + 7 + 4 = 22, o bien 2 × (7 + 4) = 22.",
+      "ru": "Периметр = сумма всех 4 сторон: 7+4+7+4 = 22. Или 2×(7+4) = 22."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_005",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es la diferencia entre perímetro y área?",
+      "ru": "В чём разница между периметром и площадью?"
+    },
+    "options": [
+      {
+        "es": "El perímetro es la longitud del contorno; el área es la superficie interior.",
+        "ru": "Периметр — это длина контура; площадь — это внутренняя поверхность."
+      },
+      {
+        "es": "Son lo mismo, solo cambia la unidad.",
+        "ru": "Это одно и то же, только единицы разные."
+      },
+      {
+        "es": "El área siempre es mayor que el perímetro.",
+        "ru": "Площадь всегда больше периметра."
+      }
+    ],
+    "answer": "El perímetro es la longitud del contorno; el área es la superficie interior.",
+    "explanation": {
+      "es": "El perímetro mide el contorno (en cm o m), el área mide la superficie (en cm² o m²). Son magnitudes distintas.",
+      "ru": "Периметр измеряет контур (в см или м), площадь — поверхность (в см² или м²). Это разные величины."
+    },
+    "hint": {
+      "es": "Pensá en rodear una habitación (perímetro) vs alfombrarla (área).",
+      "ru": "Представь: обойти комнату по периметру — это периметр; покрыть пол ковром — это площадь."
+    },
+    "skillTags": [
+      "perimeter_vs_area"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Perímetro = longitud del borde (en cm, m). Área = superficie interior (en cm², m²).",
+      "ru": "Периметр — длина границы (в см, м). Площадь — внутренняя поверхность (в см², м²)."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "explain"
+  },
+  {
+    "id": "geo_006",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un cuadrado tiene 9 cm de lado. ¿Cuál es su perímetro?",
+      "ru": "Квадрат имеет сторону 9 см. Каков его периметр?"
+    },
+    "options": null,
+    "answer": "36",
+    "explanation": {
+      "es": "P = 4 × 9 = 36 cm.",
+      "ru": "P = 4 × 9 = 36 см."
+    },
+    "hint": {
+      "es": "P = 4 × lado.",
+      "ru": "P = 4 × сторона."
+    },
+    "skillTags": [
+      "perimeter_square"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Perímetro = 4 × lado = 4 × 9 = 36. El área sería 9 × 9 = 81.",
+      "ru": "Периметр = 4 × сторона = 4 × 9 = 36. Площадь = 9 × 9 = 81."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_007",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Una habitación mide 5 m de largo y 4 m de ancho. ¿Cuántos metros de zócalo se necesitan para rodearla?",
+      "ru": "Комната имеет длину 5 м и ширину 4 м. Сколько метров плинтуса нужно, чтобы обойти её по периметру?"
+    },
+    "options": null,
+    "answer": "18",
+    "explanation": {
+      "es": "Perímetro = 2 × (5 + 4) = 2 × 9 = 18 m de zócalo.",
+      "ru": "Периметр = 2 × (5 + 4) = 2 × 9 = 18 м плинтуса."
+    },
+    "hint": {
+      "es": "El zócalo rodea la habitación, entonces calculás el perímetro.",
+      "ru": "Плинтус идёт по контуру комнаты, значит считаем периметр."
+    },
+    "skillTags": [
+      "perimeter_rectangle",
+      "perimeter_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El zócalo cubre todo el contorno: 2 × (5 + 4) = 18 m. Un rectángulo tiene 4 lados.",
+      "ru": "Плинтус идёт по всему периметру: 2 × (5 + 4) = 18 м. У прямоугольника 4 стороны."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_008",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un jardín rectangular mide 10 m de largo y 6 m de ancho. ¿Cuántos m² tiene?",
+      "ru": "Прямоугольный сад имеет длину 10 м и ширину 6 м. Сколько м² он занимает?"
+    },
+    "options": null,
+    "answer": "60",
+    "explanation": {
+      "es": "Área = 10 × 6 = 60 m².",
+      "ru": "Площадь = 10 × 6 = 60 м²."
+    },
+    "hint": {
+      "es": "Área = largo × ancho.",
+      "ru": "Площадь = длина × ширина."
+    },
+    "skillTags": [
+      "area_rectangle",
+      "area_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Área = largo × ancho: 10 × 6 = 60 m². No sumes: 10 + 6 = 16 sería el semiperímetro.",
+      "ru": "Площадь = длина × ширина: 10 × 6 = 60 м². Не складывай стороны."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_009",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es verdad que el área de un rectángulo de 4 cm × 5 cm es 20 cm²?",
+      "ru": "Правда ли, что площадь прямоугольника 4 см × 5 см равна 20 см²?"
+    },
+    "options": null,
+    "answer": "true",
+    "explanation": {
+      "es": "Área = 4 × 5 = 20 cm². Correcto.",
+      "ru": "Площадь = 4 × 5 = 20 см². Верно."
+    },
+    "hint": {
+      "es": "Área = largo × ancho.",
+      "ru": "Площадь = длина × ширина."
+    },
+    "skillTags": [
+      "area_rectangle"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El área es 4 × 5 = 20 cm². El perímetro sería 2 × (4 + 5) = 18 cm.",
+      "ru": "Площадь = 4 × 5 = 20 см². Периметр = 2×(4+5) = 18 см."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_010",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un cuadrado tiene perímetro de 28 cm. ¿Cuánto mide su lado?",
+      "ru": "Квадрат имеет периметр 28 см. Какова длина его стороны?"
+    },
+    "options": null,
+    "answer": "7",
+    "explanation": {
+      "es": "P = 4 × lado → lado = P ÷ 4 = 28 ÷ 4 = 7 cm.",
+      "ru": "P = 4 × сторона → сторона = P ÷ 4 = 28 ÷ 4 = 7 см."
+    },
+    "hint": {
+      "es": "Si P = 4 × lado, entonces lado = P ÷ 4.",
+      "ru": "Если P = 4 × сторона, то сторона = P ÷ 4."
+    },
+    "skillTags": [
+      "perimeter_square",
+      "inverse_problem"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Perímetro = 4 × lado, entonces lado = 28 ÷ 4 = 7 cm.",
+      "ru": "Периметр = 4 × сторона, значит сторона = 28 ÷ 4 = 7 см."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "boss"
+  },
+  {
+    "id": "geo_011",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál figura tiene mayor área: un cuadrado de 4 cm de lado o un rectángulo de 6 cm × 3 cm?",
+      "ru": "Какая фигура имеет большую площадь: квадрат со стороной 4 см или прямоугольник 6 см × 3 см?"
+    },
+    "options": [
+      {
+        "es": "El cuadrado (16 cm²)",
+        "ru": "Квадрат (16 см²)"
+      },
+      {
+        "es": "El rectángulo (18 cm²)",
+        "ru": "Прямоугольник (18 см²)"
+      },
+      {
+        "es": "Son iguales",
+        "ru": "Они равны"
+      }
+    ],
+    "answer": "El rectángulo (18 cm²)",
+    "explanation": {
+      "es": "Cuadrado: 4 × 4 = 16 cm². Rectángulo: 6 × 3 = 18 cm². El rectángulo es mayor.",
+      "ru": "Квадрат: 4 × 4 = 16 см². Прямоугольник: 6 × 3 = 18 см². Прямоугольник больше."
+    },
+    "hint": {
+      "es": "Calculá el área de cada figura y comparalas.",
+      "ru": "Вычисли площадь каждой фигуры и сравни."
+    },
+    "skillTags": [
+      "area_square",
+      "area_rectangle",
+      "comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Cuadrado: 4 × 4 = 16 cm². Rectángulo: 6 × 3 = 18 cm². El rectángulo tiene más área.",
+      "ru": "Квадрат: 4×4 = 16 см². Прямоугольник: 6×3 = 18 см². Прямоугольник больше."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_012",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Querés cercar un terreno rectangular de 12 m × 8 m. ¿Cuántos metros de cerco necesitás?",
+      "ru": "Ты хочешь огородить прямоугольный участок 12 м × 8 м. Сколько метров забора нужно?"
+    },
+    "options": null,
+    "answer": "40",
+    "explanation": {
+      "es": "Perímetro = 2 × (12 + 8) = 2 × 20 = 40 m de cerco.",
+      "ru": "Периметр = 2 × (12 + 8) = 2 × 20 = 40 м забора."
+    },
+    "hint": {
+      "es": "El cerco rodea el terreno, entonces calculás el perímetro.",
+      "ru": "Забор окружает участок, значит считаем периметр."
+    },
+    "skillTags": [
+      "perimeter_rectangle",
+      "perimeter_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Un terreno rectangular tiene 4 lados: 2 × (12 + 8) = 40 m de cerco.",
+      "ru": "У прямоугольного участка 4 стороны: 2×(12+8) = 40 м забора."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_013",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un piso cuadrado de 3 m de lado. ¿Cuántos m² de baldosas necesitás para cubrirlo?",
+      "ru": "Квадратный пол со стороной 3 м. Сколько м² плитки нужно, чтобы покрыть его?"
+    },
+    "options": null,
+    "answer": "9",
+    "explanation": {
+      "es": "Área = 3 × 3 = 9 m². Necesitás 9 m² de baldosas.",
+      "ru": "Площадь = 3 × 3 = 9 м². Нужно 9 м² плитки."
+    },
+    "hint": {
+      "es": "Las baldosas cubren la superficie, entonces calculás el área.",
+      "ru": "Плитка покрывает поверхность, значит считаем площадь."
+    },
+    "skillTags": [
+      "area_square",
+      "area_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El área del cuadrado es lado²: 3 × 3 = 9 m². El perímetro sería 4 × 3 = 12 m.",
+      "ru": "Площадь квадрата = сторона²: 3 × 3 = 9 м². Периметр = 4 × 3 = 12 м."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_014",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un rectángulo tiene perímetro de 26 cm y largo de 8 cm. ¿Cuánto mide el ancho?",
+      "ru": "Прямоугольник имеет периметр 26 см и длину 8 см. Какова его ширина?"
+    },
+    "options": null,
+    "answer": "5",
+    "explanation": {
+      "es": "P = 2 × (largo + ancho) → 26 = 2 × (8 + ancho) → 13 = 8 + ancho → ancho = 5 cm.",
+      "ru": "P = 2 × (длина + ширина) → 26 = 2 × (8 + ширина) → 13 = 8 + ширина → ширина = 5 см."
+    },
+    "hint": {
+      "es": "P ÷ 2 = largo + ancho. Despejá el ancho.",
+      "ru": "P ÷ 2 = длина + ширина. Найди ширину."
+    },
+    "skillTags": [
+      "perimeter_rectangle",
+      "inverse_problem"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Perímetro = 2 × (largo + ancho): 26 = 2 × (8 + ancho) → 13 = 8 + ancho → ancho = 5.",
+      "ru": "26 = 2×(8 + ширина) → 13 = 8 + ширина → ширина = 5 см."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_015",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Tenés 24 m de cerco para hacer un corral rectangular. Si el largo es 8 m, ¿cuánto es el ancho?",
+      "ru": "У тебя 24 м забора для прямоугольного загона. Если длина 8 м, какова ширина?"
+    },
+    "options": [
+      {
+        "es": "4 m",
+        "ru": "4 м"
+      },
+      {
+        "es": "8 m",
+        "ru": "8 м"
+      },
+      {
+        "es": "16 m",
+        "ru": "16 м"
+      }
+    ],
+    "answer": "4 m",
+    "explanation": {
+      "es": "P = 24 m, largo = 8 m. 24 = 2 × (8 + ancho) → 12 = 8 + ancho → ancho = 4 m.",
+      "ru": "P = 24 м, длина = 8 м. 24 = 2 × (8 + ширина) → 12 = 8 + ширина → ширина = 4 м."
+    },
+    "hint": {
+      "es": "P ÷ 2 = largo + ancho. Entonces ancho = (P ÷ 2) − largo.",
+      "ru": "P ÷ 2 = длина + ширина. Значит ширина = (P ÷ 2) − длина."
+    },
+    "skillTags": [
+      "perimeter_rectangle",
+      "inverse_problem"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "24 = 2 × (8 + ancho) → 12 = 8 + ancho → ancho = 4 m.",
+      "ru": "24 = 2×(8 + ширина) → 12 = 8 + ширина → ширина = 4 м."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_016",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es el área de un triángulo con base 8 cm y altura 5 cm?",
+      "ru": "Чему равна площадь треугольника с основанием 8 см и высотой 5 см?"
+    },
+    "options": [
+      {
+        "es": "40 cm²",
+        "ru": "40 см²"
+      },
+      {
+        "es": "20 cm²",
+        "ru": "20 см²"
+      },
+      {
+        "es": "13 cm²",
+        "ru": "13 см²"
+      },
+      {
+        "es": "80 cm²",
+        "ru": "80 см²"
+      }
+    ],
+    "answer": "20 cm²",
+    "explanation": {
+      "es": "Área del triángulo = base × altura ÷ 2 = 8 × 5 ÷ 2 = 40 ÷ 2 = 20 cm².",
+      "ru": "Площадь треугольника = основание × высота ÷ 2 = 8 × 5 ÷ 2 = 40 ÷ 2 = 20 см²."
+    },
+    "hint": {
+      "es": "Área del triángulo = base × altura ÷ 2.",
+      "ru": "Площадь треугольника = основание × высота ÷ 2."
+    },
+    "commonMistake": {
+      "es": "Olvidar dividir por 2 y responder 40 cm². El triángulo es la mitad del rectángulo que lo contiene.",
+      "ru": "Забыть разделить на 2 и ответить 40 см². Треугольник — это половина прямоугольника с теми же основанием и высотой."
+    },
+    "skillTags": [
+      "area_triangle"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_017",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuántos lados tiene un hexágono?",
+      "ru": "Сколько сторон у шестиугольника?"
+    },
+    "options": [
+      {
+        "es": "5",
+        "ru": "5"
+      },
+      {
+        "es": "6",
+        "ru": "6"
+      },
+      {
+        "es": "7",
+        "ru": "7"
+      },
+      {
+        "es": "8",
+        "ru": "8"
+      }
+    ],
+    "answer": "6",
+    "explanation": {
+      "es": "Hexa = 6 en griego. Un hexágono tiene 6 lados.",
+      "ru": "«Гекса» по-гречески означает 6. У шестиугольника 6 сторон."
+    },
+    "hint": {
+      "es": "El prefijo 'hexa' viene del griego y significa 6.",
+      "ru": "Префикс «гекса» происходит из греческого и означает 6."
+    },
+    "commonMistake": {
+      "es": "Confundir con pentágono (5 lados) o heptágono (7 lados). Hexa = 6.",
+      "ru": "Путать с пятиугольником (5 сторон) или семиугольником (7 сторон). Гекса = 6."
+    },
+    "skillTags": [
+      "polygon_sides"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_018",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuántos grados tiene un ángulo recto?",
+      "ru": "Сколько градусов в прямом угле?"
+    },
+    "options": [
+      {
+        "es": "45°",
+        "ru": "45°"
+      },
+      {
+        "es": "90°",
+        "ru": "90°"
+      },
+      {
+        "es": "180°",
+        "ru": "180°"
+      },
+      {
+        "es": "360°",
+        "ru": "360°"
+      }
+    ],
+    "answer": "90°",
+    "explanation": {
+      "es": "Un ángulo recto mide exactamente 90°. Es el ángulo de las esquinas de un cuadrado.",
+      "ru": "Прямой угол равен ровно 90°. Это угол в углах квадрата."
+    },
+    "hint": {
+      "es": "Es el ángulo que forma la esquina de una hoja de papel.",
+      "ru": "Это угол, который образует уголок листа бумаги."
+    },
+    "commonMistake": {
+      "es": "No confundir con ángulo llano (180°) ni con ángulo completo (360°).",
+      "ru": "Не путать с развёрнутым углом (180°) и полным углом (360°)."
+    },
+    "skillTags": [
+      "angles"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_019",
+    "topicId": "geometria",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuántos grados suman los ángulos interiores de un triángulo?",
+      "ru": "Сколько градусов составляют сумму внутренних углов треугольника?"
+    },
+    "options": [
+      {
+        "es": "90°",
+        "ru": "90°"
+      },
+      {
+        "es": "180°",
+        "ru": "180°"
+      },
+      {
+        "es": "270°",
+        "ru": "270°"
+      },
+      {
+        "es": "360°",
+        "ru": "360°"
+      }
+    ],
+    "answer": "180°",
+    "explanation": {
+      "es": "La suma de los ángulos interiores de cualquier triángulo es siempre 180°.",
+      "ru": "Сумма внутренних углов любого треугольника всегда равна 180°."
+    },
+    "hint": {
+      "es": "Es una propiedad fundamental de todos los triángulos, sin importar su forma.",
+      "ru": "Это фундаментальное свойство всех треугольников, независимо от их формы."
+    },
+    "commonMistake": {
+      "es": "Confundir con los 360° de un cuadrilátero. Los triángulos suman 180°.",
+      "ru": "Путать с 360° четырёхугольника. У треугольника сумма углов — 180°."
+    },
+    "skillTags": [
+      "angles_triangle"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "geo_020",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un triángulo tiene ángulos de 60° y 80°. ¿Cuánto mide el tercer ángulo?",
+      "ru": "Треугольник имеет углы 60° и 80°. Чему равен третий угол?"
+    },
+    "answer": "40",
+    "explanation": {
+      "es": "La suma es 180°. Tercer ángulo = 180° − 60° − 80° = 40°.",
+      "ru": "Сумма углов 180°. Третий угол = 180° − 60° − 80° = 40°."
+    },
+    "hint": {
+      "es": "Los tres ángulos suman 180°. Restá los dos conocidos.",
+      "ru": "Три угла в сумме дают 180°. Вычти два известных."
+    },
+    "commonMistake": {
+      "es": "Sumar 60 + 80 = 140 y dar 140° como respuesta. Hay que restar de 180: 180 − 140 = 40°.",
+      "ru": "Сложить 60 + 80 = 140 и дать ответ 140°. Нужно вычесть из 180: 180 − 140 = 40°."
+    },
+    "skillTags": [
+      "angles_triangle"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_021",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un triángulo isósceles tiene dos lados de 7 cm y uno de 4 cm. ¿Cuál es su perímetro?",
+      "ru": "Равнобедренный треугольник имеет две стороны по 7 см и одну 4 см. Каков его периметр?"
+    },
+    "options": [
+      {
+        "es": "14 cm",
+        "ru": "14 см"
+      },
+      {
+        "es": "18 cm",
+        "ru": "18 см"
+      },
+      {
+        "es": "21 cm",
+        "ru": "21 см"
+      },
+      {
+        "es": "11 cm",
+        "ru": "11 см"
+      }
+    ],
+    "answer": "18 cm",
+    "explanation": {
+      "es": "Perímetro = 7 + 7 + 4 = 18 cm.",
+      "ru": "Периметр = 7 + 7 + 4 = 18 см."
+    },
+    "hint": {
+      "es": "Sumá todos los lados del triángulo.",
+      "ru": "Сложи все стороны треугольника."
+    },
+    "commonMistake": {
+      "es": "Sumar solo un lado de 7 cm en lugar de los dos: 7 + 7 + 4 = 18, no 7 + 4 = 11.",
+      "ru": "Сложить только одну сторону в 7 см вместо двух: 7 + 7 + 4 = 18, а не 7 + 4 = 11."
+    },
+    "skillTags": [
+      "perimeter_triangle"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_022",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una piscina rectangular mide 12 m × 5 m. ¿Cuántos metros cuadrados tiene?",
+      "ru": "Прямоугольный бассейн имеет размеры 12 м × 5 м. Сколько квадратных метров он занимает?"
+    },
+    "options": [
+      {
+        "es": "34 m²",
+        "ru": "34 м²"
+      },
+      {
+        "es": "60 m²",
+        "ru": "60 м²"
+      },
+      {
+        "es": "17 m²",
+        "ru": "17 м²"
+      },
+      {
+        "es": "70 m²",
+        "ru": "70 м²"
+      }
+    ],
+    "answer": "60 m²",
+    "explanation": {
+      "es": "Área = largo × ancho = 12 × 5 = 60 m².",
+      "ru": "Площадь = длина × ширина = 12 × 5 = 60 м²."
+    },
+    "hint": {
+      "es": "Área del rectángulo = largo × ancho.",
+      "ru": "Площадь прямоугольника = длина × ширина."
+    },
+    "commonMistake": {
+      "es": "Calcular el perímetro (34 m) en vez del área. El perímetro suma los lados, el área los multiplica.",
+      "ru": "Посчитать периметр (34 м) вместо площади. Периметр — это сумма сторон, площадь — их произведение."
+    },
+    "skillTags": [
+      "area_rectangle",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_023",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un cuadrado tiene área de 49 cm². ¿Cuánto mide su lado?",
+      "ru": "Квадрат имеет площадь 49 см². Чему равна его сторона?"
+    },
+    "answer": "7",
+    "explanation": {
+      "es": "Área = lado². Si lado² = 49, entonces lado = √49 = 7 cm.",
+      "ru": "Площадь = сторона². Если сторона² = 49, то сторона = √49 = 7 см."
+    },
+    "hint": {
+      "es": "¿Qué número multiplicado por sí mismo da 49?",
+      "ru": "Какое число, умноженное само на себя, даёт 49?"
+    },
+    "commonMistake": {
+      "es": "Dividir 49 por 4 (los lados del cuadrado). Hay que buscar la raíz cuadrada: 7 × 7 = 49.",
+      "ru": "Делить 49 на 4 (стороны квадрата). Нужно найти квадратный корень: 7 × 7 = 49."
+    },
+    "skillTags": [
+      "area_square",
+      "inverse_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_024",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una figura está formada por dos rectángulos: uno de 6×4 cm y otro de 3×2 cm. ¿Cuánto es el área total?",
+      "ru": "Фигура состоит из двух прямоугольников: 6×4 см и 3×2 см. Какова общая площадь?"
+    },
+    "options": [
+      {
+        "es": "24 cm²",
+        "ru": "24 см²"
+      },
+      {
+        "es": "30 cm²",
+        "ru": "30 см²"
+      },
+      {
+        "es": "36 cm²",
+        "ru": "36 см²"
+      },
+      {
+        "es": "18 cm²",
+        "ru": "18 см²"
+      }
+    ],
+    "answer": "30 cm²",
+    "explanation": {
+      "es": "Área total = (6 × 4) + (3 × 2) = 24 + 6 = 30 cm².",
+      "ru": "Общая площадь = (6 × 4) + (3 × 2) = 24 + 6 = 30 см²."
+    },
+    "hint": {
+      "es": "Calculá el área de cada rectángulo por separado y sumá.",
+      "ru": "Посчитай площадь каждого прямоугольника отдельно и сложи."
+    },
+    "commonMistake": {
+      "es": "Calcular solo el área del rectángulo mayor (24 cm²) y olvidar el menor. Hay que sumar ambas partes.",
+      "ru": "Посчитать только площадь большего прямоугольника (24 см²) и забыть меньший. Нужно сложить обе части."
+    },
+    "skillTags": [
+      "area_composite",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_025",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es el perímetro de un triángulo equilátero con lado de 9 cm?",
+      "ru": "Каков периметр правильного треугольника со стороной 9 см?"
+    },
+    "options": [
+      {
+        "es": "18 cm",
+        "ru": "18 см"
+      },
+      {
+        "es": "27 cm",
+        "ru": "27 см"
+      },
+      {
+        "es": "36 cm",
+        "ru": "36 см"
+      },
+      {
+        "es": "81 cm",
+        "ru": "81 см"
+      }
+    ],
+    "answer": "27 cm",
+    "explanation": {
+      "es": "Un triángulo equilátero tiene 3 lados iguales. Perímetro = 3 × 9 = 27 cm.",
+      "ru": "У правильного треугольника 3 равные стороны. Периметр = 3 × 9 = 27 см."
+    },
+    "hint": {
+      "es": "Equilátero = 3 lados iguales. Multiplicá el lado por 3.",
+      "ru": "Equilátero = 3 равные стороны. Умножь сторону на 3."
+    },
+    "commonMistake": {
+      "es": "Multiplicar por 2 como si fuera un cuadrado. Un triángulo tiene 3 lados, no 4.",
+      "ru": "Умножить на 2 как для квадрата. У треугольника 3 стороны, а не 4."
+    },
+    "skillTags": [
+      "perimeter_triangle"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_026",
+    "topicId": "geometria",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un rectángulo tiene área de 48 cm² y largo de 8 cm. ¿Cuánto mide el ancho?",
+      "ru": "Прямоугольник имеет площадь 48 см² и длину 8 см. Чему равна его ширина?"
+    },
+    "options": [
+      {
+        "es": "4 cm",
+        "ru": "4 см"
+      },
+      {
+        "es": "6 cm",
+        "ru": "6 см"
+      },
+      {
+        "es": "8 cm",
+        "ru": "8 см"
+      },
+      {
+        "es": "12 cm",
+        "ru": "12 см"
+      }
+    ],
+    "answer": "6 cm",
+    "explanation": {
+      "es": "Área = largo × ancho → 48 = 8 × ancho → ancho = 48 ÷ 8 = 6 cm.",
+      "ru": "Площадь = длина × ширина → 48 = 8 × ширина → ширина = 48 ÷ 8 = 6 см."
+    },
+    "hint": {
+      "es": "Si Área = largo × ancho, despejá el ancho: ancho = Área ÷ largo.",
+      "ru": "Если Площадь = длина × ширина, выразим ширину: ширина = Площадь ÷ длина."
+    },
+    "commonMistake": {
+      "es": "Restar 48 − 8 = 40 cm en vez de dividir. La fórmula del área es multiplicación, así que se despeja dividiendo.",
+      "ru": "Вычесть 48 − 8 = 40 вместо деления. Формула площади — умножение, поэтому ширина находится делением."
+    },
+    "skillTags": [
+      "area_rectangle",
+      "inverse_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_027",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una figura en L está formada por un rectángulo de 10×6 cm del que se recortó una esquina de 3×2 cm. ¿Cuánto es el área?",
+      "ru": "Г-образная фигура — прямоугольник 10×6 см, из которого вырезан угол 3×2 см. Какова площадь?"
+    },
+    "options": [
+      {
+        "es": "54 cm²",
+        "ru": "54 см²"
+      },
+      {
+        "es": "60 cm²",
+        "ru": "60 см²"
+      },
+      {
+        "es": "48 cm²",
+        "ru": "48 см²"
+      },
+      {
+        "es": "66 cm²",
+        "ru": "66 см²"
+      }
+    ],
+    "answer": "54 cm²",
+    "explanation": {
+      "es": "Área total − área recortada = (10 × 6) − (3 × 2) = 60 − 6 = 54 cm².",
+      "ru": "Полная площадь − вырезанная = (10 × 6) − (3 × 2) = 60 − 6 = 54 см²."
+    },
+    "hint": {
+      "es": "Calculá el rectángulo completo y restá la esquina que falta.",
+      "ru": "Посчитай полный прямоугольник и вычти вырезанный угол."
+    },
+    "commonMistake": {
+      "es": "Olvidar restar la esquina y dar 60 cm². La figura en L no es el rectángulo completo.",
+      "ru": "Забыть вычесть вырезанный угол и ответить 60 см². Г-образная фигура — не полный прямоугольник."
+    },
+    "skillTags": [
+      "area_composite",
+      "area_rectangle"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_028",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Para cubrir el piso de un cuarto de 4 m × 3 m con baldosas de 50 cm × 50 cm, ¿cuántas baldosas necesitás?",
+      "ru": "Чтобы покрыть пол комнаты 4 м × 3 м плитками 50 см × 50 см, сколько плиток нужно?"
+    },
+    "options": [
+      {
+        "es": "24",
+        "ru": "24"
+      },
+      {
+        "es": "48",
+        "ru": "48"
+      },
+      {
+        "es": "96",
+        "ru": "96"
+      },
+      {
+        "es": "144",
+        "ru": "144"
+      }
+    ],
+    "answer": "48",
+    "explanation": {
+      "es": "El cuarto mide 400 cm × 300 cm. Baldosas en largo: 400 ÷ 50 = 8. Baldosas en ancho: 300 ÷ 50 = 6. Total: 8 × 6 = 48.",
+      "ru": "Комната 400 см × 300 см. Плиток по длине: 400 ÷ 50 = 8. Плиток по ширине: 300 ÷ 50 = 6. Итого: 8 × 6 = 48."
+    },
+    "hint": {
+      "es": "Convertí todo a centímetros, luego calculá cuántas baldosas caben en cada dirección.",
+      "ru": "Переведи всё в сантиметры, затем посчитай, сколько плиток помещается в каждом направлении."
+    },
+    "commonMistake": {
+      "es": "Dividir el área del cuarto (12 m²) entre el área de la baldosa (0,25 m²) = 48. Los dos métodos dan igual, pero hay que convertir las unidades.",
+      "ru": "Разделить площадь комнаты (12 м²) на площадь плитки (0,25 м²) = 48. Оба метода дают одинаковый результат, но нужно следить за единицами."
+    },
+    "skillTags": [
+      "area_rectangle",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_029",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un rectángulo tiene largo el doble que su ancho. Si su perímetro es 60 cm, ¿cuánto mide el ancho?",
+      "ru": "Длина прямоугольника в два раза больше его ширины. Если периметр равен 60 см, чему равна ширина?"
+    },
+    "options": [
+      {
+        "es": "10 cm",
+        "ru": "10 см"
+      },
+      {
+        "es": "15 cm",
+        "ru": "15 см"
+      },
+      {
+        "es": "20 cm",
+        "ru": "20 см"
+      },
+      {
+        "es": "12 cm",
+        "ru": "12 см"
+      }
+    ],
+    "answer": "10 cm",
+    "explanation": {
+      "es": "Llamemos al ancho a. El largo es 2a. Perímetro = 2(2a + a) = 6a = 60 → a = 10 cm.",
+      "ru": "Пусть ширина = a. Длина = 2a. Периметр = 2(2a + a) = 6a = 60 → a = 10 см."
+    },
+    "hint": {
+      "es": "Si el largo es el doble del ancho, el perímetro es 2×(largo + ancho) = 2×(2a + a) = 6a.",
+      "ru": "Если длина вдвое больше ширины, периметр = 2×(2a + a) = 6a."
+    },
+    "commonMistake": {
+      "es": "Dividir 60 entre 2 (= 30) y luego entre 2 (= 15). Pero hay cuatro lados (dos de 2a y dos de a), así que el perímetro es 6a = 60 → a = 10.",
+      "ru": "Делить 60 на 2 (= 30), потом ещё на 2 (= 15). Но у прямоугольника четыре стороны (два по 2a и два по a), поэтому периметр = 6a = 60 → a = 10."
+    },
+    "skillTags": [
+      "perimeter_rectangle",
+      "inverse_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_030",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un campo rectangular tiene largo de 6b metros y ancho de 14 metros. Si el área es 840 m², ¿cuánto vale b?",
+      "ru": "Прямоугольное поле имеет длину 6b метров и ширину 14 метров. Если площадь равна 840 м², чему равно b?"
+    },
+    "options": [
+      {
+        "es": "8",
+        "ru": "8"
+      },
+      {
+        "es": "10",
+        "ru": "10"
+      },
+      {
+        "es": "12",
+        "ru": "12"
+      },
+      {
+        "es": "14",
+        "ru": "14"
+      }
+    ],
+    "answer": "10",
+    "explanation": {
+      "es": "Área = 6b × 14 = 84b = 840 → b = 840 ÷ 84 = 10.",
+      "ru": "Площадь = 6b × 14 = 84b = 840 → b = 840 ÷ 84 = 10."
+    },
+    "hint": {
+      "es": "Planteá: 6b × 14 = 840. Primero calculá 6 × 14 = 84, luego despejá b.",
+      "ru": "Составь: 6b × 14 = 840. Сначала 6 × 14 = 84, затем найди b."
+    },
+    "commonMistake": {
+      "es": "Sumar los lados en vez de multiplicarlos. El área es 6b × 14 = 84b, hay que dividir 840 ÷ 84 = 10.",
+      "ru": "Складывать стороны вместо умножения. Площадь: 6b × 14 = 84b, нужно 840 ÷ 84 = 10."
+    },
+    "skillTags": [
+      "area_rectangle",
+      "inverse_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_031",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un rectángulo tiene un perímetro de 36 cm y su largo es el doble de su ancho. ¿Cuál es su área?",
+      "ru": "Прямоугольник имеет периметр 36 см, а его длина вдвое больше ширины. Какова его площадь?"
+    },
+    "options": [
+      {
+        "es": "72 cm²",
+        "ru": "72 см²"
+      },
+      {
+        "es": "81 cm²",
+        "ru": "81 см²"
+      },
+      {
+        "es": "54 cm²",
+        "ru": "54 см²"
+      },
+      {
+        "es": "108 cm²",
+        "ru": "108 см²"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "area",
+      "perimeter",
+      "algebra",
+      "rectangle"
+    ],
+    "hint": {
+      "es": "Llamá al ancho 'a'. Largo = 2a. Perímetro = 2(a + 2a) = 6a = 36 → a = 6. Área = 6 × 12.",
+      "ru": "Назови ширину 'a'. Длина = 2a. Периметр = 2(a + 2a) = 6a = 36 → a = 6. Площадь = 6 × 12."
+    },
+    "explanation": {
+      "es": "6a = 36 → a = 6 (ancho), largo = 12. Área = 6 × 12 = 72 cm².",
+      "ru": "6a = 36 → a = 6 (ширина), длина = 12. Площадь = 6 × 12 = 72 см²."
+    },
+    "commonMistake": {
+      "es": "Calcular el área del cuadrado con lado 36/4 = 9: área = 81. Error: no es un cuadrado.",
+      "ru": "Вычислить площадь квадрата со стороной 36/4 = 9: площадь = 81. Ошибка: это не квадрат."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_032",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un triángulo tiene ángulos de 47° y 68°. ¿Cuánto mide el tercer ángulo?",
+      "ru": "Треугольник имеет углы 47° и 68°. Сколько градусов в третьем угле?"
+    },
+    "options": [
+      {
+        "es": "65°",
+        "ru": "65°"
+      },
+      {
+        "es": "75°",
+        "ru": "75°"
+      },
+      {
+        "es": "55°",
+        "ru": "55°"
+      },
+      {
+        "es": "115°",
+        "ru": "115°"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "angles",
+      "triangle"
+    ],
+    "hint": {
+      "es": "La suma de los ángulos de un triángulo es siempre 180°. Tercer ángulo = 180 − 47 − 68.",
+      "ru": "Сумма углов треугольника всегда равна 180°. Третий угол = 180 − 47 − 68."
+    },
+    "explanation": {
+      "es": "180° − 47° − 68° = 65°.",
+      "ru": "180° − 47° − 68° = 65°."
+    },
+    "commonMistake": {
+      "es": "Sumar 47 + 68 = 115 y dar eso como el tercer ángulo. Hay que restar de 180.",
+      "ru": "Сложить 47 + 68 = 115 и дать это как третий угол. Нужно вычесть из 180."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_033",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un círculo tiene radio 7 cm. ¿Cuánto es su área? (Usá π ≈ 3,14)",
+      "ru": "Круг имеет радиус 7 см. Какова его площадь? (Используй π ≈ 3,14)"
+    },
+    "options": [
+      {
+        "es": "153,86 cm²",
+        "ru": "153,86 см²"
+      },
+      {
+        "es": "43,96 cm²",
+        "ru": "43,96 см²"
+      },
+      {
+        "es": "21,98 cm²",
+        "ru": "21,98 см²"
+      },
+      {
+        "es": "196 cm²",
+        "ru": "196 см²"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "circle",
+      "area",
+      "pi"
+    ],
+    "hint": {
+      "es": "Área del círculo = π × r². Con r = 7: π × 7² = 3,14 × 49.",
+      "ru": "Площадь круга = π × r². При r = 7: π × 7² = 3,14 × 49."
+    },
+    "explanation": {
+      "es": "Área = π × r² = 3,14 × 49 = 153,86 cm².",
+      "ru": "Площадь = π × r² = 3,14 × 49 = 153,86 см²."
+    },
+    "commonMistake": {
+      "es": "Usar la fórmula de la circunferencia (2πr = 43,96) en lugar del área (πr²). Circunferencia ≠ área.",
+      "ru": "Использовать формулу длины окружности (2πr = 43,96) вместо площади (πr²). Длина ≠ площадь."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_034",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un triángulo rectángulo tiene catetos de 6 cm y 8 cm. ¿Cuánto mide la hipotenusa?",
+      "ru": "Прямоугольный треугольник имеет катеты 6 см и 8 см. Сколько составляет гипотенуза?"
+    },
+    "options": [
+      {
+        "es": "10 cm",
+        "ru": "10 см"
+      },
+      {
+        "es": "14 cm",
+        "ru": "14 см"
+      },
+      {
+        "es": "100 cm",
+        "ru": "100 см"
+      },
+      {
+        "es": "7 cm",
+        "ru": "7 см"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "pythagorean_theorem",
+      "right_triangle"
+    ],
+    "hint": {
+      "es": "Teorema de Pitágoras: h² = 6² + 8² = 36 + 64 = 100. Entonces h = √100.",
+      "ru": "Теорема Пифагора: h² = 6² + 8² = 36 + 64 = 100. Значит h = √100."
+    },
+    "explanation": {
+      "es": "h² = 36 + 64 = 100; h = √100 = 10 cm. (Terna pitagórica 6-8-10, el doble de 3-4-5.)",
+      "ru": "h² = 36 + 64 = 100; h = √100 = 10 см. (Пифагорова тройка 6-8-10, удвоенная 3-4-5.)"
+    },
+    "commonMistake": {
+      "es": "Sumar los catetos: 6 + 8 = 14. La hipotenusa no es la suma, sino la raíz de la suma de cuadrados.",
+      "ru": "Сложить катеты: 6 + 8 = 14. Гипотенуза — не сумма, а корень из суммы квадратов."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "geo_035",
+    "topicId": "geometria",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una figura en forma de L se forma uniendo dos rectángulos: uno de 8×3 y otro de 4×5. ¿Cuál es el área total?",
+      "ru": "Фигура в форме буквы L образована двумя прямоугольниками: 8×3 и 4×5. Какова общая площадь?"
+    },
+    "options": [
+      {
+        "es": "44 cm²",
+        "ru": "44 см²"
+      },
+      {
+        "es": "40 cm²",
+        "ru": "40 см²"
+      },
+      {
+        "es": "54 cm²",
+        "ru": "54 см²"
+      },
+      {
+        "es": "32 cm²",
+        "ru": "32 см²"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "area",
+      "composite_shapes"
+    ],
+    "hint": {
+      "es": "Calculá el área de cada rectángulo por separado y sumá: (8 × 3) + (4 × 5).",
+      "ru": "Вычисли площадь каждого прямоугольника отдельно и сложи: (8 × 3) + (4 × 5)."
+    },
+    "explanation": {
+      "es": "Área 1 = 8 × 3 = 24 cm². Área 2 = 4 × 5 = 20 cm². Total = 24 + 20 = 44 cm².",
+      "ru": "Площадь 1 = 8 × 3 = 24 см². Площадь 2 = 4 × 5 = 20 см². Итого = 24 + 20 = 44 см²."
+    },
+    "commonMistake": {
+      "es": "Calcular el área del rectángulo que encierra la figura completa y restar. Sin el dato del hueco, no se puede. Sumá las partes directamente.",
+      "ru": "Вычислять площадь описывающего прямоугольника и вычитать. Без данных о вырезе нельзя. Суммируй части напрямую."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  }
+]

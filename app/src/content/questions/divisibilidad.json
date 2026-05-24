@@ -1,0 +1,1306 @@
+[
+  {
+    "id": "div_001",
+    "topicId": "divisibilidad",
+    "difficulty": 1,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es 24 divisible por 2?",
+      "ru": "Делится ли 24 на 2?"
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "Sí. Un número es divisible por 2 si termina en 0, 2, 4, 6 u 8. 24 termina en 4.",
+      "ru": "Да. Число делится на 2, если оканчивается на 0, 2, 4, 6 или 8. 24 оканчивается на 4."
+    },
+    "hint": {
+      "es": "Mirá la última cifra.",
+      "ru": "Посмотри на последнюю цифру."
+    },
+    "commonMistake": {
+      "es": "Confundir divisibilidad por 2 con ser un número pequeño.",
+      "ru": "Путать делимость на 2 с тем, что число маленькое."
+    },
+    "skillTags": [
+      "divisibility_2"
+    ],
+    "verified": false,
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_002",
+    "topicId": "divisibilidad",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estos números es divisible por 5?",
+      "ru": "Какое из чисел делится на 5?"
+    },
+    "options": [
+      {
+        "es": "32",
+        "ru": "32"
+      },
+      {
+        "es": "47",
+        "ru": "47"
+      },
+      {
+        "es": "55",
+        "ru": "55"
+      },
+      {
+        "es": "68",
+        "ru": "68"
+      }
+    ],
+    "answer": "55",
+    "explanation": {
+      "es": "Para ser divisible por 5, el número tiene que terminar en 0 o en 5. 55 termina en 5.",
+      "ru": "Чтобы число делилось на 5, оно должно оканчиваться на 0 или 5. 55 оканчивается на 5."
+    },
+    "hint": {
+      "es": "Mirá la última cifra.",
+      "ru": "Посмотри на последнюю цифру."
+    },
+    "commonMistake": {
+      "es": "Pensar que cualquier número impar es divisible por 5.",
+      "ru": "Думать, что любое нечётное число делится на 5."
+    },
+    "skillTags": [
+      "divisibility_5"
+    ],
+    "verified": false,
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_003",
+    "topicId": "divisibilidad",
+    "difficulty": 2,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es 132 divisible por 3?",
+      "ru": "Делится ли 132 на 3?"
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "Sí. Sumá las cifras: 1 + 3 + 2 = 6. Como 6 es múltiplo de 3, 132 también lo es.",
+      "ru": "Да. Сложи цифры: 1 + 3 + 2 = 6. 6 делится на 3, значит и 132 делится на 3."
+    },
+    "hint": {
+      "es": "Sumá las cifras y mirá si esa suma es múltiplo de 3.",
+      "ru": "Сложи цифры и проверь, делится ли сумма на 3."
+    },
+    "commonMistake": {
+      "es": "Mirar solo la última cifra (eso vale para 2 o 5, no para 3).",
+      "ru": "Смотреть только на последнюю цифру (это работает для 2 и 5, не для 3)."
+    },
+    "skillTags": [
+      "divisibility_3"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_004",
+    "topicId": "divisibilidad",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estos números es divisible por 10?",
+      "ru": "Какое из чисел делится на 10?"
+    },
+    "options": [
+      {
+        "es": "105",
+        "ru": "105"
+      },
+      {
+        "es": "300",
+        "ru": "300"
+      },
+      {
+        "es": "215",
+        "ru": "215"
+      },
+      {
+        "es": "92",
+        "ru": "92"
+      }
+    ],
+    "answer": "300",
+    "explanation": {
+      "es": "Un número es divisible por 10 cuando termina en 0. 300 termina en 0.",
+      "ru": "Число делится на 10, если оканчивается на 0. 300 оканчивается на 0."
+    },
+    "hint": {
+      "es": "Termina en cero.",
+      "ru": "Оканчивается на ноль."
+    },
+    "commonMistake": {
+      "es": "Elegir un número que termina en 5 (eso vale para 5, no para 10).",
+      "ru": "Выбрать число на 5 (это для 5, не для 10)."
+    },
+    "skillTags": [
+      "divisibility_10"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_005",
+    "topicId": "divisibilidad",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál NO es múltiplo de 3?",
+      "ru": "Какое число НЕ делится на 3?"
+    },
+    "options": [
+      {
+        "es": "12",
+        "ru": "12"
+      },
+      {
+        "es": "21",
+        "ru": "21"
+      },
+      {
+        "es": "25",
+        "ru": "25"
+      },
+      {
+        "es": "33",
+        "ru": "33"
+      }
+    ],
+    "answer": "25",
+    "explanation": {
+      "es": "Sumá las cifras de 25: 2 + 5 = 7. 7 no es múltiplo de 3, entonces 25 tampoco.",
+      "ru": "Сумма цифр 25: 2 + 5 = 7. 7 не делится на 3, значит и 25 не делится."
+    },
+    "hint": {
+      "es": "Sumá las cifras de cada opción.",
+      "ru": "Сложи цифры у каждого варианта."
+    },
+    "commonMistake": {
+      "es": "Adivinar sin sumar las cifras.",
+      "ru": "Угадывать, не складывая цифры."
+    },
+    "skillTags": [
+      "divisibility_3"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_006",
+    "topicId": "divisibilidad",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estos números es divisible por 2 y por 5 al mismo tiempo?",
+      "ru": "Какое число делится одновременно и на 2, и на 5?"
+    },
+    "options": [
+      {
+        "es": "35",
+        "ru": "35"
+      },
+      {
+        "es": "42",
+        "ru": "42"
+      },
+      {
+        "es": "60",
+        "ru": "60"
+      },
+      {
+        "es": "75",
+        "ru": "75"
+      }
+    ],
+    "answer": "60",
+    "explanation": {
+      "es": "Para que sea divisible por 2 y 5, tiene que terminar en 0. 60 termina en 0.",
+      "ru": "Чтобы число делилось и на 2, и на 5, оно должно оканчиваться на 0. 60 оканчивается на 0."
+    },
+    "hint": {
+      "es": "Si es divisible por 2 y por 5, también lo es por 10.",
+      "ru": "Если число делится на 2 и на 5, оно делится и на 10."
+    },
+    "commonMistake": {
+      "es": "Elegir un número que solo es divisible por uno de los dos.",
+      "ru": "Выбрать число, которое делится только на одно из двух."
+    },
+    "skillTags": [
+      "divisibility_2",
+      "divisibility_5"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_007",
+    "topicId": "divisibilidad",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuántos múltiplos de 5 hay entre 1 y 30 (incluidos)?",
+      "ru": "Сколько чисел, кратных 5, есть от 1 до 30 (включительно)?"
+    },
+    "answer": "6",
+    "explanation": {
+      "es": "Son: 5, 10, 15, 20, 25 y 30. En total, 6 múltiplos.",
+      "ru": "Это: 5, 10, 15, 20, 25 и 30. Всего 6 чисел."
+    },
+    "hint": {
+      "es": "Empezá en 5 y sumá de a 5.",
+      "ru": "Начни с 5 и прибавляй по 5."
+    },
+    "commonMistake": {
+      "es": "Olvidarse de incluir el 30.",
+      "ru": "Забыть включить 30."
+    },
+    "skillTags": [
+      "multiples_5"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_008",
+    "topicId": "divisibilidad",
+    "difficulty": 3,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es 245 divisible por 3?",
+      "ru": "Делится ли 245 на 3?"
+    },
+    "answer": "false",
+    "explanation": {
+      "es": "No. 2 + 4 + 5 = 11. 11 no es múltiplo de 3, entonces 245 tampoco.",
+      "ru": "Нет. 2 + 4 + 5 = 11. 11 не делится на 3, значит и 245 не делится."
+    },
+    "hint": {
+      "es": "Sumá las cifras y mirá si esa suma es múltiplo de 3.",
+      "ru": "Сложи цифры и проверь, делится ли сумма на 3."
+    },
+    "commonMistake": {
+      "es": "Confundir divisibilidad por 3 con divisibilidad por 5.",
+      "ru": "Путать признаки делимости на 3 и на 5."
+    },
+    "skillTags": [
+      "divisibility_3"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_009",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Tenés 48 alfajores y querés armar bolsitas iguales sin que sobre ninguno. ¿Por cuál NO podés dividirlos en partes iguales?",
+      "ru": "У тебя 48 конфет, и ты хочешь разложить их по равным пакетикам, чтобы ничего не осталось. На какое число НЕЛЬЗЯ разделить?"
+    },
+    "options": [
+      {
+        "es": "2",
+        "ru": "2"
+      },
+      {
+        "es": "3",
+        "ru": "3"
+      },
+      {
+        "es": "5",
+        "ru": "5"
+      },
+      {
+        "es": "6",
+        "ru": "6"
+      }
+    ],
+    "answer": "5",
+    "explanation": {
+      "es": "48 es divisible por 2, por 3 y por 6, pero no por 5 (no termina en 0 ni en 5).",
+      "ru": "48 делится на 2, на 3 и на 6, но не делится на 5 (не оканчивается ни на 0, ни на 5)."
+    },
+    "hint": {
+      "es": "Probá cada opción con los criterios.",
+      "ru": "Проверь каждый вариант признаком делимости."
+    },
+    "commonMistake": {
+      "es": "No verificar uno por uno.",
+      "ru": "Не проверять варианты по одному."
+    },
+    "skillTags": [
+      "divisibility_2",
+      "divisibility_3",
+      "divisibility_5"
+    ],
+    "verified": false,
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_010",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuál es el menor número de tres cifras divisible por 5?",
+      "ru": "Какое самое маленькое трёхзначное число делится на 5?"
+    },
+    "answer": "100",
+    "explanation": {
+      "es": "El menor número de tres cifras es 100, y 100 termina en 0, así que es divisible por 5.",
+      "ru": "Самое маленькое трёхзначное число — 100, оно оканчивается на 0, значит, делится на 5."
+    },
+    "hint": {
+      "es": "Empezá por el más chico de tres cifras y mirá si cumple.",
+      "ru": "Начни с самого маленького трёхзначного и проверь."
+    },
+    "commonMistake": {
+      "es": "Pensar en 105 sin notar que 100 también cumple.",
+      "ru": "Сразу подумать про 105 и не заметить, что 100 тоже подходит."
+    },
+    "skillTags": [
+      "divisibility_5"
+    ],
+    "verified": false,
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "boss"
+  },
+  {
+    "id": "div_011",
+    "difficulty": 2,
+    "type": "true_false",
+    "skillTags": [
+      "divisibility_9"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: el número 135 es divisible por 9.",
+      "ru": "Верно или нет: число 135 делится на 9."
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "La suma de cifras de 135 es 1 + 3 + 5 = 9, que es múltiplo de 9. Entonces 135 es divisible por 9.",
+      "ru": "Сумма цифр 135: 1 + 3 + 5 = 9, кратна 9. Значит 135 делится на 9."
+    },
+    "hint": {
+      "es": "Un número es divisible por 9 si la suma de sus cifras es múltiplo de 9.",
+      "ru": "Число делится на 9, если сумма его цифр кратна 9."
+    },
+    "commonMistake": {
+      "es": "No alcanza con ver si termina en 9. Hay que sumar TODAS las cifras: 1+3+5=9.",
+      "ru": "Недостаточно смотреть на последнюю цифру. Нужно сложить ВСЕ цифры: 1+3+5=9."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_012",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "skillTags": [
+      "prime_numbers"
+    ],
+    "prompt": {
+      "es": "¿Cuál de estos números es primo?",
+      "ru": "Какое из этих чисел является простым?"
+    },
+    "options": [
+      {
+        "es": "9",
+        "ru": "9"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      },
+      {
+        "es": "17",
+        "ru": "17"
+      },
+      {
+        "es": "21",
+        "ru": "21"
+      }
+    ],
+    "answer": "17",
+    "explanation": {
+      "es": "17 es primo: no se puede dividir exactamente por ningún número entre 2 y 4. Los demás: 9=3×3, 15=3×5, 21=3×7.",
+      "ru": "17 — простое: не делится ни на одно число от 2 до 4. Остальные: 9=3×3, 15=3×5, 21=3×7."
+    },
+    "hint": {
+      "es": "Un número primo tiene exactamente dos divisores: el 1 y él mismo.",
+      "ru": "Простое число имеет ровно два делителя: 1 и само себя."
+    },
+    "commonMistake": {
+      "es": "9 parece primo pero 9 = 3 × 3. Siempre probá si el número tiene divisores entre 2 y su raíz cuadrada.",
+      "ru": "9 кажется простым, но 9 = 3 × 3. Проверяй делители от 2 до квадратного корня числа."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_013",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "divisors"
+    ],
+    "prompt": {
+      "es": "¿Cuántos divisores tiene el número 12?",
+      "ru": "Сколько делителей у числа 12?"
+    },
+    "answer": "6",
+    "explanation": {
+      "es": "Los divisores de 12 son: 1, 2, 3, 4, 6 y 12. En total, 6 divisores.",
+      "ru": "Делители числа 12: 1, 2, 3, 4, 6 и 12. Итого 6 делителей."
+    },
+    "hint": {
+      "es": "Buscá todos los números que dividen exactamente a 12 (sin resto).",
+      "ru": "Найди все числа, которые делят 12 без остатка."
+    },
+    "commonMistake": {
+      "es": "No olvidés incluir el 1 y el propio 12 como divisores.",
+      "ru": "Не забудь включить 1 и само число 12 в список делителей."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_014",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "multiples_6"
+    ],
+    "prompt": {
+      "es": "¿Cuál es el menor múltiplo de 6 que es mayor que 20?",
+      "ru": "Какое наименьшее кратное 6 больше 20?"
+    },
+    "answer": "24",
+    "explanation": {
+      "es": "Múltiplos de 6: 6, 12, 18, 24... El primero mayor que 20 es 24.",
+      "ru": "Кратные 6: 6, 12, 18, 24... Первое, которое больше 20 — это 24."
+    },
+    "hint": {
+      "es": "Listá los múltiplos de 6 en orden hasta encontrar el primero que supere 20.",
+      "ru": "Перечисли кратные 6 по порядку, пока не найдёшь первое, превышающее 20."
+    },
+    "commonMistake": {
+      "es": "18 es múltiplo de 6 pero es menor que 20, no mayor. El siguiente es 24.",
+      "ru": "18 — кратное 6, но оно меньше 20. Следующее — 24."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_015",
+    "difficulty": 2,
+    "type": "true_false",
+    "skillTags": [
+      "divisibility_4"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: el número 148 es divisible por 4.",
+      "ru": "Верно или нет: число 148 делится на 4."
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "Para saber si un número es divisible por 4, basta con dividir sus dos últimas cifras: 48 ÷ 4 = 12. Sí es divisible.",
+      "ru": "Для делимости на 4 достаточно проверить две последние цифры: 48 ÷ 4 = 12. Да, делится."
+    },
+    "hint": {
+      "es": "Un número es divisible por 4 si sus dos últimas cifras forman un número divisible por 4.",
+      "ru": "Число делится на 4, если его последние две цифры делятся на 4."
+    },
+    "commonMistake": {
+      "es": "No hay que dividir el número entero: solo mirá las dos últimas cifras (48) y verificá si son divisibles por 4.",
+      "ru": "Не нужно делить всё число: смотри только на последние две цифры (48) и проверяй делимость на 4."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_016",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "skillTags": [
+      "prime_numbers"
+    ],
+    "prompt": {
+      "es": "¿Cuál de estos números es compuesto (no primo)?",
+      "ru": "Какое из этих чисел является составным (не простым)?"
+    },
+    "options": [
+      {
+        "es": "2",
+        "ru": "2"
+      },
+      {
+        "es": "7",
+        "ru": "7"
+      },
+      {
+        "es": "11",
+        "ru": "11"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      }
+    ],
+    "answer": "15",
+    "explanation": {
+      "es": "15 = 3 × 5, tiene más de dos divisores, así que es compuesto. Los demás (2, 7, 11) son primos.",
+      "ru": "15 = 3 × 5, имеет более двух делителей — составное. Остальные (2, 7, 11) — простые."
+    },
+    "hint": {
+      "es": "Un número compuesto tiene al menos un divisor además del 1 y de sí mismo.",
+      "ru": "Составное число имеет хотя бы один делитель, кроме 1 и самого себя."
+    },
+    "commonMistake": {
+      "es": "2 es el único número par que es primo. No confundas par con compuesto.",
+      "ru": "2 — единственное чётное простое число. Чётный ≠ составной."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "div_017",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "skillTags": [
+      "prime_factorization"
+    ],
+    "prompt": {
+      "es": "¿Cuál es la descomposición en factores primos de 12?",
+      "ru": "Каково разложение числа 12 на простые множители?"
+    },
+    "options": [
+      {
+        "es": "2 × 6",
+        "ru": "2 × 6"
+      },
+      {
+        "es": "2² × 3",
+        "ru": "2² × 3"
+      },
+      {
+        "es": "3 × 4",
+        "ru": "3 × 4"
+      },
+      {
+        "es": "2 × 3²",
+        "ru": "2 × 3²"
+      }
+    ],
+    "answer": "2² × 3",
+    "explanation": {
+      "es": "12 = 2 × 6 = 2 × 2 × 3 = 2² × 3. Todos los factores deben ser primos.",
+      "ru": "12 = 2 × 6 = 2 × 2 × 3 = 2² × 3. Все множители должны быть простыми."
+    },
+    "hint": {
+      "es": "Dividí por 2 hasta que no puedas más, después seguí con el 3.",
+      "ru": "Дели на 2, пока возможно, потом на 3."
+    },
+    "commonMistake": {
+      "es": "2 × 6 y 3 × 4 usan factores que NO son primos (6 y 4). En la descomposición todos deben ser primos.",
+      "ru": "2 × 6 и 3 × 4 содержат не простые множители (6 и 4). В разложении все должны быть простыми."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_018",
+    "difficulty": 3,
+    "type": "true_false",
+    "skillTags": [
+      "divisibility_9"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: el número 3.582 es divisible por 9.",
+      "ru": "Верно или нет: число 3.582 делится на 9."
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "Suma de cifras: 3 + 5 + 8 + 2 = 18. Como 18 es múltiplo de 9, el número 3.582 también lo es.",
+      "ru": "Сумма цифр: 3 + 5 + 8 + 2 = 18. Так как 18 кратно 9, число 3.582 тоже делится на 9."
+    },
+    "hint": {
+      "es": "Sumá todas las cifras del número y verificá si esa suma es múltiplo de 9.",
+      "ru": "Сложи все цифры числа и проверь, делится ли сумма на 9."
+    },
+    "commonMistake": {
+      "es": "3 + 5 + 8 + 2 = 18, no 20. Cuidado al sumar cifras de izquierda a derecha.",
+      "ru": "3 + 5 + 8 + 2 = 18, не 20. Будь внимателен при сложении цифр."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_019",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "gcd"
+    ],
+    "prompt": {
+      "es": "¿Cuál es el MCD (máximo común divisor) de 12 y 18?",
+      "ru": "Чему равен НОД (наибольший общий делитель) чисел 12 и 18?"
+    },
+    "answer": "6",
+    "explanation": {
+      "es": "Divisores de 12: 1, 2, 3, 4, 6, 12. Divisores de 18: 1, 2, 3, 6, 9, 18. El mayor en común es 6.",
+      "ru": "Делители 12: 1, 2, 3, 4, 6, 12. Делители 18: 1, 2, 3, 6, 9, 18. Наибольший общий — 6."
+    },
+    "hint": {
+      "es": "Listá los divisores de cada número y buscá el mayor que aparezca en ambas listas.",
+      "ru": "Выпиши делители каждого числа и найди наибольший, встречающийся в обоих списках."
+    },
+    "commonMistake": {
+      "es": "El MCD no es la multiplicación de los números ni su suma. Es el mayor divisor que comparten.",
+      "ru": "НОД — не произведение и не сумма чисел. Это наибольший общий делитель."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_020",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "lcm"
+    ],
+    "prompt": {
+      "es": "¿Cuál es el MCM (mínimo común múltiplo) de 4 y 6?",
+      "ru": "Чему равно НОК (наименьшее общее кратное) чисел 4 и 6?"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Múltiplos de 4: 4, 8, 12, 16... Múltiplos de 6: 6, 12, 18... El menor en común es 12.",
+      "ru": "Кратные 4: 4, 8, 12, 16... Кратные 6: 6, 12, 18... Наименьшее общее — 12."
+    },
+    "hint": {
+      "es": "Listá los múltiplos de cada número hasta encontrar el primero que aparezca en ambas listas.",
+      "ru": "Перечисли кратные каждого числа, пока не найдёшь первое общее."
+    },
+    "commonMistake": {
+      "es": "El MCM no es la multiplicación directa: 4 × 6 = 24 no es el MCM. El MCM de 4 y 6 es 12.",
+      "ru": "НОК — не всегда произведение: 4 × 6 = 24 ≠ НОК. НОК(4,6) = 12."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_021",
+    "difficulty": 3,
+    "type": "true_false",
+    "skillTags": [
+      "divisors"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: 14 es divisor de 56.",
+      "ru": "Верно или нет: 14 является делителем числа 56."
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "56 ÷ 14 = 4, sin resto. Por lo tanto 14 es divisor de 56.",
+      "ru": "56 ÷ 14 = 4, без остатка. Значит 14 — делитель числа 56."
+    },
+    "hint": {
+      "es": "Dividí 56 entre 14 y verificá si el resultado es exacto (sin resto).",
+      "ru": "Раздели 56 на 14 и проверь, получается ли целое число без остатка."
+    },
+    "commonMistake": {
+      "es": "No confundas: decir que 14 es divisor de 56 significa que 56 ÷ 14 es exacto, no al revés.",
+      "ru": "14 является делителем 56 означает, что 56 ÷ 14 — целое. Не путай направление."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_022",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "multiples_4"
+    ],
+    "prompt": {
+      "es": "¿Cuántos múltiplos de 4 hay entre 1 y 40 (incluido el 40)?",
+      "ru": "Сколько кратных числа 4 находится от 1 до 40 включительно?"
+    },
+    "answer": "10",
+    "explanation": {
+      "es": "Los múltiplos de 4 hasta 40 son: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40. En total, 10.",
+      "ru": "Кратные 4 до 40: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40. Итого 10."
+    },
+    "hint": {
+      "es": "Podés contar: 40 ÷ 4 = 10. Hay exactamente 10 múltiplos de 4 hasta 40.",
+      "ru": "Можно посчитать: 40 ÷ 4 = 10. Ровно 10 кратных числа 4 до 40."
+    },
+    "commonMistake": {
+      "es": "No olvides contar el 40 mismo: es múltiplo de 4 porque 40 ÷ 4 = 10 exacto.",
+      "ru": "Не забудь включить само число 40: 40 ÷ 4 = 10 — без остатка."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_023",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "divisibility_9"
+    ],
+    "prompt": {
+      "es": "El número 1 _ 5 es divisible por 9. ¿Cuál es el dígito que falta?",
+      "ru": "Число 1 _ 5 делится на 9. Какая цифра стоит вместо пропуска?"
+    },
+    "answer": "3",
+    "explanation": {
+      "es": "La suma de cifras debe ser múltiplo de 9: 1 + _ + 5 = 6 + _. Para que sea múltiplo de 9: 6 + 3 = 9. El dígito es 3.",
+      "ru": "Сумма цифр должна быть кратна 9: 1 + _ + 5 = 6 + _. Чтобы получить 9: _ = 3."
+    },
+    "hint": {
+      "es": "Sumá las cifras conocidas y buscá qué dígito hace que la suma sea múltiplo de 9.",
+      "ru": "Сложи известные цифры и найди, какая цифра делает сумму кратной 9."
+    },
+    "commonMistake": {
+      "es": "La suma 1 + 5 = 6. Para llegar a 9 (el múltiplo más cercano) hace falta sumar 3, no 4 ni 2.",
+      "ru": "1 + 5 = 6. До ближайшего кратного 9 не хватает 3, а не 4 или 2."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_024",
+    "difficulty": 3,
+    "type": "true_false",
+    "skillTags": [
+      "divisibility_3",
+      "algebraic_thinking"
+    ],
+    "prompt": {
+      "es": "El número b = 3 × 14 + 6. ¿Es b divisible por 3?",
+      "ru": "Число b = 3 × 14 + 6. Делится ли b на 3?"
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "b = 42 + 6 = 48. Suma de cifras de 48: 4 + 8 = 12, múltiplo de 3. Sí es divisible. También: 3×14 es múltiplo de 3, y 6 también, así que la suma es múltiplo de 3.",
+      "ru": "b = 42 + 6 = 48. Сумма цифр: 4 + 8 = 12, кратна 3. Делится. Или: 3×14 кратно 3, и 6 тоже — значит сумма тоже кратна 3."
+    },
+    "hint": {
+      "es": "Si cada sumando es múltiplo de 3, la suma también lo es.",
+      "ru": "Если каждое слагаемое кратно 3, то и сумма кратна 3."
+    },
+    "commonMistake": {
+      "es": "No hace falta calcular b completo: 3×14 claramente es múltiplo de 3, y 6 = 2×3 también. Su suma es múltiplo de 3.",
+      "ru": "Не нужно вычислять b: 3×14 кратно 3, и 6 = 2×3 тоже. Их сумма — кратная 3."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_025",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "gcd",
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Tenés 24 manzanas y 36 naranjas. Querés armar bolsas con la misma cantidad de cada fruta, sin que sobre ninguna. ¿Cuántas bolsas podés armar como máximo?",
+      "ru": "У тебя 24 яблока и 36 апельсинов. Хочешь разложить их по пакетам с одинаковым количеством каждого фрукта, ничего не оставив. Максимальное количество пакетов?"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Necesitás el MCD(24, 36) = 12. Con 12 bolsas: cada una lleva 24÷12 = 2 manzanas y 36÷12 = 3 naranjas.",
+      "ru": "НОД(24, 36) = 12. При 12 пакетах: в каждом 24÷12 = 2 яблока и 36÷12 = 3 апельсина."
+    },
+    "hint": {
+      "es": "La cantidad máxima de bolsas iguales es el MCD de las dos cantidades.",
+      "ru": "Максимальное количество одинаковых пакетов — это НОД двух чисел."
+    },
+    "commonMistake": {
+      "es": "El número de bolsas debe dividir EXACTAMENTE tanto a 24 como a 36. El mayor número que hace eso es el MCD = 12.",
+      "ru": "Количество пакетов должно делить ТОЧНО и 24, и 36. Наибольшее такое число — НОД = 12."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_026",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "lcm",
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Un semáforo cambia cada 4 minutos y otro cambia cada 6 minutos. Si ahora están sincronizados, ¿en cuántos minutos volverán a cambiar al mismo tiempo?",
+      "ru": "Один светофор меняется каждые 4 минуты, другой — каждые 6 минут. Если сейчас они синхронизированы, через сколько минут они снова совпадут?"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Necesitás el MCM(4, 6) = 12. A los 12 minutos ambos cambian al mismo tiempo.",
+      "ru": "НОК(4, 6) = 12. Через 12 минут оба светофора сменятся одновременно."
+    },
+    "hint": {
+      "es": "Buscá el menor número que sea múltiplo de 4 y de 6 al mismo tiempo.",
+      "ru": "Найди наименьшее число, кратное одновременно 4 и 6."
+    },
+    "commonMistake": {
+      "es": "4 × 6 = 24 no es el MCM. Los múltiplos comunes son 12, 24, 36... El menor es 12.",
+      "ru": "4 × 6 = 24 — не НОК. Общие кратные: 12, 24, 36... Наименьшее — 12."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_027",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "skillTags": [
+      "prime_factorization"
+    ],
+    "prompt": {
+      "es": "¿Cuál es la descomposición en factores primos de 36?",
+      "ru": "Каково разложение числа 36 на простые множители?"
+    },
+    "options": [
+      {
+        "es": "2 × 18",
+        "ru": "2 × 18"
+      },
+      {
+        "es": "2² × 3²",
+        "ru": "2² × 3²"
+      },
+      {
+        "es": "4 × 9",
+        "ru": "4 × 9"
+      },
+      {
+        "es": "6 × 6",
+        "ru": "6 × 6"
+      }
+    ],
+    "answer": "2² × 3²",
+    "explanation": {
+      "es": "36 = 2 × 18 = 2 × 2 × 9 = 2 × 2 × 3 × 3 = 2² × 3². Todos los factores son primos.",
+      "ru": "36 = 2 × 18 = 2 × 2 × 9 = 2 × 2 × 3 × 3 = 2² × 3². Все множители простые."
+    },
+    "hint": {
+      "es": "Dividí por 2 hasta que no puedas más, luego por 3.",
+      "ru": "Дели на 2, пока возможно, затем на 3."
+    },
+    "commonMistake": {
+      "es": "2×18, 4×9 y 6×6 no son factorizaciones en primos porque 18, 4, 9 y 6 no son números primos.",
+      "ru": "2×18, 4×9 и 6×6 — не разложения на простые: 18, 4, 9 и 6 сами не простые."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_028",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "divisibility_9"
+    ],
+    "prompt": {
+      "es": "El número 8.7_1 es divisible por 9. ¿Cuál es el dígito que falta?",
+      "ru": "Число 8.7_1 делится на 9. Какая цифра стоит вместо пропуска?"
+    },
+    "answer": "2",
+    "explanation": {
+      "es": "La suma de las cifras conocidas es 8 + 7 + 1 = 16. Para ser múltiplo de 9: 16 + _ = 18, entonces _ = 2.",
+      "ru": "Сумма известных цифр: 8 + 7 + 1 = 16. Чтобы получить 18 (кратное 9): _ = 2."
+    },
+    "hint": {
+      "es": "Sumá las cifras que conocés y buscá qué dígito hace que el total sea múltiplo de 9.",
+      "ru": "Сложи известные цифры и найди, какая цифра делает сумму кратной 9."
+    },
+    "commonMistake": {
+      "es": "8 + 7 + 1 = 16, no 17. El próximo múltiplo de 9 mayor que 16 es 18, así que falta 2.",
+      "ru": "8 + 7 + 1 = 16. Ближайшее кратное 9 больше 16 — это 18. Значит, недостаёт 2."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_029",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "division_remainder"
+    ],
+    "prompt": {
+      "es": "Al dividir un número natural n por 7, el cociente es 8 y el resto es 3. ¿Cuánto vale n?",
+      "ru": "При делении натурального числа n на 7 получается частное 8 и остаток 3. Чему равно n?"
+    },
+    "answer": "59",
+    "explanation": {
+      "es": "División entera: dividendo = divisor × cociente + resto. n = 7 × 8 + 3 = 56 + 3 = 59.",
+      "ru": "Деление с остатком: делимое = делитель × частное + остаток. n = 7 × 8 + 3 = 56 + 3 = 59."
+    },
+    "hint": {
+      "es": "Usá la fórmula: n = divisor × cociente + resto.",
+      "ru": "Используй формулу: n = делитель × частное + остаток."
+    },
+    "commonMistake": {
+      "es": "Sumar todo directamente (7 + 8 + 3 = 18) es incorrecto. Hay que multiplicar primero: 7 × 8 = 56, después sumar el resto: 56 + 3 = 59.",
+      "ru": "Нельзя просто складывать: 7 + 8 + 3 = 18 — ошибка. Сначала умножение: 7 × 8 = 56, потом остаток: 56 + 3 = 59."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_030",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "divisors",
+      "prime_factorization"
+    ],
+    "prompt": {
+      "es": "¿Cuántos divisores tiene el número 30?",
+      "ru": "Сколько делителей у числа 30?"
+    },
+    "answer": "8",
+    "explanation": {
+      "es": "30 = 2 × 3 × 5. Sus divisores son: 1, 2, 3, 5, 6, 10, 15, 30. En total, 8 divisores.",
+      "ru": "30 = 2 × 3 × 5. Делители: 1, 2, 3, 5, 6, 10, 15, 30. Итого 8 делителей."
+    },
+    "hint": {
+      "es": "Descomponé 30 en factores primos y listá todas las combinaciones posibles.",
+      "ru": "Разложи 30 на простые множители и перечисли все возможные комбинации."
+    },
+    "commonMistake": {
+      "es": "No olvides los divisores 'compuestos' como 6 (=2×3), 10 (=2×5) y 15 (=3×5).",
+      "ru": "Не забудь 'составные' делители: 6 (=2×3), 10 (=2×5) и 15 (=3×5)."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_031",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un número es divisible por 3 y por 5, está entre 120 y 150, y NO es divisible por 10. ¿Cuál es?",
+      "ru": "Число делится на 3 и на 5, находится между 120 и 150, и НЕ делится на 10. Какое это число?"
+    },
+    "options": [
+      {
+        "es": "135",
+        "ru": "135"
+      },
+      {
+        "es": "120",
+        "ru": "120"
+      },
+      {
+        "es": "130",
+        "ru": "130"
+      },
+      {
+        "es": "150",
+        "ru": "150"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "divisibility",
+      "multiple_conditions"
+    ],
+    "hint": {
+      "es": "Divisible por 3 y 5 = divisible por 15. Múltiplos de 15 entre 120 y 150: 120, 135, 150. Ahora eliminá los divisibles por 10.",
+      "ru": "Делится на 3 и 5 = делится на 15. Кратные 15 между 120 и 150: 120, 135, 150. Теперь убери кратные 10."
+    },
+    "explanation": {
+      "es": "Múltiplos de 15 en ese rango: 120, 135, 150. 120 y 150 son divisibles por 10. Queda 135.",
+      "ru": "Кратные 15 в этом диапазоне: 120, 135, 150. 120 и 150 делятся на 10. Остаётся 135."
+    },
+    "commonMistake": {
+      "es": "Olvidar que 'divisible por 3 y por 5' implica divisible por 15 (si son coprimos).",
+      "ru": "Забыть, что «делится на 3 и на 5» означает делится на 15 (если они взаимно просты)."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_032",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuántos múltiplos de 7 hay entre 1 y 100?",
+      "ru": "Сколько кратных 7 находится между 1 и 100?"
+    },
+    "options": [
+      {
+        "es": "14",
+        "ru": "14"
+      },
+      {
+        "es": "13",
+        "ru": "13"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      },
+      {
+        "es": "12",
+        "ru": "12"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "multiples",
+      "counting"
+    ],
+    "hint": {
+      "es": "El mayor múltiplo de 7 ≤ 100 es 7 × 14 = 98. Entonces hay 14 múltiplos: 7, 14, 21, ..., 98.",
+      "ru": "Наибольшее кратное 7 ≤ 100 это 7 × 14 = 98. Значит кратных 14: 7, 14, 21, ..., 98."
+    },
+    "explanation": {
+      "es": "100 ÷ 7 = 14,28... → parte entera = 14. Hay 14 múltiplos de 7 entre 1 y 100.",
+      "ru": "100 ÷ 7 = 14,28... → целая часть = 14. Кратных 7 между 1 и 100 — 14 штук."
+    },
+    "commonMistake": {
+      "es": "Contar hasta 7 × 15 = 105, que ya pasa de 100. Siempre chequeá que el múltiplo no supere el límite.",
+      "ru": "Считать до 7 × 15 = 105, что больше 100. Всегда проверяй, что кратное не превышает границу."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_033",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estos números es primo?",
+      "ru": "Какое из этих чисел является простым?"
+    },
+    "options": [
+      {
+        "es": "97",
+        "ru": "97"
+      },
+      {
+        "es": "91",
+        "ru": "91"
+      },
+      {
+        "es": "87",
+        "ru": "87"
+      },
+      {
+        "es": "99",
+        "ru": "99"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "prime_numbers",
+      "divisibility_test"
+    ],
+    "hint": {
+      "es": "Comprobá si cada número tiene divisores entre 2 y su raíz cuadrada. 91 = 7 × 13, 87 = 3 × 29, 99 = 9 × 11.",
+      "ru": "Проверь, есть ли у каждого числа делители от 2 до его квадратного корня. 91 = 7 × 13, 87 = 3 × 29, 99 = 9 × 11."
+    },
+    "explanation": {
+      "es": "91 = 7 × 13. 87 = 3 × 29. 99 = 9 × 11. 97 no tiene divisores hasta √97 ≈ 9,8. Es primo.",
+      "ru": "91 = 7 × 13. 87 = 3 × 29. 99 = 9 × 11. 97 не имеет делителей до √97 ≈ 9,8. Оно простое."
+    },
+    "commonMistake": {
+      "es": "Creer que 91 es primo porque no parece divisible. 91 = 7 × 13, hay que verificar siempre.",
+      "ru": "Считать 91 простым, потому что не выглядит делимым. 91 = 7 × 13, всегда проверяй."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_034",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "El MCD de 48 y 36 es...",
+      "ru": "НОД чисел 48 и 36 равен..."
+    },
+    "options": [
+      {
+        "es": "12",
+        "ru": "12"
+      },
+      {
+        "es": "6",
+        "ru": "6"
+      },
+      {
+        "es": "18",
+        "ru": "18"
+      },
+      {
+        "es": "24",
+        "ru": "24"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "gcd",
+      "factorization"
+    ],
+    "hint": {
+      "es": "Buscá los divisores comunes de 48 y 36. O descomponés: 48 = 2⁴ × 3; 36 = 2² × 3². MCD = 2² × 3.",
+      "ru": "Ищи общие делители 48 и 36. Или разложи: 48 = 2⁴ × 3; 36 = 2² × 3². НОД = 2² × 3."
+    },
+    "explanation": {
+      "es": "48 = 2⁴ × 3; 36 = 2² × 3². MCD = mínimos exponentes comunes = 2² × 3 = 4 × 3 = 12.",
+      "ru": "48 = 2⁴ × 3; 36 = 2² × 3². НОД = минимальные общие показатели = 2² × 3 = 4 × 3 = 12."
+    },
+    "commonMistake": {
+      "es": "Confundir MCD con mcm. El MCD es el MAYOR divisor común, no el múltiplo.",
+      "ru": "Путать НОД с НОК. НОД — это НАИБОЛЬШИЙ общий делитель, а не кратное."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "div_035",
+    "topicId": "divisibilidad",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "El mínimo común múltiplo (mcm) de 8 y 12 es...",
+      "ru": "Наименьшее общее кратное (НОК) чисел 8 и 12 равно..."
+    },
+    "options": [
+      {
+        "es": "24",
+        "ru": "24"
+      },
+      {
+        "es": "48",
+        "ru": "48"
+      },
+      {
+        "es": "96",
+        "ru": "96"
+      },
+      {
+        "es": "16",
+        "ru": "16"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "lcm",
+      "factorization"
+    ],
+    "hint": {
+      "es": "8 = 2³; 12 = 2² × 3. mcm = máximos exponentes = 2³ × 3 = 24.",
+      "ru": "8 = 2³; 12 = 2² × 3. НОК = максимальные показатели = 2³ × 3 = 24."
+    },
+    "explanation": {
+      "es": "mcm(8, 12): 8 = 2³; 12 = 2² × 3. Se toman los máximos: 2³ × 3¹ = 8 × 3 = 24.",
+      "ru": "НОК(8, 12): 8 = 2³; 12 = 2² × 3. Берём максимальные степени: 2³ × 3¹ = 8 × 3 = 24."
+    },
+    "commonMistake": {
+      "es": "Multiplicar 8 × 12 = 96 y pensar que ese es el mcm. No siempre es así; hay que dividir por el MCD.",
+      "ru": "Умножить 8 × 12 = 96 и считать это НОК. Это не всегда так; нужно делить на НОД."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  }
+]

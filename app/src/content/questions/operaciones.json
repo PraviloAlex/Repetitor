@@ -1,0 +1,1315 @@
+[
+  {
+    "id": "op_001",
+    "topicId": "operaciones",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es 5 + 3 × 2?",
+      "ru": "Сколько будет 5 + 3 × 2?"
+    },
+    "options": [
+      {
+        "es": "11",
+        "ru": "11"
+      },
+      {
+        "es": "16",
+        "ru": "16"
+      },
+      {
+        "es": "13",
+        "ru": "13"
+      },
+      {
+        "es": "10",
+        "ru": "10"
+      }
+    ],
+    "answer": "11",
+    "explanation": {
+      "es": "Primero la multiplicación: 3 × 2 = 6. Después la suma: 5 + 6 = 11.",
+      "ru": "Сначала умножение: 3 × 2 = 6. Потом сложение: 5 + 6 = 11."
+    },
+    "hint": {
+      "es": "Primero las multiplicaciones, después las sumas.",
+      "ru": "Сначала умножение, потом сложение."
+    },
+    "commonMistake": {
+      "es": "Sumar 5 + 3 primero y multiplicar después por 2.",
+      "ru": "Сложить 5 + 3, а потом умножить на 2."
+    },
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "verified": false,
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_002",
+    "topicId": "operaciones",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es (4 + 6) × 2?",
+      "ru": "Сколько будет (4 + 6) × 2?"
+    },
+    "options": [
+      {
+        "es": "20",
+        "ru": "20"
+      },
+      {
+        "es": "16",
+        "ru": "16"
+      },
+      {
+        "es": "14",
+        "ru": "14"
+      },
+      {
+        "es": "12",
+        "ru": "12"
+      }
+    ],
+    "answer": "20",
+    "explanation": {
+      "es": "El paréntesis va primero: 4 + 6 = 10. Después 10 × 2 = 20.",
+      "ru": "Сначала скобка: 4 + 6 = 10. Потом 10 × 2 = 20."
+    },
+    "hint": {
+      "es": "Si hay paréntesis, ese cálculo va primero.",
+      "ru": "Если есть скобки — они выполняются первыми."
+    },
+    "commonMistake": {
+      "es": "Multiplicar primero 6 × 2 = 12 y después sumar 4.",
+      "ru": "Сначала умножить 6 × 2 = 12, а потом прибавить 4."
+    },
+    "skillTags": [
+      "order_of_operations",
+      "parentheses"
+    ],
+    "verified": false,
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_003",
+    "topicId": "operaciones",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Resolvé: 12 − 3 × 2 + 1",
+      "ru": "Реши: 12 − 3 × 2 + 1"
+    },
+    "answer": "7",
+    "explanation": {
+      "es": "Primero 3 × 2 = 6. Después 12 − 6 + 1 = 7.",
+      "ru": "Сначала 3 × 2 = 6. Потом 12 − 6 + 1 = 7."
+    },
+    "hint": {
+      "es": "Multiplicación antes que resta y suma.",
+      "ru": "Умножение раньше, чем вычитание и сложение."
+    },
+    "commonMistake": {
+      "es": "Calcular de izquierda a derecha sin respetar prioridad.",
+      "ru": "Считать слева направо, не глядя на приоритет."
+    },
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_004",
+    "topicId": "operaciones",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es 20 ÷ 4 + 6?",
+      "ru": "Сколько будет 20 ÷ 4 + 6?"
+    },
+    "options": [
+      {
+        "es": "11",
+        "ru": "11"
+      },
+      {
+        "es": "8",
+        "ru": "8"
+      },
+      {
+        "es": "10",
+        "ru": "10"
+      },
+      {
+        "es": "12",
+        "ru": "12"
+      }
+    ],
+    "answer": "11",
+    "explanation": {
+      "es": "Primero la división: 20 ÷ 4 = 5. Después 5 + 6 = 11.",
+      "ru": "Сначала деление: 20 ÷ 4 = 5. Потом 5 + 6 = 11."
+    },
+    "hint": {
+      "es": "División antes que suma.",
+      "ru": "Деление раньше сложения."
+    },
+    "commonMistake": {
+      "es": "Sumar 4 + 6 primero.",
+      "ru": "Сначала сложить 4 + 6."
+    },
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_005",
+    "topicId": "operaciones",
+    "difficulty": 2,
+    "type": "true_false",
+    "prompt": {
+      "es": "Verdadero o falso: 2 + 3 × 4 = 20.",
+      "ru": "Верно или нет: 2 + 3 × 4 = 20."
+    },
+    "answer": "false",
+    "explanation": {
+      "es": "No, porque primero va 3 × 4 = 12, y después 2 + 12 = 14.",
+      "ru": "Нет: сначала 3 × 4 = 12, потом 2 + 12 = 14."
+    },
+    "hint": {
+      "es": "Pensá: ¿qué operación va primero?",
+      "ru": "Подумай: какое действие первым?"
+    },
+    "commonMistake": {
+      "es": "Pensar que se calcula de izquierda a derecha.",
+      "ru": "Думать, что считают слева направо."
+    },
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "verified": false,
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "boss"
+  },
+  {
+    "id": "op_006",
+    "topicId": "operaciones",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Resolvé: 8 + 2 × (5 − 3)",
+      "ru": "Реши: 8 + 2 × (5 − 3)"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Primero el paréntesis: 5 − 3 = 2. Después 2 × 2 = 4. Al final 8 + 4 = 12.",
+      "ru": "Сначала скобка: 5 − 3 = 2. Потом 2 × 2 = 4. В конце 8 + 4 = 12."
+    },
+    "hint": {
+      "es": "Paréntesis → multiplicación → suma.",
+      "ru": "Скобка → умножение → сложение."
+    },
+    "commonMistake": {
+      "es": "Sumar 8 + 2 primero.",
+      "ru": "Сложить 8 + 2 первыми."
+    },
+    "skillTags": [
+      "order_of_operations",
+      "parentheses"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_007",
+    "topicId": "operaciones",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Comprás 3 cuadernos a $250 y 2 lapiceras a $120. ¿Cuánto gastás en total?",
+      "ru": "Ты купил 3 тетради по 250 и 2 ручки по 120. Сколько всего потратил?"
+    },
+    "options": [
+      {
+        "es": "$990",
+        "ru": "990"
+      },
+      {
+        "es": "$870",
+        "ru": "870"
+      },
+      {
+        "es": "$740",
+        "ru": "740"
+      },
+      {
+        "es": "$1010",
+        "ru": "1010"
+      }
+    ],
+    "answer": "$990",
+    "explanation": {
+      "es": "3 × 250 = 750. 2 × 120 = 240. 750 + 240 = 990.",
+      "ru": "3 × 250 = 750. 2 × 120 = 240. 750 + 240 = 990."
+    },
+    "hint": {
+      "es": "Calculá cada producto por separado y después sumá.",
+      "ru": "Посчитай каждое произведение отдельно, потом сложи."
+    },
+    "commonMistake": {
+      "es": "Sumar 3 + 2 = 5 y multiplicar por algo.",
+      "ru": "Сложить 3 + 2 = 5 и умножить на что-нибудь."
+    },
+    "skillTags": [
+      "word_problem",
+      "multiplication"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_008",
+    "topicId": "operaciones",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Resolvé: 100 − (20 + 5 × 4)",
+      "ru": "Реши: 100 − (20 + 5 × 4)"
+    },
+    "answer": "60",
+    "explanation": {
+      "es": "Dentro del paréntesis: 5 × 4 = 20. Después 20 + 20 = 40. Por último 100 − 40 = 60.",
+      "ru": "Внутри скобки: 5 × 4 = 20. Потом 20 + 20 = 40. В конце 100 − 40 = 60."
+    },
+    "hint": {
+      "es": "Adentro del paréntesis también hay prioridades.",
+      "ru": "Внутри скобки тоже работает порядок действий."
+    },
+    "commonMistake": {
+      "es": "Restar 100 − 20 primero.",
+      "ru": "Сначала вычесть 100 − 20."
+    },
+    "skillTags": [
+      "order_of_operations",
+      "parentheses"
+    ],
+    "verified": false,
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_009",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Resolvé: 36 ÷ (2 × 3) + 5",
+      "ru": "Реши: 36 ÷ (2 × 3) + 5"
+    },
+    "answer": "11",
+    "explanation": {
+      "es": "Paréntesis: 2 × 3 = 6. División: 36 ÷ 6 = 6. Suma: 6 + 5 = 11.",
+      "ru": "Скобка: 2 × 3 = 6. Деление: 36 ÷ 6 = 6. Сложение: 6 + 5 = 11."
+    },
+    "hint": {
+      "es": "Resolvé el paréntesis y después dividí.",
+      "ru": "Сначала скобка, потом деление."
+    },
+    "commonMistake": {
+      "es": "Dividir 36 ÷ 2 primero.",
+      "ru": "Сначала разделить 36 ÷ 2."
+    },
+    "skillTags": [
+      "order_of_operations",
+      "parentheses"
+    ],
+    "verified": false,
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_010",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En una panadería hay 8 cajas con 12 facturas cada una. Si se venden 30, ¿cuántas quedan?",
+      "ru": "В пекарне 8 коробок, в каждой по 12 булочек. Продали 30. Сколько осталось?"
+    },
+    "options": [
+      {
+        "es": "66",
+        "ru": "66"
+      },
+      {
+        "es": "76",
+        "ru": "76"
+      },
+      {
+        "es": "56",
+        "ru": "56"
+      },
+      {
+        "es": "86",
+        "ru": "86"
+      }
+    ],
+    "answer": "66",
+    "explanation": {
+      "es": "Primero 8 × 12 = 96 facturas. Después 96 − 30 = 66 quedan.",
+      "ru": "Сначала 8 × 12 = 96 булочек. Потом 96 − 30 = 66 осталось."
+    },
+    "hint": {
+      "es": "Primero el total, después restá lo vendido.",
+      "ru": "Сначала общее количество, потом вычти проданное."
+    },
+    "commonMistake": {
+      "es": "Restar 30 de 12 antes de multiplicar.",
+      "ru": "Вычесть 30 из 12 до умножения."
+    },
+    "skillTags": [
+      "word_problem",
+      "multiplication",
+      "subtraction"
+    ],
+    "verified": false,
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_011",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "Resolvé: 15 + 4 × 3 − 2",
+      "ru": "Вычисли: 15 + 4 × 3 − 2"
+    },
+    "answer": "25",
+    "explanation": {
+      "es": "Primero la multiplicación: 4 × 3 = 12. Luego de izquierda a derecha: 15 + 12 − 2 = 25.",
+      "ru": "Сначала умножение: 4 × 3 = 12. Затем слева направо: 15 + 12 − 2 = 25."
+    },
+    "hint": {
+      "es": "Recordá: la multiplicación va antes que la suma y la resta.",
+      "ru": "Помни: умножение выполняется раньше сложения и вычитания."
+    },
+    "commonMistake": {
+      "es": "Sumar antes de multiplicar da 19 × 3 − 2 = 55. Siempre multiplicá primero.",
+      "ru": "Если сложить сначала: (15+4)×3−2 = 55. Умножение — в приоритете."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_012",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem",
+      "mental_math"
+    ],
+    "prompt": {
+      "es": "En una panadería hay 3 docenas de medialunas. ¿Cuántas medialunas hay en total?",
+      "ru": "В булочной есть 3 дюжины круассанов. Сколько круассанов всего?"
+    },
+    "answer": "36",
+    "explanation": {
+      "es": "Una docena = 12 unidades. 3 docenas = 3 × 12 = 36.",
+      "ru": "Дюжина = 12 штук. 3 дюжины = 3 × 12 = 36."
+    },
+    "hint": {
+      "es": "Una docena son 12 unidades.",
+      "ru": "Дюжина — это 12 штук."
+    },
+    "commonMistake": {
+      "es": "Una docena no es 10 sino 12. 3 × 10 = 30 es incorrecto.",
+      "ru": "Дюжина — не 10, а 12. 3 × 10 = 30 — ошибка."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_013",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "Resolvé: (18 − 6) ÷ 4 + 5",
+      "ru": "Вычисли: (18 − 6) ÷ 4 + 5"
+    },
+    "answer": "8",
+    "explanation": {
+      "es": "Paréntesis primero: 18 − 6 = 12. Luego división: 12 ÷ 4 = 3. Luego suma: 3 + 5 = 8.",
+      "ru": "Скобки первыми: 18 − 6 = 12. Потом деление: 12 ÷ 4 = 3. Потом сложение: 3 + 5 = 8."
+    },
+    "hint": {
+      "es": "Resolvé lo que está entre paréntesis antes que todo lo demás.",
+      "ru": "Сначала вычисли то, что в скобках."
+    },
+    "commonMistake": {
+      "es": "Olvidar los paréntesis y dividir 6 ÷ 4 primero da un resultado incorrecto.",
+      "ru": "Если не считать скобки сначала, получится неверный результат."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_014",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "skillTags": [
+      "natural_numbers"
+    ],
+    "prompt": {
+      "es": "¿Cuál es el número que sigue a 2.999?",
+      "ru": "Какое число следует за 2.999?"
+    },
+    "options": [
+      {
+        "es": "2.990",
+        "ru": "2.990"
+      },
+      {
+        "es": "3.000",
+        "ru": "3.000"
+      },
+      {
+        "es": "2.900",
+        "ru": "2.900"
+      },
+      {
+        "es": "3.001",
+        "ru": "3.001"
+      }
+    ],
+    "answer": "3.000",
+    "explanation": {
+      "es": "El número siguiente (sucesor) de 2.999 es 2.999 + 1 = 3.000.",
+      "ru": "Число, следующее за 2.999, равно 2.999 + 1 = 3.000."
+    },
+    "hint": {
+      "es": "El sucesor de un número es ese número más uno.",
+      "ru": "Следующее число — это данное число плюс один."
+    },
+    "commonMistake": {
+      "es": "Al sumar 1 a 2.999 las unidades pasan a 0, las decenas a 0, las centenas a 0 y los millares aumentan en 1.",
+      "ru": "При прибавлении 1 к 2.999 каждый разряд обнуляется и тысячи увеличиваются на 1."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_015",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Comprás una mochila que cuesta $1.200 y pagás con un billete de $2.000. ¿Cuánto de vuelto recibís?",
+      "ru": "Ты покупаешь рюкзак за $1.200 и платишь купюрой $2.000. Сколько сдачи получишь?"
+    },
+    "answer": "800",
+    "explanation": {
+      "es": "Vuelto = lo que pagás − lo que cuesta: 2.000 − 1.200 = 800.",
+      "ru": "Сдача = заплатил − стоимость: 2.000 − 1.200 = 800."
+    },
+    "hint": {
+      "es": "Vuelto = precio pagado − precio del artículo.",
+      "ru": "Сдача = сумма оплаты − цена товара."
+    },
+    "commonMistake": {
+      "es": "Restar al revés: 1.200 − 2.000 no tiene sentido en este contexto. Siempre restá lo más pequeño al más grande.",
+      "ru": "1.200 − 2.000 не имеет смысла здесь. Из большего вычитаем меньшее."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_016",
+    "difficulty": 2,
+    "type": "true_false",
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: 4 × (3 + 2) es igual a 4 × 3 + 2.",
+      "ru": "Верно или нет: 4 × (3 + 2) равно 4 × 3 + 2."
+    },
+    "answer": "false",
+    "explanation": {
+      "es": "4 × (3 + 2) = 4 × 5 = 20. En cambio 4 × 3 + 2 = 12 + 2 = 14. Son distintos.",
+      "ru": "4 × (3 + 2) = 4 × 5 = 20. А 4 × 3 + 2 = 12 + 2 = 14. Они разные."
+    },
+    "hint": {
+      "es": "Resolvé cada expresión por separado y compará.",
+      "ru": "Вычисли каждое выражение отдельно и сравни."
+    },
+    "commonMistake": {
+      "es": "Los paréntesis cambian el orden. 4 × (3 + 2) multiplica por toda la suma, no solo por el 3.",
+      "ru": "Скобки меняют порядок: 4 × (3 + 2) — умножение на всю сумму, а не только на 3."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "op_017",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem",
+      "fractions_of_total"
+    ],
+    "prompt": {
+      "es": "Una florería recibió 4 docenas de flores. La mitad son rosas y un cuarto son claveles. ¿Cuántas flores NO son ni rosas ni claveles?",
+      "ru": "В цветочном магазине получили 4 дюжины цветов. Половина — розы, четверть — гвоздики. Сколько цветов — ни розы, ни гвоздики?"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Total: 4 × 12 = 48. Rosas: 48 ÷ 2 = 24. Claveles: 48 ÷ 4 = 12. Resto: 48 − 24 − 12 = 12.",
+      "ru": "Всего: 4 × 12 = 48. Розы: 48 ÷ 2 = 24. Гвоздики: 48 ÷ 4 = 12. Остаток: 48 − 24 − 12 = 12."
+    },
+    "hint": {
+      "es": "Primero calculá cuántas flores hay en total, después restá las rosas y los claveles.",
+      "ru": "Сначала посчитай общее количество, потом вычти розы и гвоздики."
+    },
+    "commonMistake": {
+      "es": "Olvidar que hay que restar ambas partes (rosas Y claveles), no solo una.",
+      "ru": "Нельзя забыть вычесть обе группы — и розы, и гвоздики."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_018",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Comprás 5 paquetes de galletitas a $180 cada uno y una botella de jugo a $320. ¿Cuánto gastás en total?",
+      "ru": "Покупаешь 5 пачек печенья по $180 и бутылку сока за $320. Сколько потратишь всего?"
+    },
+    "answer": "1220",
+    "explanation": {
+      "es": "Galletitas: 5 × 180 = 900. Total: 900 + 320 = 1.220.",
+      "ru": "Печенье: 5 × 180 = 900. Итого: 900 + 320 = 1.220."
+    },
+    "hint": {
+      "es": "Calculá primero el costo de las galletitas y después sumá el jugo.",
+      "ru": "Сначала посчитай стоимость печенья, потом добавь сок."
+    },
+    "commonMistake": {
+      "es": "Sumar todo antes de multiplicar: (5 + 180 + 320) da un resultado incorrecto.",
+      "ru": "Нельзя складывать всё подряд: сначала умножение, потом сложение."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_019",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "Resolvé: 3 × (10 − 4) ÷ 2 + 1",
+      "ru": "Вычисли: 3 × (10 − 4) ÷ 2 + 1"
+    },
+    "answer": "10",
+    "explanation": {
+      "es": "Paréntesis: 10 − 4 = 6. De izquierda a derecha: 3 × 6 = 18, 18 ÷ 2 = 9, 9 + 1 = 10.",
+      "ru": "Скобки: 10 − 4 = 6. Слева направо: 3 × 6 = 18, 18 ÷ 2 = 9, 9 + 1 = 10."
+    },
+    "hint": {
+      "es": "Resolvé el paréntesis primero. Luego multiplicación y división de izquierda a derecha, al final la suma.",
+      "ru": "Сначала скобки, потом умножение и деление слева направо, в конце сложение."
+    },
+    "commonMistake": {
+      "es": "Dividir antes de multiplicar: 3 × (10 − 4 ÷ 2) + 1 = 3 × 8 + 1 = 25. Hay que ir de izquierda a derecha.",
+      "ru": "Умножение и деление выполняются слева направо, нельзя менять порядок."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_020",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "division_remainder"
+    ],
+    "prompt": {
+      "es": "Al dividir 29 entre 5, ¿cuál es el resto?",
+      "ru": "При делении 29 на 5 какой получается остаток?"
+    },
+    "answer": "4",
+    "explanation": {
+      "es": "29 = 5 × 5 + 4. El cociente es 5 y el resto es 4.",
+      "ru": "29 = 5 × 5 + 4. Частное равно 5, остаток равен 4."
+    },
+    "hint": {
+      "es": "Buscá el múltiplo de 5 más cercano a 29 sin pasarlo: 5 × 5 = 25.",
+      "ru": "Найди ближайшее кратное 5, не превышающее 29: 5 × 5 = 25."
+    },
+    "commonMistake": {
+      "es": "29 ÷ 5 = 5 con resto 4, no con resto 9. El resto siempre es menor que el divisor.",
+      "ru": "Остаток всегда меньше делителя. 4 < 5 — правильно. 9 > 5 — ошибка."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_021",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "skillTags": [
+      "division_remainder",
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Tenés 75 caramelos para repartir en partes iguales entre 6 amigos. ¿Cuántos caramelos sobran?",
+      "ru": "У тебя 75 конфет, которые нужно поровну раздать 6 друзьям. Сколько конфет останется?"
+    },
+    "answer": "3",
+    "explanation": {
+      "es": "75 ÷ 6 = 12 con resto 3 (6 × 12 = 72 y 75 − 72 = 3). Sobran 3 caramelos.",
+      "ru": "75 ÷ 6 = 12 с остатком 3 (6 × 12 = 72, 75 − 72 = 3). Останется 3 конфеты."
+    },
+    "hint": {
+      "es": "Buscá el múltiplo de 6 más cercano a 75 sin pasarlo.",
+      "ru": "Найди ближайшее кратное 6, не превышающее 75."
+    },
+    "commonMistake": {
+      "es": "6 × 12 = 72, no 75. Sobran 75 − 72 = 3 caramelos, no 0.",
+      "ru": "6 × 12 = 72, не 75. Остаток = 75 − 72 = 3."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_022",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "skillTags": [
+      "word_problem",
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "La mitad de 80 aumentada en 15 es:",
+      "ru": "Половина от 80, увеличенная на 15, равна:"
+    },
+    "options": [
+      {
+        "es": "40",
+        "ru": "40"
+      },
+      {
+        "es": "55",
+        "ru": "55"
+      },
+      {
+        "es": "70",
+        "ru": "70"
+      },
+      {
+        "es": "47",
+        "ru": "47"
+      }
+    ],
+    "answer": "55",
+    "explanation": {
+      "es": "La mitad de 80 = 80 ÷ 2 = 40. Aumentada en 15: 40 + 15 = 55.",
+      "ru": "Половина от 80 = 80 ÷ 2 = 40. Увеличенная на 15: 40 + 15 = 55."
+    },
+    "hint": {
+      "es": "Primero calculá la mitad, después sumá 15.",
+      "ru": "Сначала найди половину, потом прибавь 15."
+    },
+    "commonMistake": {
+      "es": "Dividir (80 + 15) ÷ 2 = 47,5 es incorrecto. Hay que hacer la mitad PRIMERO y luego sumar.",
+      "ru": "Нельзя делать (80+15)÷2. Сначала — половина, потом — прибавить 15."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_023",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "skillTags": [
+      "estimation"
+    ],
+    "prompt": {
+      "es": "¿Cuál de estos resultados es aproximadamente correcto para 51 × 19?",
+      "ru": "Какой из результатов приблизительно верен для 51 × 19?"
+    },
+    "options": [
+      {
+        "es": "100",
+        "ru": "100"
+      },
+      {
+        "es": "1.000",
+        "ru": "1.000"
+      },
+      {
+        "es": "10.000",
+        "ru": "10.000"
+      },
+      {
+        "es": "500",
+        "ru": "500"
+      }
+    ],
+    "answer": "1.000",
+    "explanation": {
+      "es": "51 ≈ 50 y 19 ≈ 20. Entonces 50 × 20 = 1.000. El resultado real es 969.",
+      "ru": "51 ≈ 50 и 19 ≈ 20. Значит 50 × 20 = 1.000. Точный ответ: 969."
+    },
+    "hint": {
+      "es": "Redondeá los dos números y multiplicá. 51 ≈ 50, 19 ≈ 20.",
+      "ru": "Округли оба числа и перемножь. 51 ≈ 50, 19 ≈ 20."
+    },
+    "commonMistake": {
+      "es": "Multiplicar las decenas 50 × 10 = 500 olvida que 19 está más cerca de 20.",
+      "ru": "50 × 10 = 500 — ошибка: 19 ближе к 20, не к 10."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_024",
+    "difficulty": 3,
+    "type": "true_false",
+    "skillTags": [
+      "division_remainder"
+    ],
+    "prompt": {
+      "es": "Verdadero o falso: al dividir 37 entre 6, el resto es 1.",
+      "ru": "Верно или нет: при делении 37 на 6 остаток равен 1."
+    },
+    "answer": "true",
+    "explanation": {
+      "es": "6 × 6 = 36 y 37 − 36 = 1. El cociente es 6 y el resto es 1.",
+      "ru": "6 × 6 = 36, 37 − 36 = 1. Частное = 6, остаток = 1."
+    },
+    "hint": {
+      "es": "Buscá el múltiplo de 6 inmediatamente anterior a 37.",
+      "ru": "Найди кратное 6, ближайшее к 37 снизу."
+    },
+    "commonMistake": {
+      "es": "6 × 7 = 42 > 37, así que hay que usar 6 × 6 = 36. El resto es 37 − 36 = 1.",
+      "ru": "6 × 7 = 42 > 37, поэтому берём 6 × 6 = 36. Остаток = 37 − 36 = 1."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_025",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem",
+      "fractions_of_total"
+    ],
+    "prompt": {
+      "es": "En una panadería se elaboran 6 docenas de facturas. La mitad son medialunas de manteca y un tercio son medialunas de grasa. ¿Cuántas facturas quedan?",
+      "ru": "В булочной делают 6 дюжин выпечки. Половина — масляные круассаны, треть — жировые. Сколько выпечки остаётся?"
+    },
+    "answer": "12",
+    "explanation": {
+      "es": "Total: 6 × 12 = 72. Manteca: 72 ÷ 2 = 36. Grasa: 72 ÷ 3 = 24. Resto: 72 − 36 − 24 = 12.",
+      "ru": "Всего: 6 × 12 = 72. Масляные: 72 ÷ 2 = 36. Жировые: 72 ÷ 3 = 24. Остаток: 72 − 36 − 24 = 12."
+    },
+    "hint": {
+      "es": "Calculá el total de facturas, después restá las medialunas de manteca y las de grasa.",
+      "ru": "Посчитай общее количество, потом вычти масляные и жировые круассаны."
+    },
+    "commonMistake": {
+      "es": "La mitad de 72 es 36 (no 6) y un tercio de 72 es 24 (no 2). Aplicá las fracciones al total, no a las docenas.",
+      "ru": "Половина от 72 = 36, треть от 72 = 24. Дроби применяются к общему количеству, не к числу дюжин."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_026",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "Un artículo cuesta $1.350. Pagás con tres billetes de $500. ¿Cuánto te sobra?",
+      "ru": "Товар стоит $1.350. Платишь тремя купюрами по $500. Сколько останется сдачи?"
+    },
+    "answer": "150",
+    "explanation": {
+      "es": "Pagás: 3 × 500 = 1.500. Vuelto: 1.500 − 1.350 = 150.",
+      "ru": "Платишь: 3 × 500 = 1.500. Сдача: 1.500 − 1.350 = 150."
+    },
+    "hint": {
+      "es": "Primero calculá cuánto pagás en total, después restá el costo del artículo.",
+      "ru": "Сначала посчитай сколько платишь всего, потом вычти стоимость товара."
+    },
+    "commonMistake": {
+      "es": "Restar directamente 1.350 − 500 = 850 ignora que pagás con 3 billetes, no uno.",
+      "ru": "Нельзя вычитать 1.350 − 500: платишь тремя купюрами, сначала 3 × 500 = 1.500."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_027",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem",
+      "algebraic_thinking"
+    ],
+    "prompt": {
+      "es": "Si la mitad de un número es 15, ¿cuánto es el triple de ese número?",
+      "ru": "Если половина числа равна 15, чему равна тройная этого числа?"
+    },
+    "answer": "90",
+    "explanation": {
+      "es": "Si la mitad es 15, el número es 15 × 2 = 30. El triple de 30 es 30 × 3 = 90.",
+      "ru": "Если половина = 15, то само число = 15 × 2 = 30. Тройное от 30 = 30 × 3 = 90."
+    },
+    "hint": {
+      "es": "Primero encontrá el número completo (la mitad × 2), después calculá el triple.",
+      "ru": "Сначала найди само число (половина × 2), потом умножь на 3."
+    },
+    "commonMistake": {
+      "es": "Calcular el triple de la mitad: 15 × 3 = 45 es incorrecto. Hay que encontrar el número entero primero.",
+      "ru": "15 × 3 = 45 — ошибка: нужно сначала найти само число (30), потом его утроить."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_028",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "natural_numbers",
+      "word_problem"
+    ],
+    "prompt": {
+      "es": "En un colectivo viajan 48 personas. En la primera parada suben 7 y bajan 12. En la segunda suben 5 y bajan 3. ¿Cuántas personas viajan después de la segunda parada?",
+      "ru": "В автобусе едут 48 человек. На первой остановке садятся 7 и выходят 12. На второй — садятся 5 и выходят 3. Сколько человек едет после второй остановки?"
+    },
+    "answer": "45",
+    "explanation": {
+      "es": "Tras la 1ª parada: 48 + 7 − 12 = 43. Tras la 2ª parada: 43 + 5 − 3 = 45.",
+      "ru": "После 1-й: 48 + 7 − 12 = 43. После 2-й: 43 + 5 − 3 = 45."
+    },
+    "hint": {
+      "es": "Hacé las operaciones en orden: primero la primera parada, después la segunda.",
+      "ru": "Выполняй операции по порядку: сначала первая остановка, потом вторая."
+    },
+    "commonMistake": {
+      "es": "Sumar todas las subidas y restar todas las bajadas juntas: 48 + (7 + 5) − (12 + 3) = 45. Da igual en este caso, pero en otras situaciones puede fallar.",
+      "ru": "Лучше считать пошагово, чтобы не запутаться при более сложных задачах."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_029",
+    "difficulty": 4,
+    "type": "numeric_input",
+    "skillTags": [
+      "word_problem",
+      "division_remainder"
+    ],
+    "prompt": {
+      "es": "Una maestra tiene 100 lápices para repartir en partes iguales entre 7 grupos. ¿Cuántos lápices le quedan sin repartir?",
+      "ru": "У учительницы 100 карандашей, которые нужно поровну раздать 7 группам. Сколько карандашей останется нераспределёнными?"
+    },
+    "answer": "2",
+    "explanation": {
+      "es": "100 ÷ 7 = 14 con resto 2 (7 × 14 = 98, y 100 − 98 = 2).",
+      "ru": "100 ÷ 7 = 14 с остатком 2 (7 × 14 = 98, 100 − 98 = 2)."
+    },
+    "hint": {
+      "es": "Buscá el múltiplo de 7 más cercano a 100 sin pasarlo.",
+      "ru": "Найди ближайшее кратное 7, не превышающее 100."
+    },
+    "commonMistake": {
+      "es": "7 × 15 = 105 > 100, así que hay que usar 7 × 14 = 98. Sobran 100 − 98 = 2.",
+      "ru": "7 × 15 = 105 > 100, поэтому используем 7 × 14 = 98. Остаток = 2."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_030",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "skillTags": [
+      "word_problem",
+      "order_of_operations"
+    ],
+    "prompt": {
+      "es": "Un club compró 3 cajas de 8 pelotas cada una y 2 cajas de 6 pelotas cada una. Si regaló 10 pelotas, ¿cuántas le quedaron?",
+      "ru": "Клуб купил 3 ящика по 8 мячей и 2 ящика по 6 мячей. Если подарил 10 мячей, сколько осталось?"
+    },
+    "options": [
+      {
+        "es": "26",
+        "ru": "26"
+      },
+      {
+        "es": "22",
+        "ru": "22"
+      },
+      {
+        "es": "14",
+        "ru": "14"
+      },
+      {
+        "es": "36",
+        "ru": "36"
+      }
+    ],
+    "answer": "26",
+    "explanation": {
+      "es": "Cajas de 8: 3 × 8 = 24. Cajas de 6: 2 × 6 = 12. Total: 24 + 12 = 36. Después de regalar: 36 − 10 = 26.",
+      "ru": "Ящики по 8: 3 × 8 = 24. Ящики по 6: 2 × 6 = 12. Итого: 24 + 12 = 36. После подарка: 36 − 10 = 26."
+    },
+    "hint": {
+      "es": "Calculá el total de pelotas de cada tipo de caja por separado y después sumalas.",
+      "ru": "Посчитай мячи каждого типа отдельно, потом сложи."
+    },
+    "commonMistake": {
+      "es": "Sumar las cajas primero (3 + 2 = 5) y multiplicar (5 × 8 = 40) ignora que hay dos tipos de cajas con distinta cantidad.",
+      "ru": "Нельзя складывать ящики разных типов: у них разное количество мячей."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_031",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En una librería compran 3 cuadernos de $850, 2 lapiceras de $320 y pagan con $4000. ¿Cuánto reciben de vuelto?",
+      "ru": "В магазине купили 3 тетради по $850 и 2 ручки по $320, заплатили $4000. Сколько сдачи?"
+    },
+    "options": [
+      {
+        "es": "$810",
+        "ru": "$810"
+      },
+      {
+        "es": "$910",
+        "ru": "$910"
+      },
+      {
+        "es": "$760",
+        "ru": "$760"
+      },
+      {
+        "es": "$860",
+        "ru": "$860"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "word_problem",
+      "multi_step"
+    ],
+    "hint": {
+      "es": "Primero calculá el costo total: (3 × 850) + (2 × 320). Luego restalo de $4000.",
+      "ru": "Сначала посчитай общую стоимость: (3 × 850) + (2 × 320). Потом вычти из $4000."
+    },
+    "explanation": {
+      "es": "3 × 850 = 2550; 2 × 320 = 640; Total = 3190; Vuelto = 4000 − 3190 = $810",
+      "ru": "3 × 850 = 2550; 2 × 320 = 640; Итого = 3190; Сдача = 4000 − 3190 = $810"
+    },
+    "commonMistake": {
+      "es": "Error frecuente: olvidar multiplicar antes de sumar. Siempre × antes de +.",
+      "ru": "Частая ошибка: забыть умножить перед сложением. Умножение всегда раньше сложения."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_032",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Calculá: (18 − 3²) × 4 + 72 ÷ 8",
+      "ru": "Вычисли: (18 − 3²) × 4 + 72 ÷ 8"
+    },
+    "options": [
+      {
+        "es": "45",
+        "ru": "45"
+      },
+      {
+        "es": "53",
+        "ru": "53"
+      },
+      {
+        "es": "36",
+        "ru": "36"
+      },
+      {
+        "es": "81",
+        "ru": "81"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "order_of_operations",
+      "powers"
+    ],
+    "hint": {
+      "es": "Primero resolvé el paréntesis: 3² = 9, luego 18 − 9 = 9. Después × y ÷, finalmente +.",
+      "ru": "Сначала скобку: 3² = 9, потом 18 − 9 = 9. Затем × и ÷, в конце +."
+    },
+    "explanation": {
+      "es": "3² = 9; (18 − 9) = 9; 9 × 4 = 36; 72 ÷ 8 = 9; 36 + 9 = 45",
+      "ru": "3² = 9; (18 − 9) = 9; 9 × 4 = 36; 72 ÷ 8 = 9; 36 + 9 = 45"
+    },
+    "commonMistake": {
+      "es": "No calcular 3² primero. Recordá: potencias antes que multiplicación.",
+      "ru": "Не считать 3² первым. Помни: степени раньше умножения."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_033",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Si a × 6 − 18 = 48, ¿cuánto vale a?",
+      "ru": "Если a × 6 − 18 = 48, чему равно a?"
+    },
+    "options": [
+      {
+        "es": "11",
+        "ru": "11"
+      },
+      {
+        "es": "5",
+        "ru": "5"
+      },
+      {
+        "es": "9",
+        "ru": "9"
+      },
+      {
+        "es": "13",
+        "ru": "13"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "algebra",
+      "equations"
+    ],
+    "hint": {
+      "es": "Sumá 18 a los dos lados: a × 6 = 66. Luego dividí por 6.",
+      "ru": "Прибавь 18 к обеим сторонам: a × 6 = 66. Потом раздели на 6."
+    },
+    "explanation": {
+      "es": "a × 6 = 48 + 18 = 66; a = 66 ÷ 6 = 11",
+      "ru": "a × 6 = 48 + 18 = 66; a = 66 ÷ 6 = 11"
+    },
+    "commonMistake": {
+      "es": "Dividir 48 por 6 sin sumar 18 primero. Siempre despejá a paso a paso.",
+      "ru": "Делить 48 на 6, не прибавив 18 сначала. Всегда решай шаг за шагом."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_034",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es el mayor número de 3 cifras que se puede formar con los dígitos 3, 7 y 5, sin repetirlos?",
+      "ru": "Какое наибольшее 3-значное число можно составить из цифр 3, 7 и 5 без повторений?"
+    },
+    "options": [
+      {
+        "es": "753",
+        "ru": "753"
+      },
+      {
+        "es": "735",
+        "ru": "735"
+      },
+      {
+        "es": "573",
+        "ru": "573"
+      },
+      {
+        "es": "537",
+        "ru": "537"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "number_sense",
+      "place_value"
+    ],
+    "hint": {
+      "es": "Para el mayor número: ponés el dígito más grande en las centenas, luego decenas, luego unidades.",
+      "ru": "Для наибольшего числа: ставишь наибольшую цифру на сотни, затем десятки, затем единицы."
+    },
+    "explanation": {
+      "es": "Dígitos: 7 > 5 > 3. Mayor número: 7 en centenas, 5 en decenas, 3 en unidades = 753.",
+      "ru": "Цифры: 7 > 5 > 3. Наибольшее: 7 на сотнях, 5 на десятках, 3 на единицах = 753."
+    },
+    "commonMistake": {
+      "es": "Confundir mayor número con suma mayor. Hay que ordenar los dígitos de mayor a menor.",
+      "ru": "Путать наибольшее число с наибольшей суммой. Нужно упорядочить цифры от большего к меньшему."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "op_035",
+    "topicId": "operaciones",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una canilla llena un tanque en 4 horas. Después de 1 hora y media de funcionar, ¿qué fracción del tanque falta llenar?",
+      "ru": "Кран наполняет бак за 4 часа. После 1,5 часа работы, какая часть бака ещё не заполнена?"
+    },
+    "options": [
+      {
+        "es": "5/8",
+        "ru": "5/8"
+      },
+      {
+        "es": "3/8",
+        "ru": "3/8"
+      },
+      {
+        "es": "1/2",
+        "ru": "1/2"
+      },
+      {
+        "es": "3/4",
+        "ru": "3/4"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "fractions",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "En 1 hora se llena 1/4. En 1,5 horas se llena 1,5/4 = 3/8. La fracción que falta es 1 − 3/8.",
+      "ru": "За 1 час заполняется 1/4. За 1,5 часа — 1,5/4 = 3/8. Оставшаяся часть: 1 − 3/8."
+    },
+    "explanation": {
+      "es": "En 1 hora: 1/4 del tanque. En 1,5 horas: 3/8. Falta: 1 − 3/8 = 5/8 del tanque.",
+      "ru": "За 1 час: 1/4 бака. За 1,5 часа: 3/8. Остаётся: 1 − 3/8 = 5/8 бака."
+    },
+    "commonMistake": {
+      "es": "Confundir cuánto se llenó con cuánto falta. Siempre restá de 1 (el tanque completo).",
+      "ru": "Путать заполненную часть с оставшейся. Всегда вычитай из 1 (полного бака)."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "operaciones",
+    "level": "A",
+    "title": {
+      "es": "Operaciones con números naturales",
+      "ru": "Действия с натуральными числами"
+    },
+    "summary": {
+      "es": "Sumar, restar, multiplicar y dividir con orden correcto.",
+      "ru": "Сложение, вычитание, умножение и деление в правильном порядке."
+    },
+    "lessonText": {
+      "es": "Cuando hay varias operaciones, primero se hacen las multiplicaciones y divisiones, y después las sumas y restas. Si hay paréntesis, esos van primero.\n\nEjemplo: 3 + 4 × 2 = 3 + 8 = 11.\n\nSi escribimos (3 + 4) × 2, el paréntesis va primero: 7 × 2 = 14.\n\nEn problemas de dos pasos, leé bien qué pide cada paso antes de operar.",
+      "ru": "Когда в примере несколько действий, сначала делаем умножение и деление, а потом сложение и вычитание. Если есть скобки — они выполняются в первую очередь.\n\nПример: 3 + 4 × 2 = 3 + 8 = 11.\n\nЕсли написать (3 + 4) × 2, то сначала скобка: 7 × 2 = 14.\n\nВ задачах на два действия сначала читаем внимательно, что спрашивают на каждом шаге."
+    },
+    "parentSummary": {
+      "es": "Repasa orden de operaciones: paréntesis, después multiplicación y división, al final suma y resta.",
+      "ru": "Повторяет порядок действий: скобки, потом умножение и деление, в конце сложение и вычитание."
+    }
+  },
+  {
+    "id": "divisibilidad",
+    "level": "B",
+    "title": {
+      "es": "Múltiplos, divisores y divisibilidad",
+      "ru": "Кратность, делители и признаки делимости"
+    },
+    "summary": {
+      "es": "Reconocer si un número es divisible por 2, 3, 5 o 10.",
+      "ru": "Определять, делится ли число на 2, 3, 5 или 10."
+    },
+    "lessonText": {
+      "es": "Un número es divisible por 2 si termina en 0, 2, 4, 6 u 8.\nEs divisible por 5 si termina en 0 o 5.\nEs divisible por 10 si termina en 0.\nEs divisible por 3 si la suma de sus cifras es divisible por 3.\n\nEjemplo: 126 → 1+2+6 = 9, y 9 es divisible por 3, entonces 126 también lo es.\n\nLos múltiplos de un número son los resultados de multiplicarlo: los múltiplos de 4 son 4, 8, 12, 16...\nLos divisores de 12 son los números que dividen exactamente a 12: 1, 2, 3, 4, 6 y 12.",
+      "ru": "Число делится на 2, если оканчивается на 0, 2, 4, 6 или 8.\nНа 5 — если оканчивается на 0 или 5.\nНа 10 — если оканчивается на 0.\nНа 3 — если сумма цифр делится на 3.\n\nПример: 126 → 1+2+6 = 9, и 9 делится на 3, значит 126 тоже делится на 3.\n\nКратные числа — это результаты умножения: кратные 4 это 4, 8, 12, 16...\nДелители 12 — числа, на которые 12 делится без остатка: 1, 2, 3, 4, 6 и 12."
+    },
+    "parentSummary": {
+      "es": "Trabaja criterios de divisibilidad y múltiplos. Útil para simplificar fracciones y resolver problemas combinados.",
+      "ru": "Работает с признаками делимости и кратными числами. Это основа для упрощения дробей и комбинированных задач."
+    }
+  },
+  {
+    "id": "fracciones",
+    "level": "B",
+    "title": {
+      "es": "Fracciones y números mixtos",
+      "ru": "Дроби и смешанные числа"
+    },
+    "summary": {
+      "es": "Comparar, sumar y simplificar fracciones.",
+      "ru": "Сравнивать, складывать и упрощать дроби."
+    },
+    "lessonText": {
+      "es": "Una fracción tiene numerador (arriba) y denominador (abajo). El denominador dice en cuántas partes se divide el entero.\n\nFracciones equivalentes: ½ = 2/4 = 3/6. Para encontrarlas, multiplicá o dividí numerador y denominador por el mismo número.\n\nPara comparar fracciones con igual denominador, el mayor numerador es la fracción mayor: 3/7 > 2/7.\n\nPara sumar fracciones con igual denominador, se suman los numeradores: 2/5 + 1/5 = 3/5.\n\nPara simplificar, dividí numerador y denominador por su máximo divisor común.",
+      "ru": "Дробь состоит из числителя (сверху) и знаменателя (снизу). Знаменатель показывает, на сколько частей делится целое.\n\nРавные дроби: ½ = 2/4 = 3/6. Чтобы найти равные дроби, умножь или раздели числитель и знаменатель на одно и то же число.\n\nДля сравнения дробей с одинаковым знаменателем: у кого числитель больше, та дробь и больше: 3/7 > 2/7.\n\nДля сложения дробей с одинаковым знаменателем складываем числители: 2/5 + 1/5 = 3/5.\n\nЧтобы упростить дробь, делим числитель и знаменатель на их наибольший общий делитель."
+    },
+    "parentSummary": {
+      "es": "Trabaja fracciones equivalentes, comparación y suma con igual denominador. Clave para álgebra más adelante.",
+      "ru": "Работает с равными дробями, сравнением и сложением с одинаковым знаменателем. Это основа для алгебры."
+    }
+  },
+  {
+    "id": "decimales",
+    "level": "B",
+    "title": {
+      "es": "Números decimales",
+      "ru": "Десятичные числа"
+    },
+    "summary": {
+      "es": "Leer, comparar y operar con decimales.",
+      "ru": "Читать, сравнивать и выполнять действия с десятичными числами."
+    },
+    "lessonText": {
+      "es": "Los decimales tienen una parte entera y una decimal, separadas por coma (en Argentina se usa coma, no punto).\n\nEjemplo: 3,5 significa 3 enteros y 5 décimas.\n\nPara comparar, empezá por la parte entera. Si son iguales, mirá las décimas, luego las centésimas.\nEjemplo: 2,7 > 2,35 porque 7 décimas es más que 3 décimas.\n\nPara multiplicar un decimal por 10, corrés la coma un lugar a la derecha: 3,5 × 10 = 35.\nPara dividir por 10, corrés la coma a la izquierda: 3,5 ÷ 10 = 0,35.",
+      "ru": "Десятичные числа имеют целую часть и дробную, разделённые запятой.\n\nПример: 3,5 означает 3 целых и 5 десятых.\n\nДля сравнения сначала смотрим на целую часть. Если равны — смотрим на десятые, потом на сотые.\nПример: 2,7 > 2,35 потому что 7 десятых больше, чем 3 десятых.\n\nЧтобы умножить десятичное на 10, сдвигаем запятую вправо на один знак: 3,5 × 10 = 35.\nЧтобы разделить на 10, сдвигаем запятую влево: 3,5 ÷ 10 = 0,35."
+    },
+    "parentSummary": {
+      "es": "Trabaja lectura, comparación y operaciones básicas con decimales. Base para porcentajes y medidas.",
+      "ru": "Работает с чтением, сравнением и базовыми операциями с десятичными числами. Основа для процентов и измерений."
+    }
+  },
+  {
+    "id": "porcentajes",
+    "level": "B",
+    "title": {
+      "es": "Porcentajes simples",
+      "ru": "Простые проценты"
+    },
+    "summary": {
+      "es": "Calcular el 10%, 25%, 50% y 75% de una cantidad.",
+      "ru": "Вычислять 10%, 25%, 50% и 75% от числа."
+    },
+    "lessonText": {
+      "es": "El porcentaje indica una cantidad de cada 100. El símbolo es %.\n\n50% es la mitad → dividís por 2.\n25% es la cuarta parte → dividís por 4.\n10% → dividís por 10 (o corrés la coma un lugar a la izquierda).\n75% = 50% + 25%.\n\nEjemplo: 10% de 80 = 80 ÷ 10 = 8.\n50% de 60 = 60 ÷ 2 = 30.\n25% de 40 = 40 ÷ 4 = 10.\n\nTruco: para el 10% siempre dividís por 10. Para el 20%, calculás el 10% y lo multiplicás por 2.",
+      "ru": "Процент означает количество из 100. Знак — %.\n\n50% — это половина → делим на 2.\n25% — четверть → делим на 4.\n10% → делим на 10 (или сдвигаем запятую влево на один знак).\n75% = 50% + 25%.\n\nПример: 10% от 80 = 80 ÷ 10 = 8.\n50% от 60 = 60 ÷ 2 = 30.\n25% от 40 = 40 ÷ 4 = 10.\n\nПодсказка: для 10% всегда делим на 10. Для 20% находим 10% и умножаем на 2."
+    },
+    "parentSummary": {
+      "es": "Trabaja porcentajes clave (10%, 25%, 50%, 75%). Muy útil para situaciones cotidianas y problemas combinados.",
+      "ru": "Работает с ключевыми процентами (10%, 25%, 50%, 75%). Очень полезно в повседневных ситуациях."
+    }
+  },
+  {
+    "id": "geometria",
+    "level": "B",
+    "title": {
+      "es": "Perímetro y área",
+      "ru": "Периметр и площадь"
+    },
+    "summary": {
+      "es": "Calcular perímetro y área de rectángulos y cuadrados.",
+      "ru": "Вычислять периметр и площадь прямоугольников и квадратов."
+    },
+    "lessonText": {
+      "es": "El perímetro es la suma de todos los lados de una figura.\nPara un rectángulo: P = 2 × (largo + ancho).\nPara un cuadrado: P = 4 × lado.\n\nEl área es la superficie que ocupa la figura.\nPara un rectángulo: A = largo × ancho.\nPara un cuadrado: A = lado × lado.\n\nEjemplo: un rectángulo de 6 cm de largo y 4 cm de ancho tiene:\nPerímetro = 2 × (6 + 4) = 2 × 10 = 20 cm.\nÁrea = 6 × 4 = 24 cm².\n\nImportante: el perímetro se mide en cm o m, el área en cm² o m².",
+      "ru": "Периметр — это сумма всех сторон фигуры.\nДля прямоугольника: P = 2 × (длина + ширина).\nДля квадрата: P = 4 × сторона.\n\nПлощадь — это поверхность, которую занимает фигура.\nДля прямоугольника: S = длина × ширина.\nДля квадрата: S = сторона × сторона.\n\nПример: прямоугольник длиной 6 см и шириной 4 см:\nПериметр = 2 × (6 + 4) = 2 × 10 = 20 см.\nПлощадь = 6 × 4 = 24 см².\n\nВажно: периметр измеряется в см или м, площадь — в см² или м²."
+    },
+    "parentSummary": {
+      "es": "Trabaja perímetro y área de figuras básicas. Necesario para geometría de secundaria y problemas con medidas.",
+      "ru": "Работает с периметром и площадью основных фигур. Это основа геометрии в средней школе."
+    }
+  }
+]

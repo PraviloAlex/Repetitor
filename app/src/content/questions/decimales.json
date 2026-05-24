@@ -1,0 +1,1452 @@
+[
+  {
+    "id": "dec_001",
+    "topicId": "decimales",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es mayor: 3,5 o 3,25?",
+      "ru": "Что больше: 3,5 или 3,25?"
+    },
+    "options": [
+      {
+        "es": "3,5",
+        "ru": "3,5"
+      },
+      {
+        "es": "3,25",
+        "ru": "3,25"
+      },
+      {
+        "es": "Son iguales",
+        "ru": "Они равны"
+      }
+    ],
+    "answer": "3,5",
+    "explanation": {
+      "es": "3,5 tiene 5 décimas y 3,25 tiene 2 décimas. 5 décimas > 2 décimas.",
+      "ru": "3,5 имеет 5 десятых, а 3,25 — 2 десятых. 5 десятых > 2 десятых."
+    },
+    "hint": {
+      "es": "Comparé las décimas primero.",
+      "ru": "Сначала сравни десятые."
+    },
+    "skillTags": [
+      "decimal_comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Más dígitos no significa mayor. Hay que comparar posición a posición: 3,5 = 3,50, que es mayor que 3,25.",
+      "ru": "Больше цифр — не значит больше. Сравниваем поразрядно: 3,5 = 3,50 > 3,25."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_002",
+    "topicId": "decimales",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 3,5 × 10?",
+      "ru": "Сколько будет 3,5 × 10?"
+    },
+    "options": null,
+    "answer": "35",
+    "explanation": {
+      "es": "Para multiplicar por 10, corrés la coma un lugar a la derecha: 3,5 → 35.",
+      "ru": "Чтобы умножить на 10, сдвигаем запятую вправо на один знак: 3,5 → 35."
+    },
+    "hint": {
+      "es": "Corrés la coma un lugar a la derecha.",
+      "ru": "Сдвинь запятую на один знак вправо."
+    },
+    "skillTags": [
+      "decimal_multiply10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Al multiplicar por 10, la coma se corre un lugar a la derecha: 3,5 → 35.",
+      "ru": "При умножении на 10 запятая сдвигается на 1 вправо: 3,5 → 35."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_003",
+    "topicId": "decimales",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 7,2 ÷ 10?",
+      "ru": "Сколько будет 7,2 ÷ 10?"
+    },
+    "options": null,
+    "answer": "0.72",
+    "explanation": {
+      "es": "Para dividir por 10, corrés la coma un lugar a la izquierda: 7,2 → 0,72.",
+      "ru": "Чтобы разделить на 10, сдвигаем запятую влево: 7,2 → 0,72."
+    },
+    "hint": {
+      "es": "Corrés la coma un lugar a la izquierda.",
+      "ru": "Сдвинь запятую на один знак влево."
+    },
+    "skillTags": [
+      "decimal_divide10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Al dividir por 10, la coma se corre un lugar a la izquierda: 7,2 → 0,72.",
+      "ru": "При делении на 10 запятая сдвигается на 1 влево: 7,2 → 0,72."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_004",
+    "topicId": "decimales",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es mayor: 0,8 o 0,75?",
+      "ru": "Что больше: 0,8 или 0,75?"
+    },
+    "options": [
+      {
+        "es": "0,8",
+        "ru": "0,8"
+      },
+      {
+        "es": "0,75",
+        "ru": "0,75"
+      },
+      {
+        "es": "Son iguales",
+        "ru": "Они равны"
+      }
+    ],
+    "answer": "0,8",
+    "explanation": {
+      "es": "0,8 = 0,80. Comparando: 80 centésimas > 75 centésimas.",
+      "ru": "0,8 = 0,80. Сравниваем: 80 сотых > 75 сотых."
+    },
+    "hint": {
+      "es": "Escribí 0,8 como 0,80 para comparar.",
+      "ru": "Запиши 0,8 как 0,80 для сравнения."
+    },
+    "skillTags": [
+      "decimal_comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "0,8 = 0,80 y 0,80 > 0,75. Igualá los decimales con un cero antes de comparar.",
+      "ru": "0,8 = 0,80 > 0,75. Допиши нуль, чтобы сравнивать одинаковое количество знаков."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_005",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 1,4 + 2,3?",
+      "ru": "Сколько будет 1,4 + 2,3?"
+    },
+    "options": null,
+    "answer": "3.7",
+    "explanation": {
+      "es": "Sumás las partes decimales: 0,4 + 0,3 = 0,7. Sumás las enteras: 1 + 2 = 3. Resultado: 3,7.",
+      "ru": "Складываем дробные части: 0,4 + 0,3 = 0,7. Целые: 1 + 2 = 3. Результат: 3,7."
+    },
+    "hint": {
+      "es": "Sumá las partes decimales por separado.",
+      "ru": "Складывай дробные части отдельно."
+    },
+    "skillTags": [
+      "decimal_addition"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Hay que alinear las comas y sumar décima con décima: 1,4 + 2,3 = 3,7.",
+      "ru": "Выровни запятые и складывай десятые с десятыми: 1,4 + 2,3 = 3,7."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_006",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 5,6 − 2,1?",
+      "ru": "Сколько будет 5,6 − 2,1?"
+    },
+    "options": null,
+    "answer": "3.5",
+    "explanation": {
+      "es": "Restás separando: 5 − 2 = 3, y 0,6 − 0,1 = 0,5. Resultado: 3,5.",
+      "ru": "Вычитаем по частям: 5 − 2 = 3, и 0,6 − 0,1 = 0,5. Результат: 3,5."
+    },
+    "hint": {
+      "es": "Restá la parte entera y la decimal por separado.",
+      "ru": "Вычитай целую и дробную части отдельно."
+    },
+    "skillTags": [
+      "decimal_subtraction"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Alineá las comas antes de restar: 5,6 − 2,1 = 3,5.",
+      "ru": "Выровни запятые перед вычитанием: 5,6 − 2,1 = 3,5."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_007",
+    "topicId": "decimales",
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cómo se escribe en decimal \"4 enteros y 7 décimas\"?",
+      "ru": "Как записать «4 целых и 7 десятых» в виде десятичной дроби?"
+    },
+    "options": [
+      {
+        "es": "4,7",
+        "ru": "4,7"
+      },
+      {
+        "es": "47",
+        "ru": "47"
+      },
+      {
+        "es": "0,47",
+        "ru": "0,47"
+      }
+    ],
+    "answer": "4,7",
+    "explanation": {
+      "es": "Las décimas van después de la coma. 4 enteros y 7 décimas = 4,7.",
+      "ru": "Десятые пишутся после запятой. 4 целых и 7 десятых = 4,7."
+    },
+    "hint": {
+      "es": "Las décimas van después de la coma.",
+      "ru": "Десятые идут после запятой."
+    },
+    "skillTags": [
+      "decimal_reading"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Las décimas van justo después de la coma: 4,7. Si escribís 4,07, son centésimas, no décimas.",
+      "ru": "Десятые — первая цифра после запятой: 4,7. Если написать 4,07 — это сотые, не десятые."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_008",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 0,6 × 10?",
+      "ru": "Сколько будет 0,6 × 10?"
+    },
+    "options": null,
+    "answer": "6",
+    "explanation": {
+      "es": "0,6 × 10 = 6. Corrés la coma un lugar a la derecha.",
+      "ru": "0,6 × 10 = 6. Сдвигаем запятую на один знак вправо."
+    },
+    "hint": {
+      "es": "Multiplicar por 10 mueve la coma a la derecha.",
+      "ru": "Умножение на 10 сдвигает запятую вправо."
+    },
+    "skillTags": [
+      "decimal_multiply10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "La coma se corre un lugar a la derecha: 0,6 → 6.",
+      "ru": "Запятая сдвигается на 1 вправо: 0,6 → 6."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_009",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Ordená de menor a mayor: 1,2 — 1,02 — 1,25",
+      "ru": "Расставь от меньшего к большему: 1,2 — 1,02 — 1,25"
+    },
+    "options": [
+      {
+        "es": "1,02 — 1,2 — 1,25",
+        "ru": "1,02 — 1,2 — 1,25"
+      },
+      {
+        "es": "1,2 — 1,02 — 1,25",
+        "ru": "1,2 — 1,02 — 1,25"
+      },
+      {
+        "es": "1,25 — 1,2 — 1,02",
+        "ru": "1,25 — 1,2 — 1,02"
+      }
+    ],
+    "answer": "1,02 — 1,2 — 1,25",
+    "explanation": {
+      "es": "1,02 = 1,020, 1,2 = 1,200, 1,25 = 1,250. Ordenados: 1,020 < 1,200 < 1,250.",
+      "ru": "1,02 = 1,020, 1,2 = 1,200, 1,25 = 1,250. Порядок: 1,020 < 1,200 < 1,250."
+    },
+    "hint": {
+      "es": "Completá con ceros para tener el mismo número de decimales.",
+      "ru": "Дополни нулями до одинакового числа знаков после запятой."
+    },
+    "skillTags": [
+      "decimal_comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Primero compará las décimas: 1,02 tiene 0 décimas; 1,2 y 1,25 tienen 2 décimas. Después mirá las centésimas.",
+      "ru": "Сначала сравни десятые: у 1,02 их 0; у 1,2 и 1,25 — 2. Потом смотри сотые."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_010",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 4,5 × 100?",
+      "ru": "Сколько будет 4,5 × 100?"
+    },
+    "options": null,
+    "answer": "450",
+    "explanation": {
+      "es": "Multiplicar por 100 mueve la coma dos lugares a la derecha: 4,5 → 450.",
+      "ru": "Умножение на 100 сдвигает запятую на два знака вправо: 4,5 → 450."
+    },
+    "hint": {
+      "es": "Por 100 movés la coma dos lugares.",
+      "ru": "На 100 запятая сдвигается на два знака."
+    },
+    "skillTags": [
+      "decimal_multiply100"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Al multiplicar por 100 la coma se corre dos lugares a la derecha: 4,5 → 450.",
+      "ru": "При умножении на 100 запятая сдвигается на 2 вправо: 4,5 → 450."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_011",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Una botella tiene 1,5 litros. Si la llenás con 0,75 litros más, ¿cuántos litros hay en total?",
+      "ru": "В бутылке 1,5 литра. Если добавить ещё 0,75 литра, сколько литров будет всего?"
+    },
+    "options": null,
+    "answer": "2.25",
+    "explanation": {
+      "es": "1,5 + 0,75 = 2,25 litros. Alineás la coma y sumás: 1,50 + 0,75 = 2,25.",
+      "ru": "1,5 + 0,75 = 2,25 литра. Выравниваем запятую и складываем: 1,50 + 0,75 = 2,25."
+    },
+    "hint": {
+      "es": "Escribí 1,5 como 1,50 para alinear los decimales.",
+      "ru": "Запиши 1,5 как 1,50 для выравнивания знаков."
+    },
+    "skillTags": [
+      "decimal_addition"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Igualá los decimales: 1,50 + 0,75 = 2,25. Asegurate de sumar centésima con centésima.",
+      "ru": "Выровни: 1,50 + 0,75 = 2,25. Складывай сотые с сотыми."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_012",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es verdad que 0,3 > 0,29?",
+      "ru": "Правда ли, что 0,3 > 0,29?"
+    },
+    "options": null,
+    "answer": "true",
+    "explanation": {
+      "es": "0,3 = 0,30. Comparando: 30 centésimas > 29 centésimas. Entonces 0,3 > 0,29.",
+      "ru": "0,3 = 0,30. Сравниваем: 30 сотых > 29 сотых. Значит 0,3 > 0,29."
+    },
+    "hint": {
+      "es": "Escribí 0,3 como 0,30 para comparar.",
+      "ru": "Запиши 0,3 как 0,30 для сравнения."
+    },
+    "skillTags": [
+      "decimal_comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "0,3 = 0,30 y 0,30 > 0,29. La cantidad de dígitos no importa; se compara posición a posición.",
+      "ru": "0,3 = 0,30 > 0,29. Количество цифр не важно — сравниваем поразрядно."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_013",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Comprás 3 paquetes que pesan 0,4 kg cada uno. ¿Cuántos kg hay en total?",
+      "ru": "Ты купил 3 пакета по 0,4 кг каждый. Сколько кг всего?"
+    },
+    "options": null,
+    "answer": "1.2",
+    "explanation": {
+      "es": "3 × 0,4 = 1,2 kg. También podés pensarlo como 0,4 + 0,4 + 0,4 = 1,2.",
+      "ru": "3 × 0,4 = 1,2 кг. Можно думать так: 0,4 + 0,4 + 0,4 = 1,2."
+    },
+    "hint": {
+      "es": "Multiplicá 3 × 4 = 12, después colocá la coma.",
+      "ru": "Умножь 3 × 4 = 12, потом поставь запятую."
+    },
+    "skillTags": [
+      "decimal_multiplication"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "0,4 × 3 = 1,2. El resultado debe ser menor que 1 entero × 3 = 3 pero mayor que 1.",
+      "ru": "0,4 × 3 = 1,2. Результат должен быть больше 1, но меньше 2."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_014",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estos es mayor que 2?",
+      "ru": "Какое из этих чисел больше 2?"
+    },
+    "options": [
+      {
+        "es": "2,01",
+        "ru": "2,01"
+      },
+      {
+        "es": "1,99",
+        "ru": "1,99"
+      },
+      {
+        "es": "1,9",
+        "ru": "1,9"
+      }
+    ],
+    "answer": "2,01",
+    "explanation": {
+      "es": "2,01 tiene parte entera 2 y además 1 centésima, entonces es mayor que 2. Los otros son menores que 2.",
+      "ru": "2,01 имеет целую часть 2 и ещё 1 сотую, значит больше 2. Остальные меньше 2."
+    },
+    "hint": {
+      "es": "Mirá la parte entera primero.",
+      "ru": "Сначала посмотри на целую часть."
+    },
+    "skillTags": [
+      "decimal_comparison"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Solo 2,01 es mayor que 2. Los demás son iguales o menores.",
+      "ru": "Только 2,01 больше 2. Остальные равны или меньше."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_015",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un precio era $12,50 y bajó $3,25. ¿Cuál es el nuevo precio?",
+      "ru": "Цена была $12,50 и снизилась на $3,25. Какова новая цена?"
+    },
+    "options": null,
+    "answer": "9.25",
+    "explanation": {
+      "es": "12,50 − 3,25 = 9,25. Restás las partes enteras (12−3=9) y las decimales (50−25=25 centésimas).",
+      "ru": "12,50 − 3,25 = 9,25. Вычитаем целые (12−3=9) и дробные части (50−25=25 сотых)."
+    },
+    "hint": {
+      "es": "Alineá la coma y restá columna por columna.",
+      "ru": "Выровняй запятую и вычитай столбиком."
+    },
+    "skillTags": [
+      "decimal_subtraction"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Alineá las comas: 12,50 − 3,25. Restá centésimas primero (50−25=25) y luego enteros (12−3=9). Resultado: 9,25.",
+      "ru": "Выровни запятые: 12,50 − 3,25. Сначала сотые (50−25=25), потом целые (12−3=9). Ответ: 9,25."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_016",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es 2,4 × 100?",
+      "ru": "Сколько будет 2,4 × 100?"
+    },
+    "options": [
+      {
+        "es": "24",
+        "ru": "24"
+      },
+      {
+        "es": "240",
+        "ru": "240"
+      },
+      {
+        "es": "2400",
+        "ru": "2400"
+      },
+      {
+        "es": "0,024",
+        "ru": "0,024"
+      }
+    ],
+    "answer": "240",
+    "explanation": {
+      "es": "Multiplicar por 100 desplaza la coma dos lugares a la derecha: 2,4 → 240.",
+      "ru": "При умножении на 100 запятая сдвигается на два знака вправо: 2,4 → 240."
+    },
+    "hint": {
+      "es": "Multiplicar por 100 desplaza la coma dos lugares a la derecha.",
+      "ru": "При умножении на 100 запятая сдвигается на два знака вправо."
+    },
+    "commonMistake": {
+      "es": "Un error frecuente es desplazar solo un lugar (resultado 24). Por 100 se desplazan dos lugares.",
+      "ru": "Часто сдвигают только на один знак (получают 24). При умножении на 100 — два знака."
+    },
+    "skillTags": [
+      "decimal_multiply100"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_017",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es 3,6 ÷ 100?",
+      "ru": "Сколько будет 3,6 ÷ 100?"
+    },
+    "options": [
+      {
+        "es": "360",
+        "ru": "360"
+      },
+      {
+        "es": "0,36",
+        "ru": "0,36"
+      },
+      {
+        "es": "0,036",
+        "ru": "0,036"
+      },
+      {
+        "es": "36",
+        "ru": "36"
+      }
+    ],
+    "answer": "0,036",
+    "explanation": {
+      "es": "Dividir por 100 desplaza la coma dos lugares a la izquierda: 3,6 → 0,036.",
+      "ru": "При делении на 100 запятая сдвигается на два знака влево: 3,6 → 0,036."
+    },
+    "hint": {
+      "es": "Dividir por 100 desplaza la coma dos lugares a la izquierda.",
+      "ru": "При делении на 100 запятая сдвигается на два знака влево."
+    },
+    "commonMistake": {
+      "es": "Confundir con multiplicar: dividir achica el número, la coma va a la izquierda.",
+      "ru": "Путают с умножением: при делении число становится меньше, запятая идёт влево."
+    },
+    "skillTags": [
+      "decimal_divide100"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_018",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 5,8 + 3,4?",
+      "ru": "Сколько будет 5,8 + 3,4?"
+    },
+    "answer": "9,2",
+    "explanation": {
+      "es": "Alineá la coma y sumá: 5,8 + 3,4 = 9,2.",
+      "ru": "Выравниваем запятую и складываем: 5,8 + 3,4 = 9,2."
+    },
+    "hint": {
+      "es": "Alineá la coma decimal antes de sumar.",
+      "ru": "Выравни запятую перед сложением."
+    },
+    "commonMistake": {
+      "es": "No alinear la coma puede dar resultados incorrectos. Escribí los números uno debajo del otro con las comas alineadas.",
+      "ru": "Несовмещение запятой даёт неверный результат. Пиши числа в столбик с совмещёнными запятыми."
+    },
+    "skillTags": [
+      "decimal_addition"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_019",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es 7,3 − 4,8?",
+      "ru": "Сколько будет 7,3 − 4,8?"
+    },
+    "answer": "2,5",
+    "explanation": {
+      "es": "7,3 − 4,8: restamos décimas primero (13 − 8 = 5, llevamos 1) y luego enteros (7 − 1 − 4 = 2). Resultado: 2,5.",
+      "ru": "7,3 − 4,8: вычитаем десятые (13 − 8 = 5, занимаем 1), потом целые (7 − 1 − 4 = 2). Ответ: 2,5."
+    },
+    "hint": {
+      "es": "Si la décima de arriba es menor, tomás prestado del entero.",
+      "ru": "Если верхняя десятая меньше, занимаешь из целой части."
+    },
+    "commonMistake": {
+      "es": "Olvidar llevar la unidad prestada da 3,5. Recordá restar 1 de los enteros cuando tomás prestado.",
+      "ru": "Забыть учесть заём дат 3,5. Не забудь вычесть 1 из целой части при займе."
+    },
+    "skillTags": [
+      "decimal_subtraction"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_020",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cómo se escribe en decimal la fracción 1/4?",
+      "ru": "Как записать дробь 1/4 в виде десятичной дроби?"
+    },
+    "options": [
+      {
+        "es": "0,14",
+        "ru": "0,14"
+      },
+      {
+        "es": "0,25",
+        "ru": "0,25"
+      },
+      {
+        "es": "0,4",
+        "ru": "0,4"
+      },
+      {
+        "es": "0,5",
+        "ru": "0,5"
+      }
+    ],
+    "answer": "0,25",
+    "explanation": {
+      "es": "1 ÷ 4 = 0,25. También: 1/4 = 25/100 = 0,25.",
+      "ru": "1 ÷ 4 = 0,25. Также: 1/4 = 25/100 = 0,25."
+    },
+    "hint": {
+      "es": "Dividí el numerador entre el denominador: 1 ÷ 4.",
+      "ru": "Раздели числитель на знаменатель: 1 ÷ 4."
+    },
+    "commonMistake": {
+      "es": "Escribir 0,14 confunde los dígitos 1 y 4 con decimales. Hay que dividir, no unir los números.",
+      "ru": "Писать 0,14 — ошибка, это смешение цифр 1 и 4. Нужно делить, а не соединять числа."
+    },
+    "skillTags": [
+      "fraction_to_decimal"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_021",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cómo se escribe en decimal la fracción 3/10?",
+      "ru": "Как записать дробь 3/10 в виде десятичной дроби?"
+    },
+    "options": [
+      {
+        "es": "3,10",
+        "ru": "3,10"
+      },
+      {
+        "es": "0,3",
+        "ru": "0,3"
+      },
+      {
+        "es": "0,03",
+        "ru": "0,03"
+      },
+      {
+        "es": "30",
+        "ru": "30"
+      }
+    ],
+    "answer": "0,3",
+    "explanation": {
+      "es": "3/10 significa 3 décimas, que se escribe 0,3.",
+      "ru": "3/10 означает 3 десятых, что записывается как 0,3."
+    },
+    "hint": {
+      "es": "Los décimos tienen un lugar después de la coma.",
+      "ru": "Десятые — это один знак после запятой."
+    },
+    "commonMistake": {
+      "es": "3/10 no es 3,10; el 3 va después de la coma como décima.",
+      "ru": "3/10 — это не 3,10; тройка стоит после запятой как десятая."
+    },
+    "skillTags": [
+      "fraction_to_decimal"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_022",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Comprás 2,5 kg de manzanas a $4,00 el kg. ¿Cuánto pagás?",
+      "ru": "Ты покупаешь 2,5 кг яблок по $4,00 за кг. Сколько платишь?"
+    },
+    "options": [
+      {
+        "es": "$6,50",
+        "ru": "$6,50"
+      },
+      {
+        "es": "$8,00",
+        "ru": "$8,00"
+      },
+      {
+        "es": "$10,00",
+        "ru": "$10,00"
+      },
+      {
+        "es": "$9,00",
+        "ru": "$9,00"
+      }
+    ],
+    "answer": "$10,00",
+    "explanation": {
+      "es": "2,5 × 4 = 10. Dos kilos son $8 y medio kilo son $2, total $10.",
+      "ru": "2,5 × 4 = 10. Два килограмма — $8, полкилограмма — $2, итого $10."
+    },
+    "hint": {
+      "es": "Multiplicá la cantidad por el precio: 2,5 × 4.",
+      "ru": "Умножь количество на цену: 2,5 × 4."
+    },
+    "commonMistake": {
+      "es": "No sumar solo $6,50 (eso sería 1,5 kg). Hay que multiplicar 2,5 × 4.",
+      "ru": "Не складывать просто $6,50 (это было бы 1,5 кг). Нужно умножить 2,5 × 4."
+    },
+    "skillTags": [
+      "decimal_multiplication",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_023",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Una cinta mide 6,8 m y la cortás en 4 partes iguales. ¿Cuánto mide cada parte?",
+      "ru": "Лента длиной 6,8 м разрезается на 4 равные части. Сколько метров в каждой части?"
+    },
+    "answer": "1,7",
+    "explanation": {
+      "es": "6,8 ÷ 4 = 1,7. Se puede pensar: 68 ÷ 4 = 17, luego la respuesta tiene una décima: 1,7.",
+      "ru": "6,8 ÷ 4 = 1,7. Можно думать так: 68 ÷ 4 = 17, затем одна десятая: 1,7."
+    },
+    "hint": {
+      "es": "Dividí 6,8 entre 4. Pensá en 68 ÷ 4 primero.",
+      "ru": "Раздели 6,8 на 4. Сначала подумай о 68 ÷ 4."
+    },
+    "commonMistake": {
+      "es": "Si dividís 68 ÷ 4 = 17, recordá que el número original tiene una décima, así que la respuesta es 1,7.",
+      "ru": "Если делишь 68 ÷ 4 = 17, помни, что исходное число имеет одну десятую, поэтому ответ 1,7."
+    },
+    "skillTags": [
+      "decimal_division",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_024",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Redondeá 3,47 al décimo más cercano.",
+      "ru": "Округли 3,47 до ближайшей десятой."
+    },
+    "options": [
+      {
+        "es": "3,4",
+        "ru": "3,4"
+      },
+      {
+        "es": "3,5",
+        "ru": "3,5"
+      },
+      {
+        "es": "3,0",
+        "ru": "3,0"
+      },
+      {
+        "es": "4,0",
+        "ru": "4,0"
+      }
+    ],
+    "answer": "3,5",
+    "explanation": {
+      "es": "El centésimo es 7 (≥ 5), entonces redondeamos el décimo hacia arriba: 3,4 → 3,5.",
+      "ru": "Цифра сотых равна 7 (≥ 5), поэтому десятые округляем вверх: 3,4 → 3,5."
+    },
+    "hint": {
+      "es": "Mirá el centésimo (segundo lugar decimal): si es 5 o más, redondeás hacia arriba.",
+      "ru": "Посмотри на цифру сотых (второй знак после запятой): если 5 или больше — округляй вверх."
+    },
+    "commonMistake": {
+      "es": "El dígito de los centésimos (7) indica que hay que subir el décimo de 4 a 5. Resultado: 3,5.",
+      "ru": "Цифра сотых (7) говорит о необходимости округлить десятые с 4 до 5. Ответ: 3,5."
+    },
+    "skillTags": [
+      "decimal_rounding"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_025",
+    "topicId": "decimales",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Redondeá 8,32 al entero más cercano.",
+      "ru": "Округли 8,32 до ближайшего целого числа."
+    },
+    "options": [
+      {
+        "es": "8",
+        "ru": "8"
+      },
+      {
+        "es": "9",
+        "ru": "9"
+      },
+      {
+        "es": "8,3",
+        "ru": "8,3"
+      },
+      {
+        "es": "8,4",
+        "ru": "8,4"
+      }
+    ],
+    "answer": "8",
+    "explanation": {
+      "es": "La parte decimal es 0,32 (< 0,5), así que redondeamos hacia abajo: 8.",
+      "ru": "Дробная часть равна 0,32 (< 0,5), поэтому округляем вниз: 8."
+    },
+    "hint": {
+      "es": "Si la parte decimal es menor que 0,5, se redondea hacia abajo.",
+      "ru": "Если дробная часть меньше 0,5 — округляем вниз."
+    },
+    "commonMistake": {
+      "es": "Hay que mirar si la parte decimal es ≥ 0,5. Como 0,32 < 0,5, queda en 8.",
+      "ru": "Нужно проверить, является ли дробная часть ≥ 0,5. Так как 0,32 < 0,5, остаётся 8."
+    },
+    "skillTags": [
+      "decimal_rounding"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "dec_026",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En una farmacia, tres medicamentos cuestan $5,40, $3,75 y $2,85. ¿Cuánto es el total?",
+      "ru": "В аптеке три лекарства стоят $5,40, $3,75 и $2,85. Сколько всего?"
+    },
+    "options": [
+      {
+        "es": "$11,00",
+        "ru": "$11,00"
+      },
+      {
+        "es": "$12,00",
+        "ru": "$12,00"
+      },
+      {
+        "es": "$11,50",
+        "ru": "$11,50"
+      },
+      {
+        "es": "$12,50",
+        "ru": "$12,50"
+      }
+    ],
+    "answer": "$12,00",
+    "explanation": {
+      "es": "5,40 + 3,75 + 2,85: primero 5,40 + 3,75 = 9,15; luego 9,15 + 2,85 = 12,00.",
+      "ru": "5,40 + 3,75 + 2,85: сначала 5,40 + 3,75 = 9,15; затем 9,15 + 2,85 = 12,00."
+    },
+    "hint": {
+      "es": "Sumá de a dos: primero los dos primeros, luego sumá el tercero.",
+      "ru": "Складывай по два: сначала первые два, потом прибавь третий."
+    },
+    "commonMistake": {
+      "es": "Olvidar alinear la coma puede llevar a errores. Sumá centésimo a centésimo, décimo a décimo.",
+      "ru": "Забытая запятая может привести к ошибке. Складывай сотые с сотыми, десятые с десятыми."
+    },
+    "skillTags": [
+      "decimal_addition",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_027",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un corredor completa 4 vueltas de 2,35 km cada una. ¿Cuántos km corrió en total?",
+      "ru": "Бегун пробегает 4 круга по 2,35 км каждый. Сколько км он пробежал всего?"
+    },
+    "answer": "9,4",
+    "explanation": {
+      "es": "4 × 2,35 = 9,40. Podés sumar: 2,35 + 2,35 + 2,35 + 2,35, o multiplicar 4 × 235 = 940 y luego la coma: 9,40.",
+      "ru": "4 × 2,35 = 9,40. Можно сложить: 2,35 + 2,35 + 2,35 + 2,35, или умножить 4 × 235 = 940 и поставить запятую: 9,40."
+    },
+    "hint": {
+      "es": "Multiplicá 4 × 2,35. Pensá: 4 × 235 = 940, luego ubicá la coma.",
+      "ru": "Умножь 4 × 2,35. Подумай: 4 × 235 = 940, затем поставь запятую."
+    },
+    "commonMistake": {
+      "es": "Multiplicar correctamente los enteros pero olvidar los centésimos. 4 × 0,35 = 1,40, más 4 × 2 = 8,00; total 9,40.",
+      "ru": "Правильно умножить целую часть, но забыть о сотых. 4 × 0,35 = 1,40, плюс 4 × 2 = 8,00; итого 9,40."
+    },
+    "skillTags": [
+      "decimal_multiplication",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_028",
+    "topicId": "decimales",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un paquete de galletitas pesa 0,45 kg. Si comprás 6 paquetes, ¿cuántos kg comprás en total?",
+      "ru": "Пачка печенья весит 0,45 кг. Если купить 6 пачек, сколько кг всего?"
+    },
+    "options": [
+      {
+        "es": "2,4 kg",
+        "ru": "2,4 кг"
+      },
+      {
+        "es": "2,7 kg",
+        "ru": "2,7 кг"
+      },
+      {
+        "es": "3,0 kg",
+        "ru": "3,0 кг"
+      },
+      {
+        "es": "2,45 kg",
+        "ru": "2,45 кг"
+      }
+    ],
+    "answer": "2,7 kg",
+    "explanation": {
+      "es": "6 × 0,45 = 2,70. Pensá: 6 × 45 = 270, luego la coma: 2,70 = 2,7 kg.",
+      "ru": "6 × 0,45 = 2,70. Подумай: 6 × 45 = 270, затем запятая: 2,70 = 2,7 кг."
+    },
+    "hint": {
+      "es": "Multiplicá 6 × 45 = 270, luego ubicá la coma (dos decimales).",
+      "ru": "Умножь 6 × 45 = 270, затем поставь запятую (два знака)."
+    },
+    "commonMistake": {
+      "es": "Pensar que 6 × 0,45 = 2,4 es confundir 0,4 con 0,45. Hay que multiplicar 6 × 45 = 270 → 2,70.",
+      "ru": "Думать, что 6 × 0,45 = 2,4 — значит путать 0,4 с 0,45. Нужно 6 × 45 = 270 → 2,70."
+    },
+    "skillTags": [
+      "decimal_multiplication",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_029",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Laura tiene $20,00. Compra un cuaderno por $7,50 y un lápiz por $2,75. ¿Cuánto le queda?",
+      "ru": "У Лауры $20,00. Она покупает тетрадь за $7,50 и карандаш за $2,75. Сколько у неё остаётся?"
+    },
+    "options": [
+      {
+        "es": "$9,75",
+        "ru": "$9,75"
+      },
+      {
+        "es": "$10,25",
+        "ru": "$10,25"
+      },
+      {
+        "es": "$9,25",
+        "ru": "$9,25"
+      },
+      {
+        "es": "$10,75",
+        "ru": "$10,75"
+      }
+    ],
+    "answer": "$9,75",
+    "explanation": {
+      "es": "Gasto total: 7,50 + 2,75 = 10,25. Resto: 20,00 − 10,25 = 9,75.",
+      "ru": "Общие расходы: 7,50 + 2,75 = 10,25. Остаток: 20,00 − 10,25 = 9,75."
+    },
+    "hint": {
+      "es": "Primero sumá lo que gastó, luego restá del total.",
+      "ru": "Сначала сложи расходы, затем вычти из начальной суммы."
+    },
+    "commonMistake": {
+      "es": "Restar cada precio por separado puede llevar a errores de orden. Mejor sumar primero: 7,50 + 2,75 = 10,25, y luego 20 − 10,25.",
+      "ru": "Вычитать каждую цену отдельно может запутать. Лучше сначала сложить: 7,50 + 2,75 = 10,25, потом 20 − 10,25."
+    },
+    "skillTags": [
+      "decimal_addition",
+      "decimal_subtraction",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_030",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En un kiosco, una barra de chocolate cuesta $3,50 y un jugo cuesta $2,80. Martín compra 2 barras y un jugo. ¿Cuánto paga?",
+      "ru": "В киоске плитка шоколада стоит $3,50, а сок — $2,80. Мартин покупает 2 плитки и сок. Сколько он платит?"
+    },
+    "options": [
+      {
+        "es": "$9,80",
+        "ru": "$9,80"
+      },
+      {
+        "es": "$10,00",
+        "ru": "$10,00"
+      },
+      {
+        "es": "$9,60",
+        "ru": "$9,60"
+      },
+      {
+        "es": "$10,30",
+        "ru": "$10,30"
+      }
+    ],
+    "answer": "$9,80",
+    "explanation": {
+      "es": "2 × 3,50 = 7,00; luego 7,00 + 2,80 = 9,80.",
+      "ru": "2 × 3,50 = 7,00; затем 7,00 + 2,80 = 9,80."
+    },
+    "hint": {
+      "es": "Primero calculá el precio de 2 barras, después sumá el jugo.",
+      "ru": "Сначала посчитай стоимость 2 плиток, потом прибавь сок."
+    },
+    "commonMistake": {
+      "es": "Sumar todo sin multiplicar: 3,50 + 3,50 + 2,80 = 9,80. Está bien así también; solo asegurate de no olvidar la segunda barra.",
+      "ru": "Складывать всё без умножения: 3,50 + 3,50 + 2,80 = 9,80. Так тоже правильно; главное — не забыть вторую плитку."
+    },
+    "skillTags": [
+      "decimal_multiplication",
+      "decimal_addition",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_031",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un producto cuesta $1250,50. Si comprás 4 unidades, ¿cuánto pagás en total?",
+      "ru": "Товар стоит $1250,50. Если купишь 4 штуки, сколько заплатишь?"
+    },
+    "options": [
+      {
+        "es": "$5002",
+        "ru": "$5002"
+      },
+      {
+        "es": "$4802",
+        "ru": "$4802"
+      },
+      {
+        "es": "$5102",
+        "ru": "$5102"
+      },
+      {
+        "es": "$5000,20",
+        "ru": "$5000,20"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "decimals",
+      "multiplication",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "Multiplicá 1250,50 × 4. Podés separar: 1250 × 4 = 5000, y 0,50 × 4 = 2,00.",
+      "ru": "Умножь 1250,50 × 4. Можно разбить: 1250 × 4 = 5000, и 0,50 × 4 = 2,00."
+    },
+    "explanation": {
+      "es": "1250,50 × 4 = 5000 + 2,00 = $5002.",
+      "ru": "1250,50 × 4 = 5000 + 2,00 = $5002."
+    },
+    "commonMistake": {
+      "es": "Olvidar multiplicar el decimal: 1250 × 4 = 5000, pero la parte decimal 0,50 × 4 = 2 también suma.",
+      "ru": "Забыть умножить десятичную часть: 1250 × 4 = 5000, но часть 0,50 × 4 = 2 тоже добавляется."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_032",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Redondeá 7,8463 a las centésimas (dos decimales).",
+      "ru": "Округли 7,8463 до сотых (двух знаков после запятой)."
+    },
+    "options": [
+      {
+        "es": "7,85",
+        "ru": "7,85"
+      },
+      {
+        "es": "7,84",
+        "ru": "7,84"
+      },
+      {
+        "es": "7,8",
+        "ru": "7,8"
+      },
+      {
+        "es": "7,846",
+        "ru": "7,846"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "rounding",
+      "decimals"
+    ],
+    "hint": {
+      "es": "Mirá el tercer decimal (milésimas): es 6, que es ≥ 5. Entonces el segundo decimal (4) sube a 5.",
+      "ru": "Смотри на третий знак (тысячные): это 6, что ≥ 5. Значит второй знак (4) повышается до 5."
+    },
+    "explanation": {
+      "es": "7,8463 → miramos la posición de las milésimas: 6 ≥ 5, entonces 7,84 → 7,85.",
+      "ru": "7,8463 → смотрим тысячные: 6 ≥ 5, поэтому 7,84 → 7,85."
+    },
+    "commonMistake": {
+      "es": "Redondear 7,84 a 7,84 sin tener en cuenta el dígito siguiente (6). Si el siguiente ≥ 5, se redondea para arriba.",
+      "ru": "Округлить 7,84 как 7,84, не учитывая следующую цифру (6). Если следующая ≥ 5, округляем вверх."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_033",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Calculá: 0,125 × 48",
+      "ru": "Вычисли: 0,125 × 48"
+    },
+    "options": [
+      {
+        "es": "6",
+        "ru": "6"
+      },
+      {
+        "es": "5,76",
+        "ru": "5,76"
+      },
+      {
+        "es": "60",
+        "ru": "60"
+      },
+      {
+        "es": "6,4",
+        "ru": "6,4"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "decimals",
+      "multiplication"
+    ],
+    "hint": {
+      "es": "0,125 = 1/8. Entonces 1/8 × 48 = 48 ÷ 8 = 6.",
+      "ru": "0,125 = 1/8. Значит 1/8 × 48 = 48 ÷ 8 = 6."
+    },
+    "explanation": {
+      "es": "0,125 = 125/1000 = 1/8. Entonces 0,125 × 48 = 48/8 = 6.",
+      "ru": "0,125 = 125/1000 = 1/8. Значит 0,125 × 48 = 48/8 = 6."
+    },
+    "commonMistake": {
+      "es": "Hacer la multiplicación larga sin simplificar. Reconocer que 0,125 = 1/8 hace el cálculo inmediato.",
+      "ru": "Делать длинное умножение без упрощения. Заметить, что 0,125 = 1/8, делает вычисление мгновенным."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_034",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un corredor corre 1,5 km en 7,5 minutos. ¿Cuántos km por minuto corre?",
+      "ru": "Бегун пробегает 1,5 км за 7,5 минут. Сколько км в минуту он бежит?"
+    },
+    "options": [
+      {
+        "es": "0,2 km/min",
+        "ru": "0,2 км/мин"
+      },
+      {
+        "es": "0,5 km/min",
+        "ru": "0,5 км/мин"
+      },
+      {
+        "es": "2 km/min",
+        "ru": "2 км/мин"
+      },
+      {
+        "es": "0,02 km/min",
+        "ru": "0,02 км/мин"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "decimals",
+      "division",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "Velocidad = distancia ÷ tiempo = 1,5 ÷ 7,5. Multiplicá ambos por 2 para simplificar.",
+      "ru": "Скорость = расстояние ÷ время = 1,5 ÷ 7,5. Умножь оба на 2 для упрощения."
+    },
+    "explanation": {
+      "es": "1,5 ÷ 7,5 = (1,5 × 2) ÷ (7,5 × 2) = 3 ÷ 15 = 0,2 km/min.",
+      "ru": "1,5 ÷ 7,5 = (1,5 × 2) ÷ (7,5 × 2) = 3 ÷ 15 = 0,2 км/мин."
+    },
+    "commonMistake": {
+      "es": "Invertir: dividir tiempo entre distancia (7,5 ÷ 1,5 = 5). El resultado sería minutos por km, no km por minuto.",
+      "ru": "Перевернуть: делить время на расстояние (7,5 ÷ 1,5 = 5). Это минуты на км, а не км в минуту."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "dec_035",
+    "topicId": "decimales",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál de estas opciones es equivalente a dividir un número por 0,25?",
+      "ru": "Какое из этих действий эквивалентно делению числа на 0,25?"
+    },
+    "options": [
+      {
+        "es": "Multiplicar por 4",
+        "ru": "Умножить на 4"
+      },
+      {
+        "es": "Dividir por 4",
+        "ru": "Разделить на 4"
+      },
+      {
+        "es": "Multiplicar por 0,25",
+        "ru": "Умножить на 0,25"
+      },
+      {
+        "es": "Restar 0,25",
+        "ru": "Вычесть 0,25"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "decimals",
+      "division",
+      "equivalence"
+    ],
+    "hint": {
+      "es": "0,25 = 1/4. Dividir por 1/4 equivale a multiplicar por 4 (la inversa).",
+      "ru": "0,25 = 1/4. Делить на 1/4 равносильно умножению на 4 (обратная операция)."
+    },
+    "explanation": {
+      "es": "n ÷ 0,25 = n ÷ (1/4) = n × 4. Por ejemplo: 10 ÷ 0,25 = 40 = 10 × 4. ✓",
+      "ru": "n ÷ 0,25 = n ÷ (1/4) = n × 4. Например: 10 ÷ 0,25 = 40 = 10 × 4. ✓"
+    },
+    "commonMistake": {
+      "es": "Pensar que dividir por un número pequeño da un resultado pequeño. Al contrario: ÷ 0,25 = × 4.",
+      "ru": "Думать, что деление на маленькое число даёт маленький результат. Наоборот: ÷ 0,25 = × 4."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  }
+]

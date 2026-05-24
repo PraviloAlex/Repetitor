@@ -1,0 +1,1489 @@
+[
+  {
+    "id": "pct_001",
+    "topicId": "porcentajes",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 10% de 80?",
+      "ru": "Сколько составляет 10% от 80?"
+    },
+    "options": null,
+    "answer": "8",
+    "explanation": {
+      "es": "El 10% se calcula dividiendo por 10: 80 ÷ 10 = 8.",
+      "ru": "10% вычисляется делением на 10: 80 ÷ 10 = 8."
+    },
+    "hint": {
+      "es": "Para el 10%, dividís por 10.",
+      "ru": "Для 10% делим на 10."
+    },
+    "skillTags": [
+      "percent_10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 10% siempre es dividir entre 10: 80 ÷ 10 = 8. No entre 100.",
+      "ru": "10% — это всегда делить на 10: 80 ÷ 10 = 8. Не на 100."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_002",
+    "topicId": "porcentajes",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 50% de 60?",
+      "ru": "Сколько составляет 50% от 60?"
+    },
+    "options": null,
+    "answer": "30",
+    "explanation": {
+      "es": "El 50% es la mitad: 60 ÷ 2 = 30.",
+      "ru": "50% — это половина: 60 ÷ 2 = 30."
+    },
+    "hint": {
+      "es": "El 50% es la mitad, dividís por 2.",
+      "ru": "50% — это половина, делим на 2."
+    },
+    "skillTags": [
+      "percent_50"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 50% es la mitad: 60 ÷ 2 = 30.",
+      "ru": "50% — это половина: 60 ÷ 2 = 30."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_003",
+    "topicId": "porcentajes",
+    "difficulty": 1,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 25% de 40?",
+      "ru": "Сколько составляет 25% от 40?"
+    },
+    "options": null,
+    "answer": "10",
+    "explanation": {
+      "es": "El 25% es la cuarta parte: 40 ÷ 4 = 10.",
+      "ru": "25% — это четверть: 40 ÷ 4 = 10."
+    },
+    "hint": {
+      "es": "El 25% es la cuarta parte, dividís por 4.",
+      "ru": "25% — это четверть, делим на 4."
+    },
+    "skillTags": [
+      "percent_25"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 25% es la cuarta parte: 40 ÷ 4 = 10.",
+      "ru": "25% — это четверть: 40 ÷ 4 = 10."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_004",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 10% de 150?",
+      "ru": "Сколько составляет 10% от 150?"
+    },
+    "options": null,
+    "answer": "15",
+    "explanation": {
+      "es": "10% de 150 = 150 ÷ 10 = 15.",
+      "ru": "10% от 150 = 150 ÷ 10 = 15."
+    },
+    "hint": {
+      "es": "Dividís por 10.",
+      "ru": "Делим на 10."
+    },
+    "skillTags": [
+      "percent_10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Para el 10%, corré la coma un lugar a la izquierda: 150 → 15.",
+      "ru": "Для 10% сдвигаем запятую влево на 1: 150 → 15."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_005",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 75% de 80?",
+      "ru": "Сколько составляет 75% от 80?"
+    },
+    "options": null,
+    "answer": "60",
+    "explanation": {
+      "es": "75% = 50% + 25%. 50% de 80 = 40. 25% de 80 = 20. 40 + 20 = 60.",
+      "ru": "75% = 50% + 25%. 50% от 80 = 40. 25% от 80 = 20. 40 + 20 = 60."
+    },
+    "hint": {
+      "es": "75% = 50% + 25%. Calculá cada parte y sumalas.",
+      "ru": "75% = 50% + 25%. Найди каждую часть и сложи."
+    },
+    "skillTags": [
+      "percent_75"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "75% = 50% + 25% = 40 + 20 = 60. También: 80 × 3 ÷ 4 = 60.",
+      "ru": "75% = 50% + 25% = 40 + 20 = 60. Или: 80 × 3 ÷ 4 = 60."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_006",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En un examen de 20 preguntas, respondiste correctamente el 50%. ¿Cuántas preguntas acertaste?",
+      "ru": "На экзамене из 20 вопросов ты ответил правильно на 50%. Сколько вопросов ты решил верно?"
+    },
+    "options": [
+      {
+        "es": "10",
+        "ru": "10"
+      },
+      {
+        "es": "5",
+        "ru": "5"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      }
+    ],
+    "answer": "10",
+    "explanation": {
+      "es": "50% de 20 = 20 ÷ 2 = 10 preguntas correctas.",
+      "ru": "50% от 20 = 20 ÷ 2 = 10 правильных вопросов."
+    },
+    "hint": {
+      "es": "El 50% es la mitad.",
+      "ru": "50% — это половина."
+    },
+    "skillTags": [
+      "percent_50",
+      "percent_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 50% de 20 preguntas es la mitad: 20 ÷ 2 = 10.",
+      "ru": "50% от 20 вопросов — это половина: 20 ÷ 2 = 10."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_007",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 20% de 50?",
+      "ru": "Сколько составляет 20% от 50?"
+    },
+    "options": null,
+    "answer": "10",
+    "explanation": {
+      "es": "10% de 50 = 5. El 20% es el doble del 10%: 5 × 2 = 10.",
+      "ru": "10% от 50 = 5. 20% — это вдвое больше 10%: 5 × 2 = 10."
+    },
+    "hint": {
+      "es": "Calculá primero el 10% y después multiplicá por 2.",
+      "ru": "Сначала найди 10%, потом умножь на 2."
+    },
+    "skillTags": [
+      "percent_20"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "20% = 2 × 10%. El 10% de 50 es 5, entonces el 20% es 10.",
+      "ru": "20% = 2 × 10%. 10% от 50 = 5, значит 20% = 10."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_008",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Un artículo cuesta $200 y tiene un 25% de descuento. ¿Cuánto pagás?",
+      "ru": "Товар стоит $200 и продаётся со скидкой 25%. Сколько ты заплатишь?"
+    },
+    "options": null,
+    "answer": "150",
+    "explanation": {
+      "es": "25% de 200 = 200 ÷ 4 = 50. El descuento es $50. Pagás: 200 − 50 = $150.",
+      "ru": "25% от 200 = 200 ÷ 4 = 50. Скидка $50. Платишь: 200 − 50 = $150."
+    },
+    "hint": {
+      "es": "Primero calculá el 25% y después restalo del precio original.",
+      "ru": "Сначала найди 25%, потом вычти из исходной цены."
+    },
+    "skillTags": [
+      "percent_25",
+      "percent_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 25% de $200 es $50. El precio final es $200 − $50 = $150.",
+      "ru": "25% от $200 = $50. Цена со скидкой: $200 − $50 = $150."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_009",
+    "topicId": "porcentajes",
+    "difficulty": 1,
+    "type": "true_false",
+    "prompt": {
+      "es": "¿Es verdad que el 50% de 100 es 50?",
+      "ru": "Правда ли, что 50% от 100 равно 50?"
+    },
+    "options": null,
+    "answer": "true",
+    "explanation": {
+      "es": "Sí. El 50% es la mitad, y la mitad de 100 es 50.",
+      "ru": "Да. 50% — это половина, а половина 100 равна 50."
+    },
+    "hint": {
+      "es": "El 50% siempre es la mitad.",
+      "ru": "50% всегда означает половину."
+    },
+    "skillTags": [
+      "percent_50"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 50% siempre es la mitad. La mitad de 100 es exactamente 50.",
+      "ru": "50% — это всегда половина. Половина от 100 = 50."
+    },
+    "xp": 10,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_010",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuál es el 10% de 340?",
+      "ru": "Каков 10% от 340?"
+    },
+    "options": [
+      {
+        "es": "34",
+        "ru": "34"
+      },
+      {
+        "es": "3,4",
+        "ru": "3,4"
+      },
+      {
+        "es": "340",
+        "ru": "340"
+      }
+    ],
+    "answer": "34",
+    "explanation": {
+      "es": "10% de 340 = 340 ÷ 10 = 34.",
+      "ru": "10% от 340 = 340 ÷ 10 = 34."
+    },
+    "hint": {
+      "es": "Dividís por 10, o corrés la coma un lugar a la izquierda.",
+      "ru": "Делим на 10, или сдвигаем запятую на один знак влево."
+    },
+    "skillTags": [
+      "percent_10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "Para el 10%, corré la coma un lugar a la izquierda: 340 → 34.",
+      "ru": "Для 10% сдвигаем запятую влево на 1: 340 → 34."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "boss"
+  },
+  {
+    "id": "pct_011",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "De 120 alumnos, el 25% practica deporte. ¿Cuántos alumnos practican deporte?",
+      "ru": "Из 120 учеников 25% занимаются спортом. Сколько учеников занимаются спортом?"
+    },
+    "options": null,
+    "answer": "30",
+    "explanation": {
+      "es": "25% de 120 = 120 ÷ 4 = 30 alumnos.",
+      "ru": "25% от 120 = 120 ÷ 4 = 30 учеников."
+    },
+    "hint": {
+      "es": "El 25% es la cuarta parte, dividís por 4.",
+      "ru": "25% — это четверть, делим на 4."
+    },
+    "skillTags": [
+      "percent_25",
+      "percent_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 25% es la cuarta parte: 120 ÷ 4 = 30.",
+      "ru": "25% — это четверть: 120 ÷ 4 = 30."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_012",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 50% de 90?",
+      "ru": "Сколько составляет 50% от 90?"
+    },
+    "options": null,
+    "answer": "45",
+    "explanation": {
+      "es": "50% de 90 = 90 ÷ 2 = 45.",
+      "ru": "50% от 90 = 90 ÷ 2 = 45."
+    },
+    "hint": {
+      "es": "Dividís por 2.",
+      "ru": "Делим на 2."
+    },
+    "skillTags": [
+      "percent_50"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 50% siempre divide entre 2: 90 ÷ 2 = 45.",
+      "ru": "50% — делим на 2: 90 ÷ 2 = 45."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_013",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Tenés $80 y gastás el 25%. ¿Cuánto te queda?",
+      "ru": "У тебя $80 и ты тратишь 25%. Сколько остаётся?"
+    },
+    "options": [
+      {
+        "es": "$60",
+        "ru": "$60"
+      },
+      {
+        "es": "$20",
+        "ru": "$20"
+      },
+      {
+        "es": "$55",
+        "ru": "$55"
+      }
+    ],
+    "answer": "$60",
+    "explanation": {
+      "es": "25% de 80 = 20. Gastás $20, entonces te queda 80 − 20 = $60.",
+      "ru": "25% от 80 = 20. Тратишь $20, остаётся 80 − 20 = $60."
+    },
+    "hint": {
+      "es": "Calculá el 25% y después restalo.",
+      "ru": "Найди 25% и вычти."
+    },
+    "skillTags": [
+      "percent_25",
+      "percent_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 25% de $80 es $20 de gasto. Lo que queda: $80 − $20 = $60.",
+      "ru": "25% от $80 = $20 (потратили). Остаток: $80 − $20 = $60."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_014",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "¿Cuánto es el 10% de 75?",
+      "ru": "Сколько составляет 10% от 75?"
+    },
+    "options": null,
+    "answer": "7.5",
+    "explanation": {
+      "es": "10% de 75 = 75 ÷ 10 = 7,5.",
+      "ru": "10% от 75 = 75 ÷ 10 = 7,5."
+    },
+    "hint": {
+      "es": "Dividís por 10.",
+      "ru": "Делим на 10."
+    },
+    "skillTags": [
+      "percent_10"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 10% de 75 se calcula dividiendo entre 10: 75 ÷ 10 = 7,5.",
+      "ru": "10% от 75 — делим на 10: 75 ÷ 10 = 7,5."
+    },
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_015",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "Una remera cuesta $400 y tiene un 10% de descuento. ¿Cuánto pagás?",
+      "ru": "Футболка стоит $400 и продаётся со скидкой 10%. Сколько ты заплатишь?"
+    },
+    "options": null,
+    "answer": "360",
+    "explanation": {
+      "es": "10% de 400 = 40. El descuento es $40. Pagás: 400 − 40 = $360.",
+      "ru": "10% от 400 = 40. Скидка $40. Платишь: 400 − 40 = $360."
+    },
+    "hint": {
+      "es": "Calculá el 10% y restalo del precio original.",
+      "ru": "Найди 10% и вычти из цены."
+    },
+    "skillTags": [
+      "percent_10",
+      "percent_context"
+    ],
+    "verified": true,
+    "commonMistake": {
+      "es": "El 10% de $400 es $40. El precio final: $400 − $40 = $360.",
+      "ru": "10% от $400 = $40. Цена со скидкой: $400 − $40 = $360."
+    },
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_016",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es el 30% de 200?",
+      "ru": "Сколько составляет 30% от 200?"
+    },
+    "options": [
+      {
+        "es": "30",
+        "ru": "30"
+      },
+      {
+        "es": "60",
+        "ru": "60"
+      },
+      {
+        "es": "45",
+        "ru": "45"
+      },
+      {
+        "es": "600",
+        "ru": "600"
+      }
+    ],
+    "answer": "60",
+    "explanation": {
+      "es": "10% de 200 = 20. Entonces 30% = 3 × 20 = 60.",
+      "ru": "10% от 200 = 20. Значит 30% = 3 × 20 = 60."
+    },
+    "hint": {
+      "es": "Calculá el 10% y multiplicalo por 3.",
+      "ru": "Вычисли 10% и умножь на 3."
+    },
+    "commonMistake": {
+      "es": "No multiplicar 200 × 30 directamente. El 30% es 30/100 × 200 = 60.",
+      "ru": "Не умножай 200 × 30 напрямую. 30% — это 30/100 × 200 = 60."
+    },
+    "skillTags": [
+      "percent_of_number"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_017",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es el 5% de 80?",
+      "ru": "Сколько составляет 5% от 80?"
+    },
+    "options": [
+      {
+        "es": "8",
+        "ru": "8"
+      },
+      {
+        "es": "5",
+        "ru": "5"
+      },
+      {
+        "es": "4",
+        "ru": "4"
+      },
+      {
+        "es": "40",
+        "ru": "40"
+      }
+    ],
+    "answer": "4",
+    "explanation": {
+      "es": "5% = la mitad del 10%. El 10% de 80 = 8, entonces 5% = 4.",
+      "ru": "5% — это половина от 10%. 10% от 80 = 8, значит 5% = 4."
+    },
+    "hint": {
+      "es": "El 5% es la mitad del 10%.",
+      "ru": "5% — это половина от 10%."
+    },
+    "commonMistake": {
+      "es": "Confundir 5% con el 10% y responder 8. El 5% es la mitad del 10%.",
+      "ru": "Путать 5% с 10% и отвечать 8. 5% — это половина от 10%."
+    },
+    "skillTags": [
+      "percent_of_number"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_018",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Cuánto es el 15% de 60?",
+      "ru": "Сколько составляет 15% от 60?"
+    },
+    "options": [
+      {
+        "es": "6",
+        "ru": "6"
+      },
+      {
+        "es": "9",
+        "ru": "9"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      },
+      {
+        "es": "12",
+        "ru": "12"
+      }
+    ],
+    "answer": "9",
+    "explanation": {
+      "es": "10% de 60 = 6. 5% de 60 = 3. Entonces 15% = 6 + 3 = 9.",
+      "ru": "10% от 60 = 6. 5% от 60 = 3. Значит 15% = 6 + 3 = 9."
+    },
+    "hint": {
+      "es": "15% = 10% + 5%. Calculá cada parte por separado.",
+      "ru": "15% = 10% + 5%. Посчитай каждую часть отдельно."
+    },
+    "commonMistake": {
+      "es": "Pensar que 15% de 60 es 15 (confundiendo el porcentaje con la cantidad). Hay que calcular 15/100 × 60.",
+      "ru": "Думать, что 15% от 60 равно 15 (путая процент с количеством). Нужно вычислить 15/100 × 60."
+    },
+    "skillTags": [
+      "percent_of_number"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_019",
+    "topicId": "porcentajes",
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Qué porcentaje es 20 de 100?",
+      "ru": "Какой процент составляет 20 от 100?"
+    },
+    "options": [
+      {
+        "es": "10%",
+        "ru": "10%"
+      },
+      {
+        "es": "20%",
+        "ru": "20%"
+      },
+      {
+        "es": "25%",
+        "ru": "25%"
+      },
+      {
+        "es": "2%",
+        "ru": "2%"
+      }
+    ],
+    "answer": "20%",
+    "explanation": {
+      "es": "20 de 100 = 20/100 = 20%.",
+      "ru": "20 из 100 = 20/100 = 20%."
+    },
+    "hint": {
+      "es": "Para pasar a porcentaje, dividí la parte entre el total y multiplicá por 100.",
+      "ru": "Для перевода в проценты раздели часть на целое и умножь на 100."
+    },
+    "commonMistake": {
+      "es": "Si el total es exactamente 100, el porcentaje es igual a la parte: 20 de 100 = 20%.",
+      "ru": "Если целое равно 100, то процент совпадает с частью: 20 из 100 = 20%."
+    },
+    "skillTags": [
+      "percent_find_rate"
+    ],
+    "xp": 15,
+    "rarity": "common",
+    "packEligible": true,
+    "cardType": "speed"
+  },
+  {
+    "id": "pct_020",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "¿Qué porcentaje es 15 de 60?",
+      "ru": "Какой процент составляет 15 от 60?"
+    },
+    "options": [
+      {
+        "es": "15%",
+        "ru": "15%"
+      },
+      {
+        "es": "25%",
+        "ru": "25%"
+      },
+      {
+        "es": "20%",
+        "ru": "20%"
+      },
+      {
+        "es": "30%",
+        "ru": "30%"
+      }
+    ],
+    "answer": "25%",
+    "explanation": {
+      "es": "15/60 = 1/4 = 25%.",
+      "ru": "15/60 = 1/4 = 25%."
+    },
+    "hint": {
+      "es": "Calculá 15/60 y convertí a porcentaje multiplicando por 100.",
+      "ru": "Вычисли 15/60 и переведи в проценты, умножив на 100."
+    },
+    "commonMistake": {
+      "es": "Confundir la parte con el porcentaje y responder 15%. Hay que dividir: 15 ÷ 60 = 0,25 = 25%.",
+      "ru": "Путать часть с процентом и отвечать 15%. Нужно делить: 15 ÷ 60 = 0,25 = 25%."
+    },
+    "skillTags": [
+      "percent_find_rate"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_021",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "El precio de una heladera era $5000. Ahora tiene un 20% de descuento. ¿Cuánto ahorrás?",
+      "ru": "Холодильник стоил $5000. Теперь на него скидка 20%. Сколько ты экономишь?"
+    },
+    "options": [
+      {
+        "es": "$500",
+        "ru": "$500"
+      },
+      {
+        "es": "$1000",
+        "ru": "$1000"
+      },
+      {
+        "es": "$800",
+        "ru": "$800"
+      },
+      {
+        "es": "$1200",
+        "ru": "$1200"
+      }
+    ],
+    "answer": "$1000",
+    "explanation": {
+      "es": "20% de $5000 = 1/5 × 5000 = $1000.",
+      "ru": "20% от $5000 = 1/5 × 5000 = $1000."
+    },
+    "hint": {
+      "es": "El 20% = 1/5. ¿Cuánto es 1/5 de 5000?",
+      "ru": "20% = 1/5. Сколько составляет 1/5 от 5000?"
+    },
+    "commonMistake": {
+      "es": "Calcular el 10% (= $500) y no doblarlo. El 20% son dos veces el 10%: 2 × $500 = $1000.",
+      "ru": "Вычислить 10% (= $500) и не удвоить. 20% — это два раза по 10%: 2 × $500 = $1000."
+    },
+    "skillTags": [
+      "percent_discount",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_022",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un producto costaba $300 y aumentó un 10%. ¿Cuánto cuesta ahora?",
+      "ru": "Товар стоил $300 и подорожал на 10%. Сколько он стоит теперь?"
+    },
+    "options": [
+      {
+        "es": "$290",
+        "ru": "$290"
+      },
+      {
+        "es": "$310",
+        "ru": "$310"
+      },
+      {
+        "es": "$330",
+        "ru": "$330"
+      },
+      {
+        "es": "$360",
+        "ru": "$360"
+      }
+    ],
+    "answer": "$330",
+    "explanation": {
+      "es": "10% de 300 = 30. Nuevo precio: 300 + 30 = $330.",
+      "ru": "10% от 300 = 30. Новая цена: 300 + 30 = $330."
+    },
+    "hint": {
+      "es": "Calculá el 10% y sumalo al precio original.",
+      "ru": "Вычисли 10% и прибавь к исходной цене."
+    },
+    "commonMistake": {
+      "es": "Restar en lugar de sumar. Un aumento del 10% significa que el precio sube, no baja.",
+      "ru": "Вычитать вместо прибавления. Увеличение на 10% означает рост цены, а не снижение."
+    },
+    "skillTags": [
+      "percent_increase",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_023",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "numeric_input",
+    "prompt": {
+      "es": "En un grupo de 40 alumnos, el 75% aprobó el examen. ¿Cuántos alumnos aprobaron?",
+      "ru": "В группе из 40 учеников 75% сдали экзамен. Сколько учеников сдали?"
+    },
+    "answer": "30",
+    "explanation": {
+      "es": "75% de 40 = 3/4 × 40 = 30.",
+      "ru": "75% от 40 = 3/4 × 40 = 30."
+    },
+    "hint": {
+      "es": "El 75% = 3/4. Calculá 3/4 de 40.",
+      "ru": "75% = 3/4. Вычисли 3/4 от 40."
+    },
+    "commonMistake": {
+      "es": "Calcular solo 1/4 (= 10) en lugar de 3/4. El 75% equivale a 3 cuartos, no 1.",
+      "ru": "Вычислить только 1/4 (= 10) вместо 3/4. 75% — это три четверти, а не одна."
+    },
+    "skillTags": [
+      "percent_of_number",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_024",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una zapatería vendió 120 pares de zapatos. El 30% fueron de color negro. ¿Cuántos pares negros vendió?",
+      "ru": "Обувной магазин продал 120 пар обуви. 30% были чёрного цвета. Сколько чёрных пар продано?"
+    },
+    "options": [
+      {
+        "es": "30",
+        "ru": "30"
+      },
+      {
+        "es": "36",
+        "ru": "36"
+      },
+      {
+        "es": "40",
+        "ru": "40"
+      },
+      {
+        "es": "48",
+        "ru": "48"
+      }
+    ],
+    "answer": "36",
+    "explanation": {
+      "es": "30% de 120: primero 10% de 120 = 12, luego 30% = 3 × 12 = 36.",
+      "ru": "30% от 120: сначала 10% от 120 = 12, затем 30% = 3 × 12 = 36."
+    },
+    "hint": {
+      "es": "Calculá el 10% de 120 y luego multiplicá por 3.",
+      "ru": "Вычисли 10% от 120 и умножь на 3."
+    },
+    "commonMistake": {
+      "es": "Confundir el 30% con 30 pares. Hay que calcular 30/100 × 120 = 36.",
+      "ru": "Путать 30% с 30 парами. Нужно вычислить 30/100 × 120 = 36."
+    },
+    "skillTags": [
+      "percent_of_number",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_025",
+    "topicId": "porcentajes",
+    "difficulty": 3,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una remera costaba $500 y bajó un 20%. ¿Cuánto cuesta ahora?",
+      "ru": "Футболка стоила $500 и подешевела на 20%. Сколько она стоит теперь?"
+    },
+    "options": [
+      {
+        "es": "$380",
+        "ru": "$380"
+      },
+      {
+        "es": "$400",
+        "ru": "$400"
+      },
+      {
+        "es": "$420",
+        "ru": "$420"
+      },
+      {
+        "es": "$450",
+        "ru": "$450"
+      }
+    ],
+    "answer": "$400",
+    "explanation": {
+      "es": "20% de 500 = 100. Nuevo precio: 500 − 100 = $400.",
+      "ru": "20% от 500 = 100. Новая цена: 500 − 100 = $400."
+    },
+    "hint": {
+      "es": "Calculá el 20% y restalo del precio original.",
+      "ru": "Вычисли 20% и вычти из исходной цены."
+    },
+    "commonMistake": {
+      "es": "Restar solo el 10% (= $50) en lugar del 20% (= $100). 20% = 2 × 10% = $100.",
+      "ru": "Вычесть только 10% (= $50) вместо 20% (= $100). 20% = 2 × 10% = $100."
+    },
+    "skillTags": [
+      "percent_discount",
+      "word_problem"
+    ],
+    "xp": 20,
+    "rarity": "rare",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_026",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En una clase de 30 alumnos, el 60% son nenas. ¿Cuántos nenes hay en la clase?",
+      "ru": "В классе из 30 учеников 60% — девочки. Сколько мальчиков в классе?"
+    },
+    "options": [
+      {
+        "es": "12",
+        "ru": "12"
+      },
+      {
+        "es": "18",
+        "ru": "18"
+      },
+      {
+        "es": "15",
+        "ru": "15"
+      },
+      {
+        "es": "10",
+        "ru": "10"
+      }
+    ],
+    "answer": "12",
+    "explanation": {
+      "es": "60% son nenas → 40% son nenes. 40% de 30 = 0,4 × 30 = 12.",
+      "ru": "60% — девочки → 40% — мальчики. 40% от 30 = 0,4 × 30 = 12."
+    },
+    "hint": {
+      "es": "Si el 60% son nenas, ¿qué porcentaje son nenes? Calculá ese porcentaje de 30.",
+      "ru": "Если 60% — девочки, какой процент — мальчики? Вычисли этот процент от 30."
+    },
+    "commonMistake": {
+      "es": "Calcular el 60% de 30 (= 18) sin restar del total. El enunciado pide los nenes, que son el 40% restante.",
+      "ru": "Вычислить 60% от 30 (= 18) без вычитания. Задача спрашивает о мальчиках, которые составляют оставшиеся 40%."
+    },
+    "skillTags": [
+      "percent_of_number",
+      "percent_complement",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_027",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "El 25% de un número es 18. ¿Cuál es ese número?",
+      "ru": "25% некоторого числа равны 18. Чему равно это число?"
+    },
+    "options": [
+      {
+        "es": "54",
+        "ru": "54"
+      },
+      {
+        "es": "72",
+        "ru": "72"
+      },
+      {
+        "es": "36",
+        "ru": "36"
+      },
+      {
+        "es": "45",
+        "ru": "45"
+      }
+    ],
+    "answer": "72",
+    "explanation": {
+      "es": "Si el 25% = 18, entonces el 100% = 18 × 4 = 72. (El 25% es 1/4, así que el total es 4 veces eso.)",
+      "ru": "Если 25% = 18, то 100% = 18 × 4 = 72. (25% — это 1/4, значит целое в 4 раза больше.)"
+    },
+    "hint": {
+      "es": "Si el 25% (1/4) es 18, ¿cuánto es el total (4/4)?",
+      "ru": "Если 25% (1/4) равно 18, чему равно всё (4/4)?"
+    },
+    "commonMistake": {
+      "es": "Multiplicar 18 × 25 o confundir el sentido inverso. Hay que multiplicar 18 × 4 porque 25% = 1/4.",
+      "ru": "Умножать 18 × 25 или путаться в обратном смысле. Нужно 18 × 4, потому что 25% = 1/4."
+    },
+    "skillTags": [
+      "percent_find_total",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_028",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "El 10% de un número es 7. ¿Cuál es ese número?",
+      "ru": "10% некоторого числа равны 7. Чему равно это число?"
+    },
+    "options": [
+      {
+        "es": "70",
+        "ru": "70"
+      },
+      {
+        "es": "7",
+        "ru": "7"
+      },
+      {
+        "es": "0,7",
+        "ru": "0,7"
+      },
+      {
+        "es": "700",
+        "ru": "700"
+      }
+    ],
+    "answer": "70",
+    "explanation": {
+      "es": "Si el 10% = 7, entonces el 100% = 7 × 10 = 70.",
+      "ru": "Если 10% = 7, то 100% = 7 × 10 = 70."
+    },
+    "hint": {
+      "es": "Si el 10% es 7, el total es 10 veces ese valor.",
+      "ru": "Если 10% равно 7, то целое в 10 раз больше."
+    },
+    "commonMistake": {
+      "es": "Pensar que el total es 7 ÷ 10 = 0,7. Pero si el 10% es 7, el total es más grande: 7 × 10 = 70.",
+      "ru": "Думать, что целое равно 7 ÷ 10 = 0,7. Но если 10% равно 7, то целое больше: 7 × 10 = 70."
+    },
+    "skillTags": [
+      "percent_find_total"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_029",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Una librería tiene 240 libros. Vendió el 35% en enero. ¿Cuántos libros le quedan?",
+      "ru": "В книжном магазине 240 книг. В январе продали 35%. Сколько книг осталось?"
+    },
+    "options": [
+      {
+        "es": "84",
+        "ru": "84"
+      },
+      {
+        "es": "156",
+        "ru": "156"
+      },
+      {
+        "es": "160",
+        "ru": "160"
+      },
+      {
+        "es": "140",
+        "ru": "140"
+      }
+    ],
+    "answer": "156",
+    "explanation": {
+      "es": "35% de 240 = 84 libros vendidos. Quedan 240 − 84 = 156.",
+      "ru": "35% от 240 = 84 книги продано. Остаток: 240 − 84 = 156."
+    },
+    "hint": {
+      "es": "Primero calculá cuántos vendió (35% de 240), luego restá del total.",
+      "ru": "Сначала посчитай, сколько продано (35% от 240), затем вычти из общего количества."
+    },
+    "commonMistake": {
+      "es": "Dar 84 como respuesta (los vendidos), no los que quedan. La pregunta pide los que sobran: 240 − 84 = 156.",
+      "ru": "Ответить 84 (проданные), а не оставшиеся. Задача спрашивает остаток: 240 − 84 = 156."
+    },
+    "skillTags": [
+      "percent_of_number",
+      "percent_complement",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_030",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un supermercado vendió frutas por un total de $600. El 40% fueron manzanas, el 35% naranjas y el resto peras. ¿Cuánto recaudó por peras?",
+      "ru": "Супермаркет продал фрукты на общую сумму $600. 40% — яблоки, 35% — апельсины, остальное — груши. Сколько составила выручка от груш?"
+    },
+    "options": [
+      {
+        "es": "$100",
+        "ru": "$100"
+      },
+      {
+        "es": "$150",
+        "ru": "$150"
+      },
+      {
+        "es": "$75",
+        "ru": "$75"
+      },
+      {
+        "es": "$120",
+        "ru": "$120"
+      }
+    ],
+    "answer": "$150",
+    "explanation": {
+      "es": "Peras = 100% − 40% − 35% = 25%. El 25% de $600 = $150.",
+      "ru": "Груши = 100% − 40% − 35% = 25%. 25% от $600 = $150."
+    },
+    "hint": {
+      "es": "Calculá qué porcentaje son las peras: 100% − 40% − 35%.",
+      "ru": "Вычисли, какой процент составляют груши: 100% − 40% − 35%."
+    },
+    "commonMistake": {
+      "es": "Sumar 40% + 35% = 75% y calcular ese 75% en vez del resto (25%). Las peras son el 25% que falta.",
+      "ru": "Сложить 40% + 35% = 75% и вычислить именно этот процент вместо остатка (25%). Груши — это недостающие 25%."
+    },
+    "skillTags": [
+      "percent_of_number",
+      "percent_complement",
+      "word_problem"
+    ],
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_031",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Un artículo cuesta $3600. Lo aumentaron 25% y luego lo rebajaron 20%. ¿Cuál es el precio final?",
+      "ru": "Товар стоит $3600. Его подняли на 25%, потом снизили на 20%. Какова итоговая цена?"
+    },
+    "options": [
+      {
+        "es": "$3600",
+        "ru": "$3600"
+      },
+      {
+        "es": "$3420",
+        "ru": "$3420"
+      },
+      {
+        "es": "$3240",
+        "ru": "$3240"
+      },
+      {
+        "es": "$3780",
+        "ru": "$3780"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "percentage",
+      "successive_changes"
+    ],
+    "hint": {
+      "es": "+25% y luego −20% no se anulan. Calculá paso a paso: 3600 × 1,25 = 4500; luego 4500 × 0,80.",
+      "ru": "+25% и затем −20% не взаимно уничтожаются. Считай шаг за шагом: 3600 × 1,25 = 4500; потом 4500 × 0,80."
+    },
+    "explanation": {
+      "es": "3600 × 1,25 = 4500; 4500 × 0,80 = 3600. ¡El precio vuelve al original! (Trampa clásica del ingreso.)",
+      "ru": "3600 × 1,25 = 4500; 4500 × 0,80 = 3600. Цена возвращается к исходной! (Классическая ловушка экзамена.)"
+    },
+    "commonMistake": {
+      "es": "Restar los porcentajes: 25% − 20% = 5% de aumento, y calcular 3600 × 1,05 = $3780. Es incorrecto.",
+      "ru": "Вычесть проценты: 25% − 20% = 5% роста, и посчитать 3600 × 1,05 = $3780. Это неверно."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_032",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En una clase de 40 estudiantes, el 45% son niñas. ¿Cuántos niños hay?",
+      "ru": "В классе 40 учеников, 45% — девочки. Сколько мальчиков?"
+    },
+    "options": [
+      {
+        "es": "22",
+        "ru": "22"
+      },
+      {
+        "es": "18",
+        "ru": "18"
+      },
+      {
+        "es": "20",
+        "ru": "20"
+      },
+      {
+        "es": "24",
+        "ru": "24"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "percentage",
+      "complement",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "Si el 45% son niñas, el 55% son niños. Calculá el 55% de 40.",
+      "ru": "Если 45% — девочки, то 55% — мальчики. Вычисли 55% от 40."
+    },
+    "explanation": {
+      "es": "Niñas: 40 × 0,45 = 18. Niños: 40 − 18 = 22. O directamente: 40 × 0,55 = 22.",
+      "ru": "Девочки: 40 × 0,45 = 18. Мальчики: 40 − 18 = 22. Или напрямую: 40 × 0,55 = 22."
+    },
+    "commonMistake": {
+      "es": "Calcular el 45% de 40 = 18 y dar eso como respuesta. Pero la pregunta pide los NIÑOS, no las niñas.",
+      "ru": "Вычислить 45% от 40 = 18 и дать это как ответ. Но вопрос спрашивает про МАЛЬЧИКОВ, не девочек."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_033",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Compraste algo por $1200, que era el 80% del precio original. ¿Cuánto valía antes del descuento?",
+      "ru": "Ты купил что-то за $1200, что составляет 80% от исходной цены. Сколько стоило до скидки?"
+    },
+    "options": [
+      {
+        "es": "$1500",
+        "ru": "$1500"
+      },
+      {
+        "es": "$1440",
+        "ru": "$1440"
+      },
+      {
+        "es": "$960",
+        "ru": "$960"
+      },
+      {
+        "es": "$1320",
+        "ru": "$1320"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "percentage",
+      "inverse",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "Si $1200 es el 80%, entonces el precio original = 1200 ÷ 0,80.",
+      "ru": "Если $1200 — это 80%, то исходная цена = 1200 ÷ 0,80."
+    },
+    "explanation": {
+      "es": "Precio original × 0,80 = 1200 → Precio original = 1200 ÷ 0,80 = $1500.",
+      "ru": "Исходная цена × 0,80 = 1200 → Исходная цена = 1200 ÷ 0,80 = $1500."
+    },
+    "commonMistake": {
+      "es": "Calcular el 80% de 1200 = 960 (o sumar el 20%: 1200 × 1,20 = 1440). Hay que dividir, no multiplicar.",
+      "ru": "Вычислить 80% от 1200 = 960 (или добавить 20%: 1200 × 1,20 = 1440). Нужно делить, а не умножать."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_034",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "En un examen respondiste 38 de 50 preguntas bien. ¿Qué porcentaje erraste?",
+      "ru": "На экзамене ты правильно ответил на 38 из 50 вопросов. Какой процент ошибок?"
+    },
+    "options": [
+      {
+        "es": "24%",
+        "ru": "24%"
+      },
+      {
+        "es": "76%",
+        "ru": "76%"
+      },
+      {
+        "es": "12%",
+        "ru": "12%"
+      },
+      {
+        "es": "38%",
+        "ru": "38%"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "percentage",
+      "complement",
+      "word_problem"
+    ],
+    "hint": {
+      "es": "Erraste 50 − 38 = 12 preguntas. El porcentaje de error = (12 ÷ 50) × 100.",
+      "ru": "Ошибся на 50 − 38 = 12 вопросах. Процент ошибок = (12 ÷ 50) × 100."
+    },
+    "explanation": {
+      "es": "Errores: 50 − 38 = 12. Porcentaje de error: 12/50 × 100 = 24%.",
+      "ru": "Ошибок: 50 − 38 = 12. Процент ошибок: 12/50 × 100 = 24%."
+    },
+    "commonMistake": {
+      "es": "Dar el porcentaje de aciertos (76%) en lugar del de errores. Leé bien la pregunta: pide el % de errores.",
+      "ru": "Дать процент правильных (76%) вместо процента ошибок. Читай внимательно: вопрос про % ошибок."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  },
+  {
+    "id": "pct_035",
+    "topicId": "porcentajes",
+    "difficulty": 4,
+    "type": "multiple_choice",
+    "prompt": {
+      "es": "Si el 30% de un número es 90, ¿cuánto es el 45% de ese mismo número?",
+      "ru": "Если 30% числа равно 90, сколько составляет 45% этого же числа?"
+    },
+    "options": [
+      {
+        "es": "135",
+        "ru": "135"
+      },
+      {
+        "es": "120",
+        "ru": "120"
+      },
+      {
+        "es": "150",
+        "ru": "150"
+      },
+      {
+        "es": "108",
+        "ru": "108"
+      }
+    ],
+    "correctOption": 0,
+    "skillTags": [
+      "percentage",
+      "inverse",
+      "multi_step"
+    ],
+    "hint": {
+      "es": "Primero encontrá el número completo: si 30% = 90, entonces 100% = 90 ÷ 0,30 = 300. Luego calculá el 45%.",
+      "ru": "Сначала найди полное число: если 30% = 90, то 100% = 90 ÷ 0,30 = 300. Потом вычисли 45%."
+    },
+    "explanation": {
+      "es": "El número = 90 ÷ 0,30 = 300. El 45% de 300 = 300 × 0,45 = 135.",
+      "ru": "Число = 90 ÷ 0,30 = 300. 45% от 300 = 300 × 0,45 = 135."
+    },
+    "commonMistake": {
+      "es": "Calcular 45% × 90 = 40,5. Error: el 90 es el 30% del número, no el número entero.",
+      "ru": "Вычислить 45% × 90 = 40,5. Ошибка: 90 — это 30% числа, а не само число."
+    },
+    "xp": 30,
+    "rarity": "epic",
+    "packEligible": true,
+    "cardType": "trick"
+  }
+]
