@@ -283,6 +283,17 @@ const RULES_BY_SKILL: Record<string, RuleMicro> = {
 };
 
 const RULES_BY_TEMPLATE: Record<string, RuleMicro> = {
+  "order-of-operations": {
+    title: {
+      es: "Multiplicacion primero, despues suma y resta.",
+      ru: "Сначала умножение, потом сложение и вычитание.",
+    },
+    steps: [
+      { es: "1) Busca las multiplicaciones y divisiones.", ru: "1) Найди умножения и деления." },
+      { es: "2) Resuelvelas primero.", ru: "2) Реши их первыми." },
+      { es: "3) Luego suma y resta de izquierda a derecha.", ru: "3) Потом сложи и вычти слева направо." },
+    ],
+  },
   "shopping-change": {
     title: {
       es: "Vuelto: total de compra y despues resta.",
