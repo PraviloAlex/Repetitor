@@ -76,26 +76,30 @@ export type TemplateId =
   | "divisibility-gcd"
   | "divisibility-lcm"
   | "divisibility-lcm-word"
-  | "divisibility-trap";
+  | "divisibility-trap"
+  | "inequality-range"
+  | "division-find-n"
+  | "geometry-formula-choice"
+  | "multi-step-word-problem";
 
 const TOPIC_TEMPLATES: Record<string, TemplateId[]> = {
-  operaciones: ["add", "sub", "mul", "exact-division", "order-of-operations", "shopping-change"],
+  operaciones: ["add", "sub", "mul", "exact-division", "order-of-operations", "shopping-change", "inequality-range"],
   divisibilidad: [
     "divisibility-rule", "next-multiple", "count-multiples", "conditional-number",
     "missing-digit-divisibility", "divisibility-select-all",
     "divisibility-prime-factor", "divisibility-gcd", "divisibility-lcm",
-    "divisibility-lcm-word", "divisibility-trap",
+    "divisibility-lcm-word", "divisibility-trap", "division-find-n",
   ],
   fracciones: [
     "fraction-simplify", "fraction-compare", "fraction-compare-to-unit", "fraction-compare-same-den",
     "fraction-equivalent-missing", "fraction-equivalent-true-false",
     "fraction-add-same-den", "fraction-sub-same-den", "fraction-add-whole-and-fraction",
     "fraction-of-number", "fraction-of-number-remainder", "fraction-part-of-set", "fraction-complement-to-whole", "mixed-to-improper",
-    "fraction-add-diff-den", "fraction-sub-diff-den", "fraction-mul", "fraction-div", "fraction-word-add",
+    "fraction-add-diff-den", "fraction-sub-diff-den", "fraction-mul", "fraction-div", "fraction-word-add", "multi-step-word-problem",
   ],
   decimales: ["decimal-add", "decimal-sub", "decimal-compare", "decimal-times-10", "decimal-money-change", "decimal-round", "decimal-measure-convert"],
   porcentajes: ["percent-of", "percent-find-rate", "discount-price", "discount-amount", "discount-quantity-total", "discount-quantity-savings", "increase-price", "increase-budget-gap", "compare-discounts", "discount-budget", "discount-leftover-money", "double-discount", "reverse-discount"],
-  geometria: ["rect-area", "rect-perimeter", "compound-area", "area-compare", "perimeter-fence-cost", "rect-missing-side-area", "square-area", "rect-missing-side-perimeter", "rect-missing-side-perimeter-with-half", "square-perimeter"],
+  geometria: ["rect-area", "rect-perimeter", "compound-area", "area-compare", "perimeter-fence-cost", "rect-missing-side-area", "square-area", "rect-missing-side-perimeter", "rect-missing-side-perimeter-with-half", "square-perimeter", "geometry-formula-choice"],
 };
 
 export type GeneratorOptions = {
@@ -793,6 +797,10 @@ function buildOperaciones(template: TemplateId, difficulty: number, params: numb
     };
   }
 
+  if (template === "inequality-range") {
+    return buildInequalityRange(template, difficulty, params);
+  }
+
   const answer = a * b;
   const prompt = phraseVariant("operaciones", template, difficulty, params, [
     { es: `Cuanto es ${a} x ${b}?`, ru: `Сколько будет ${a} x ${b}?` },
@@ -810,6 +818,102 @@ function buildOperaciones(template: TemplateId, difficulty: number, params: numb
     hint: { es: "Separa un factor en decenas y unidades.", ru: "Разложи множитель на десятки и единицы." },
     commonMistake: { es: "Multiplicar solo una parte del numero.", ru: "Умножить только одну часть числа." },
     skillTags: ["multiplication"],
+  };
+}
+
+function buildInequalityRange(template: TemplateId, difficulty: number, params: number[]): Question {
+  const [A, B, boundaryType, contextType] = params;
+  const LEQ = "≤";
+  type BoundConf = { loSym: string; hiSym: string };
+  const BOUND_CONFIGS: BoundConf[] = [
+    { loSym: "<",  hiSym: "<"  },
+    { loSym: "<",  hiSym: LEQ  },
+    { loSym: LEQ,  hiSym: "<"  },
+    { loSym: LEQ,  hiSym: LEQ  },
+  ];
+  const bc = BOUND_CONFIGS[boundaryType % 4];
+  const VAR_NAMES = ["e", "p", "x", "t"];
+  const NOUN_ES = [
+    "la edad de la persona",
+    "la cantidad de paginas leidas",
+    "el precio del producto",
+    "los puntos del torneo",
+  ];
+  const NOUN_RU = [
+    "возраст человека",
+    "количество прочитанных страниц",
+    "цена товара",
+    "очки на турнире",
+  ];
+  const varName = VAR_NAMES[contextType % 4];
+  const nounEs  = NOUN_ES[contextType % 4];
+  const nounRu  = NOUN_RU[contextType % 4];
+  const buildIneq = (lo: string, hi: string, a: number, b: number): string =>
+    `${a} ${lo} ${varName} ${hi} ${b}`;
+  const correct = buildIneq(bc.loSym, bc.hiSym, A, B);
+  type DC = { lo: string; hi: string; dA?: number; dB?: number };
+  const DIST_CONFIGS: DC[][] = [
+    [{ lo: LEQ, hi: "<"  }, { lo: "<",  hi: LEQ  }, { lo: LEQ, hi: LEQ  }],
+    [{ lo: "<",  hi: "<"  }, { lo: LEQ,  hi: LEQ  }, { lo: LEQ, hi: "<",  dA: -1 }],
+    [{ lo: "<",  hi: "<"  }, { lo: LEQ,  hi: LEQ  }, { lo: "<",  hi: LEQ, dB: 1  }],
+    [{ lo: "<",  hi: LEQ  }, { lo: LEQ,  hi: "<"  }, { lo: "<",  hi: "<"  }],
+  ];
+  const distractors = DIST_CONFIGS[boundaryType % 4].map(dc =>
+    buildIneq(dc.lo, dc.hi, A + (dc.dA ?? 0), B + (dc.dB ?? 0))
+  );
+  const allOpts = [correct, ...distractors];
+  const idHash = hashText(makeId("operaciones", template, difficulty, params));
+  const shuffled = allOpts
+    .map((opt, i) => ({ opt, sort: ((idHash >>> 0) + i * 2654435761) >>> 0 }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(x => x.opt);
+  const VERBAL_ES = [
+    `es mayor que ${A} y menor que ${B}`,
+    `es mayor que ${A} y no supera ${B}`,
+    `es al menos ${A} y menor que ${B}`,
+    `es al menos ${A} y a lo sumo ${B}`,
+  ];
+  const VERBAL_RU = [
+    `больше ${A} и меньше ${B}`,
+    `больше ${A} и не превышает ${B}`,
+    `не меньше ${A} и меньше ${B}`,
+    `не меньше ${A} и не более ${B}`,
+  ];
+  const verbalEs = VERBAL_ES[boundaryType % 4];
+  const verbalRu = VERBAL_RU[boundaryType % 4];
+  const nounEsCap = nounEs[0].toUpperCase() + nounEs.slice(1);
+  const nounRuCap = nounRu[0].toUpperCase() + nounRu.slice(1);
+  const prompt = phraseVariant("operaciones", template, difficulty, params, [
+    {
+      es: `${nounEsCap} ${verbalEs}. Cual expresion lo representa?`,
+      ru: `${nounRuCap} ${verbalRu}. Какое неравенство это описывает?`,
+    },
+    {
+      es: `Marca la expresion correcta si ${nounEs} ${verbalEs}.`,
+      ru: `Отметь правильное неравенство, если ${nounRu} ${verbalRu}.`,
+    },
+  ]);
+  const closedEs = (s: string): string => s === LEQ ? "incluido" : "no incluido";
+  const closedRu = (s: string): string => s === LEQ ? "входит" : "не входит";
+  return {
+    ...baseQuestion("operaciones", template, difficulty, params, "multiple_choice"),
+    prompt,
+    options: shuffled.map(opt => ({ es: opt, ru: opt })),
+    answer: correct,
+    explanation: {
+      es: `Extremo ${A}: ${closedEs(bc.loSym)}. Extremo ${B}: ${closedEs(bc.hiSym)}. Expresion: ${correct}.`,
+      ru: `Граница ${A}: ${closedRu(bc.loSym)}. Граница ${B}: ${closedRu(bc.hiSym)}. Неравенство: ${correct}.`,
+    },
+    hint: {
+      es: '"Mayor que" sin igualdad usa <. "No supera" / "a lo sumo" usa ≤.',
+      ru: '"Больше" без равенства — знак <. "Не превышает" / "не более" — знак ≤.',
+    },
+    commonMistake: {
+      es: '"Mayor que A" no incluye A (usa <). "Al menos A" si incluye A (usa ≤).',
+      ru: '"Больше A" — A не входит. "Не меньше A" — A входит.',
+    },
+    skillTags: ["inequality-read"],
+    xp: difficulty >= 3 ? 15 : 10,
   };
 }
 
@@ -1155,6 +1259,78 @@ function buildDivisibilidad(template: TemplateId, difficulty: number, params: nu
             "Применять неверный признак.",
       },
       skillTags: [divisor <= 6 || divisor === 9 || divisor === 10 ? `divisibility-${divisor}` : "divisibility-conditions", "divisibility-conditions"],
+    };
+  }
+
+  if (template === "division-find-n") {
+    const [d, q, r, k, subtype] = params;
+    const dividend = d * q + r;
+    const n = subtype === 1 ? dividend / k : dividend;
+    const variantsSubtype0 = [
+      {
+        es: `Al dividir n por ${d} el cociente es ${q} y el resto es ${r}. Cuanto vale n?`,
+        ru: `При делении n на ${d} получается частное ${q} и остаток ${r}. Чему равно n?`,
+      },
+      {
+        es: `n dividido ${d} da ${q} con resto ${r}. Cual es n?`,
+        ru: `n разделить на ${d} даёт ${q} и остаток ${r}. Найди n.`,
+      },
+      {
+        es: `Busca n: n / ${d} = ${q} (resto ${r}).`,
+        ru: `Найди n: n / ${d} = ${q} (остаток ${r}).`,
+      },
+    ];
+    const variantsSubtype1 = [
+      {
+        es: `Al dividir ${k}*n por ${d} el cociente es ${q} y el resto es ${r}. Cuanto vale n?`,
+        ru: `При делении ${k}*n на ${d} частное равно ${q} и остаток ${r}. Чему равно n?`,
+      },
+      {
+        es: `${k}*n dividido ${d} da cociente ${q} y resto ${r}. Cual es n?`,
+        ru: `${k}*n делим на ${d}: частное ${q}, остаток ${r}. Найди n.`,
+      },
+      {
+        es: `Si ${k} veces un numero n, dividido por ${d}, da ${q} con resto ${r}, cual es n?`,
+        ru: `Если ${k} умножить на n и разделить на ${d}, получим частное ${q} и остаток ${r}. Найди n.`,
+      },
+    ];
+    const prompt = phraseVariant(
+      "divisibilidad", template, difficulty, params,
+      subtype === 1 ? variantsSubtype1 : variantsSubtype0
+    );
+    return {
+      ...baseQuestion("divisibilidad", template, difficulty, params),
+      prompt,
+      answer: String(n),
+      explanation: subtype === 1
+        ? {
+            es: `Primero: ${k}*n = ${d} x ${q} + ${r} = ${dividend}. Luego: n = ${dividend} / ${k} = ${n}.`,
+            ru: `Сначала: ${k}*n = ${d} x ${q} + ${r} = ${dividend}. Затем: n = ${dividend} / ${k} = ${n}.`,
+          }
+        : {
+            es: `n = divisor x cociente + resto = ${d} x ${q} + ${r} = ${n}.`,
+            ru: `n = делитель x частное + остаток = ${d} x ${q} + ${r} = ${n}.`,
+          },
+      hint: subtype === 1
+        ? {
+            es: `Primero despeja ${k}*n = ${d} x ${q} + ${r}, luego divide por ${k}.`,
+            ru: `Сначала найди ${k}*n = ${d} x ${q} + ${r}, потом раздели на ${k}.`,
+          }
+        : {
+            es: `Usa: n = ${d} x ${q} + ${r}.`,
+            ru: `Используй: n = ${d} x ${q} + ${r}.`,
+          },
+      commonMistake: subtype === 1
+        ? {
+            es: `Olvidar dividir por ${k} al final.`,
+            ru: `Забыть разделить на ${k} в конце.`,
+          }
+        : {
+            es: "Olvidar sumar el resto: poner solo d x q.",
+            ru: "Забыть прибавить остаток: написать только d x q.",
+          },
+      skillTags: ["division-with-remainder"],
+      xp: difficulty >= 4 ? 20 : 15,
     };
   }
 
@@ -1663,6 +1839,50 @@ function buildFracciones(template: TemplateId, difficulty: number, params: numbe
       hint: { es: "Primero igualá los denominadores usando el MCM.", ru: "Сначала приведи знаменатели к общему с помощью НОК." },
       commonMistake: { es: "Sumar numeradores y denominadores por separado.", ru: "Складывать числители и знаменатели раздельно." },
       skillTags: ["fraction-add-diff-den", "fraction-add"],
+    };
+  }
+
+  if (template === "multi-step-word-problem") {
+    const [totalUnits, step1Den, step2Den, step3Num, step3Den] = params;
+    const after1 = totalUnits / step1Den;
+    const after2 = after1 / step2Den;
+    const answer = Math.round((after2 * step3Num) / step3Den);
+    const step1Es = ({ 2: "la mitad", 3: "un tercio", 4: "un cuarto" } as Record<number, string>)[step1Den] ?? `1/${step1Den}`;
+    const step1Ru = ({ 2: "половину", 3: "треть", 4: "четверть" } as Record<number, string>)[step1Den] ?? `1/${step1Den}`;
+    const step2Es = ({ 2: "la mitad de eso", 3: "el tercio de ese resultado", 4: "la cuarta parte de ese resultado" } as Record<number, string>)[step2Den] ?? `1/${step2Den} de eso`;
+    const step2Ru = ({ 2: "из этого половину", 3: "треть этого результата", 4: "четверть этого результата" } as Record<number, string>)[step2Den] ?? `1/${step2Den} от этого`;
+    const prompt = phraseVariant("fracciones", template, difficulty, params, [
+      {
+        es: `En una panaderia hay ${totalUnits} facturas. Se uso ${step1Es} para la masa, luego ${step2Es} para la grasa, y de lo que quedo se hicieron ${fraction(step3Num, step3Den)}. Cuantas facturas salieron?`,
+        ru: `В пекарне ${totalUnits} булочек. Взяли ${step1Ru} для теста, потом ${step2Ru} для глазури, а из остатка сделали ${fraction(step3Num, step3Den)} порций. Сколько получилось?`,
+      },
+      {
+        es: `Un vivero tiene ${totalUnits} plantas. Se usa ${step1Es} para el sector A, luego ${step2Es} va al sector B, y de lo que sobra se planta ${fraction(step3Num, step3Den)}. Cuantas plantas se plantan?`,
+        ru: `В питомнике ${totalUnits} растений. ${step1Ru} уходит в зону A, потом ${step2Ru} — в зону B, а из остатка высаживают ${fraction(step3Num, step3Den)}. Сколько высадили?`,
+      },
+      {
+        es: `En un torneo hay ${totalUnits} puntos. El equipo A toma ${step1Es}, el equipo B toma ${step2Es} de los restantes, y del saldo se reparte ${fraction(step3Num, step3Den)}. Cuantos puntos son?`,
+        ru: `На турнире ${totalUnits} очков. Команда A берёт ${step1Ru}, команда B — ${step2Ru} от оставшегося, а из остатка делят ${fraction(step3Num, step3Den)}. Сколько это очков?`,
+      },
+    ]);
+    return {
+      ...baseQuestion("fracciones", template, difficulty, params),
+      prompt,
+      answer: String(answer),
+      explanation: {
+        es: `Paso 1: ${totalUnits} / ${step1Den} = ${after1}. Paso 2: ${after1} / ${step2Den} = ${after2}. Paso 3: ${fraction(step3Num, step3Den)} de ${after2} = ${answer}.`,
+        ru: `Шаг 1: ${totalUnits} / ${step1Den} = ${after1}. Шаг 2: ${after1} / ${step2Den} = ${after2}. Шаг 3: ${fraction(step3Num, step3Den)} от ${after2} = ${answer}.`,
+      },
+      hint: {
+        es: `Hacelo en tres pasos: divide por ${step1Den}, luego por ${step2Den}, luego aplica la fraccion.`,
+        ru: `Делай в три шага: раздели на ${step1Den}, потом на ${step2Den}, потом примени дробь.`,
+      },
+      commonMistake: {
+        es: "Aplicar las tres operaciones al total original en vez del resultado anterior.",
+        ru: "Применять все три операции к исходному числу вместо результата предыдущего шага.",
+      },
+      skillTags: ["fraction-of-number", "multi-step-reasoning"],
+      xp: difficulty >= 4 ? 20 : 15,
     };
   }
 
@@ -2363,6 +2583,89 @@ function buildGeometria(template: TemplateId, difficulty: number, params: number
   }
 
   const [length, width] = params;
+  if (template === "geometry-formula-choice") {
+    const [subtype] = params;
+    type FV = {
+      correct: string;
+      distractors: [string, string, string];
+      promptEs: string; promptRu: string;
+      promptEs2: string; promptRu2: string;
+      explanationEs: string; explanationRu: string;
+      mistakeEs: string; mistakeRu: string;
+      hintEs: string; hintRu: string;
+      skillTag: string;
+    };
+    const VARIANTS: FV[] = [
+      {
+        correct: "b x h",
+        distractors: ["b + h", "2 x (b + h)", "b x b + h x h"],
+        promptEs:  "Un rectangulo tiene base b y altura h. Cual expresion representa su area?",
+        promptRu:  "Прямоугольник имеет основание b и высоту h. Какое выражение — его площадь?",
+        promptEs2: "Un terreno rectangular tiene base b y altura h. Cual formula da su superficie?",
+        promptRu2: "Прямоугольный участок с основанием b и высотой h. Какая формула — его площадь?",
+        explanationEs: "Area = base x altura = b x h. Sumar los lados da el perimetro, no el area.",
+        explanationRu: "Площадь = основание x высота = b x h. Сумма сторон — это периметр, не площадь.",
+        mistakeEs: "Confundir area (multiplicar) con perimetro (sumar lados).",
+        mistakeRu: "Перепутать площадь (умножить) с периметром (сложить стороны).",
+        hintEs: "El area siempre es una multiplicacion de dos dimensiones.",
+        hintRu: "Площадь — всегда произведение двух измерений.",
+        skillTag: "rectangle-area-formula",
+      },
+      {
+        correct: "2 x (b + h)",
+        distractors: ["b x h", "b + h", "4 x b"],
+        promptEs:  "Un rectangulo tiene base b y altura h. Cual formula calcula su perimetro?",
+        promptRu:  "Прямоугольник с основанием b и высотой h. Какая формула — его периметр?",
+        promptEs2: "Para rodear un campo rectangular de base b y altura h, cual expresion usas?",
+        promptRu2: "Чтобы обнести прямоугольное поле с основанием b и высотой h, какое выражение?",
+        explanationEs: "Perimetro = 2 lados largos + 2 lados cortos = 2 x (b + h).",
+        explanationRu: "Периметр = 2 длинных стороны + 2 короткие = 2 x (b + h).",
+        mistakeEs: "Sumar solo b + h, olvidando que el rectangulo tiene 4 lados.",
+        mistakeRu: "Написать b + h, забыв, что у прямоугольника 4 стороны.",
+        hintEs: "Dibuja el rectangulo y conta los 4 lados.",
+        hintRu: "Нарисуй прямоугольник и посчитай все 4 стороны.",
+        skillTag: "rectangle-perimeter-formula",
+      },
+      {
+        correct: "l x l",
+        distractors: ["4 x l", "l + l", "l + 4"],
+        promptEs:  "Un cuadrado tiene lado l. Que expresion representa su area?",
+        promptRu:  "Квадрат со стороной l. Какое выражение — его площадь?",
+        promptEs2: "Un piso cuadrado tiene lado l. Que expresion representa su superficie?",
+        promptRu2: "Квадратный пол со стороной l. Какое выражение — его площадь?",
+        explanationEs: "El cuadrado tiene b = h = l. Area = l x l.",
+        explanationRu: "У квадрата b = h = l. Площадь = l x l.",
+        mistakeEs: "Confundir area (l x l) con perimetro del cuadrado (4 x l).",
+        mistakeRu: "Перепутать площадь (l x l) с периметром квадрата (4 x l).",
+        hintEs: "Area = lado x lado. Para el perimetro seria 4 x lado.",
+        hintRu: "Площадь = сторона x сторона. Периметр был бы 4 x сторона.",
+        skillTag: "square-area-formula",
+      },
+    ];
+    const v = VARIANTS[subtype % VARIANTS.length];
+    const allOpts: string[] = [v.correct, v.distractors[0], v.distractors[1], v.distractors[2]];
+    const idHash = hashText(makeId("geometria", template, difficulty, params));
+    const shuffled = allOpts
+      .map((opt, i) => ({ opt, sort: ((idHash >>> 0) + i * 2654435761) >>> 0 }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(x => x.opt);
+    const prompt = phraseVariant("geometria", template, difficulty, params, [
+      { es: v.promptEs,  ru: v.promptRu  },
+      { es: v.promptEs2, ru: v.promptRu2 },
+    ]);
+    return {
+      ...baseQuestion("geometria", template, difficulty, params, "multiple_choice"),
+      prompt,
+      options: shuffled.map(opt => ({ es: opt, ru: opt })),
+      answer: v.correct,
+      explanation: { es: v.explanationEs, ru: v.explanationRu },
+      hint:         { es: v.hintEs,       ru: v.hintRu       },
+      commonMistake:{ es: v.mistakeEs,    ru: v.mistakeRu    },
+      skillTags: ["geometry-formulas"],
+      xp: difficulty >= 3 ? 15 : 10,
+    };
+  }
+
   const isArea = template === "rect-area";
   const answer = isArea ? length * width : 2 * (length + width);
   const prompt = phraseVariant("geometria", template, difficulty, params, isArea ? [
@@ -2471,6 +2774,23 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
     return buildQuestion(topicId, template, difficulty, [randInt(rng, lo, hi), randInt(rng, lo, hi)]);
   }
 
+  if (template === "division-find-n") {
+    const subtype = difficulty >= 3 ? pick(rng, [0, 1]) : 0;
+    const d = pick(rng, difficulty >= 4 ? [3, 4, 5, 6, 7, 8, 9] : [3, 4, 5, 6]);
+    const q = randInt(rng, 2, difficulty >= 4 ? 20 : 12);
+    const r = randInt(rng, 1, d - 1);
+    if (subtype === 0) {
+      return buildQuestion(topicId, template, difficulty, [d, q, r, 1, 0]);
+    }
+    const dividend = d * q + r;
+    const kOptions = ([2, 3, 4, 5] as const).filter((x) => x < dividend && dividend % x === 0);
+    if (kOptions.length === 0) {
+      return buildQuestion(topicId, template, difficulty, [d, q, r, 1, 0]);
+    }
+    const k = pick(rng, kOptions);
+    return buildQuestion(topicId, template, difficulty, [d, q, r, k, 1]);
+  }
+
   if (template === "divisibility-rule") {
     const divisor = pick(rng, difficulty >= 3 ? [3, 4, 6, 9, 10] : [2, 3, 5, 10]);
     const base = randInt(rng, 20, difficulty >= 4 ? 999 : 240);
@@ -2542,6 +2862,19 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
       return buildQuestion(topicId, template, difficulty, [divisor, forcedStart, step + 1, 0]);
     }
     return buildQuestion(topicId, template, difficulty, [divisor, start, step, answerIndex]);
+  }
+
+  if (template === "multi-step-word-problem") {
+    const step1Den = pick(rng, [2, 3, 4]);
+    const step2Opts = [2, 3, 4].filter(d => d !== step1Den);
+    const step2Den = pick(rng, step2Opts);
+    const step3Den = pick(rng, [3, 4, 5, 6, 9]);
+    const step3Num = randInt(rng, 1, step3Den - 1);
+    const lcm12 = lcm(step1Den, step2Den);
+    const lcm123 = lcm(lcm12, step3Den);
+    const baseMultiplier = randInt(rng, 3, difficulty >= 4 ? 10 : 6);
+    const totalUnits = lcm123 * baseMultiplier;
+    return buildQuestion(topicId, template, difficulty, [totalUnits, step1Den, step2Den, step3Num, step3Den]);
   }
 
   if (template === "fraction-simplify") {
@@ -2935,6 +3268,20 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
 
   if (template === "square-area" || template === "square-perimeter") {
     return buildQuestion(topicId, template, difficulty, [randInt(rng, 3, difficulty >= 4 ? 28 : 14)]);
+  }
+
+  if (template === "inequality-range") {
+    const boundaryType = randInt(rng, 0, 3);
+    const contextType  = randInt(rng, 0, 3);
+    const gapOptions = difficulty >= 4 ? [5, 8, 12, 15] : difficulty >= 3 ? [8, 10, 15, 20] : [10, 15, 20];
+    const gap = pick(rng, gapOptions);
+    const A = randInt(rng, difficulty >= 3 ? 13 : 10, difficulty >= 4 ? 85 : 70);
+    const B = A + gap;
+    return buildQuestion(topicId, template, difficulty, [A, B, boundaryType, contextType]);
+  }
+
+  if (template === "geometry-formula-choice") {
+    return buildQuestion(topicId, template, difficulty, [randInt(rng, 0, 2)]);
   }
 
   const length = randInt(rng, 4, difficulty >= 4 ? 35 : 16);

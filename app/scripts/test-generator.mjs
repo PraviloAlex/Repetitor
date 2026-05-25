@@ -344,6 +344,43 @@ function expectedAnswer(question) {
     return sd === 1 ? String(sn) : fraction(sn, sd);
   }
 
+  // ── New templates ──────────────────────────────────────────────────────────
+
+  if (template === "inequality-range") {
+    const [A, B, boundaryType, contextType] = params;
+    const LEQ = "\u2264";
+    const BOUND_CONFIGS = [
+      { loSym: "<",  hiSym: "<"  },
+      { loSym: "<",  hiSym: LEQ  },
+      { loSym: LEQ,  hiSym: "<"  },
+      { loSym: LEQ,  hiSym: LEQ  },
+    ];
+    const bc = BOUND_CONFIGS[boundaryType % 4];
+    const VAR_NAMES = ["e", "p", "x", "t"];
+    const varName = VAR_NAMES[contextType % 4];
+    return `${A} ${bc.loSym} ${varName} ${bc.hiSym} ${B}`;
+  }
+
+  if (template === "division-find-n") {
+    const [d, q, r, k, subtype] = params;
+    const dividend = d * q + r;
+    const n = subtype === 1 ? dividend / k : dividend;
+    return String(n);
+  }
+
+  if (template === "geometry-formula-choice") {
+    const CORRECT = ["b x h", "2 x (b + h)", "l x l"];
+    const [subtype] = params;
+    return CORRECT[subtype % CORRECT.length];
+  }
+
+  if (template === "multi-step-word-problem") {
+    const [totalUnits, step1Den, step2Den, step3Num, step3Den] = params;
+    const after1 = totalUnits / step1Den;
+    const after2 = after1 / step2Den;
+    return String(Math.round((after2 * step3Num) / step3Den));
+  }
+
   throw new Error(`No expected-answer validator for template: ${template}`);
 }
 
