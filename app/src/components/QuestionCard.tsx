@@ -101,9 +101,20 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
           }
         }
 
-        if (e.key === "Enter" || e.key === " ") {
+        if (e.key === "Enter") {
           // Let native button behavior work when a button is focused.
           if (target?.tagName === "BUTTON") return;
+          // When input is focused and already submitted — navigate to next question.
+          // When input is focused and not submitted — let the input's own onKeyDown handle submit.
+          if (isInputFocused && !submitted) return;
+          e.preventDefault();
+          handleEnterKey();
+        }
+
+        if (e.key === " ") {
+          // Space only works when input is not focused (to avoid interfering with typing).
+          if (target?.tagName === "BUTTON") return;
+          if (isInputFocused) return;
           e.preventDefault();
           handleEnterKey();
         }
@@ -127,15 +138,6 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
 
       <p style={{ fontSize: 18, fontWeight: 800, margin: "0 0 16px", lineHeight: 1.35 }}>
         {pick(question.prompt)}
-      </p>
-      <p style={{ margin: "0 0 10px", fontSize: 12, color: "var(--text-soft)" }}>
-        {question.type === "numeric_input"
-          ? (lang === "ru"
-              ? "Быстро: Enter/Пробел — проверить, потом Enter/Пробел — дальше."
-              : "Rapido: Enter/Espacio para revisar, luego Enter/Espacio para seguir.")
-          : (lang === "ru"
-              ? "Быстро: 1-4 выбрать, Enter/Пробел — дальше."
-              : "Rapido: 1-4 para elegir, Enter/Espacio para seguir.")}
       </p>
 
       {question.type === "multiple_choice" && question.options && (

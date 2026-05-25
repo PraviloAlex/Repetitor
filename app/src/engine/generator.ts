@@ -775,9 +775,9 @@ function buildOperaciones(template: TemplateId, difficulty: number, params: numb
     const product = factorA * factorB;
     const answer = start + product - subtract;
     const prompt = phraseVariant("operaciones", template, difficulty, params, [
-      { es: `Resolvi respetando el orden: ${start} + ${factorA} x ${factorB} - ${subtract}`, ru: `Реши с правильным порядком действий: ${start} + ${factorA} x ${factorB} - ${subtract}` },
-      { es: `Primero mira la multiplicacion: ${start} + ${factorA} x ${factorB} - ${subtract}. Cuanto da?`, ru: `Сначала найди умножение: ${start} + ${factorA} x ${factorB} - ${subtract}. Сколько получится?` },
-      { es: `Calcula ${start} + ${factorA} x ${factorB} - ${subtract} sin ir solo de izquierda a derecha.`, ru: `Вычисли ${start} + ${factorA} x ${factorB} - ${subtract}, не просто слева направо.` },
+      { es: `Cuanto es ${start} + ${factorA} x ${factorB} - ${subtract}?`, ru: `Посчитай (умножение — первым): ${start} + ${factorA} x ${factorB} - ${subtract}` },
+      { es: `Calcula: ${start} + ${factorA} x ${factorB} - ${subtract}`, ru: `Посчитай: ${start} + ${factorA} x ${factorB} - ${subtract}` },
+      { es: `Cuanto da ${start} + ${factorA} x ${factorB} - ${subtract}?`, ru: `Сколько будет: ${start} + ${factorA} x ${factorB} - ${subtract}?` },
     ]);
     return {
       ...base,
