@@ -214,50 +214,6 @@ const RULES_BY_SKILL: Record<string, RuleMicro> = {
       { es: "3) Ese resultado es el precio original.", ru: "3) Получишь исходную цену." },
     ],
   },
-  "inequality-range": {
-    title: {
-      es: "Leer desigualdades: el extremo entra o no?",
-      ru: "Неравенства: входит ли граница или нет?",
-    },
-    steps: [
-      { es: "1) Mayor que A -> A no esta incluido -> usa <.", ru: "1) Больше A -> A не входит -> пишем <." },
-      { es: "2) Al menos A / no menor que A -> A incluido -> usa ≤.", ru: "2) Не меньше A / хотя бы A -> A входит -> пишем ≤." },
-      { es: "3) Verifica cada extremo por separado.", ru: "3) Проверь каждую границу отдельно." },
-    ],
-  },
-  "division-find-n": {
-    title: {
-      es: "Para hallar n: multiplica y suma el resto.",
-      ru: "Чтобы найти n: умножь и прибавь остаток.",
-    },
-    steps: [
-      { es: "1) Escribe: n = divisor x cociente + resto.", ru: "1) Запиши: n = делитель x частное + остаток." },
-      { es: "2) Calcula la multiplicacion, luego suma el resto.", ru: "2) Сначала умножь, потом прибавь остаток." },
-      { es: "3) Si hay factor k, divide el resultado por k.", ru: "3) Если есть множитель k, раздели итог на k." },
-    ],
-  },
-  "geometry-formula-choice": {
-    title: {
-      es: "Formulas de geometria: area vs perimetro.",
-      ru: "Формулы геометрии: площадь против периметра.",
-    },
-    steps: [
-      { es: "1) Area = multiplicar dos dimensiones (base x altura).", ru: "1) Площадь = перемножить два размера." },
-      { es: "2) Perimetro = sumar todos los lados.", ru: "2) Периметр = сложить все стороны." },
-      { es: "3) Pregunta: me piden superficie o contorno?", ru: "3) Спроси: просят поверхность или контур?" },
-    ],
-  },
-  "multi-step-word-problem": {
-    title: {
-      es: "Problemas de varios pasos: uno por uno.",
-      ru: "Задачи в несколько шагов: решай по одному.",
-    },
-    steps: [
-      { es: "1) Lee el problema y marca cuantos pasos hay.", ru: "1) Прочитай задачу и отметь количество шагов." },
-      { es: "2) Calcula el primer paso y escribe el resultado.", ru: "2) Реши первый шаг и запиши результат." },
-      { es: "3) Usa ese resultado (no el total) para el paso siguiente.", ru: "3) Используй этот результат, а не исходное число." },
-    ],
-  },
   "compare-discounts": {
     title: {
       es: "No compares solo porcentaje: compara precio final.",

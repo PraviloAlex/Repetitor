@@ -369,7 +369,7 @@ function expectedAnswer(question) {
   }
 
   if (template === "geometry-formula-choice") {
-    const CORRECT = ["b x h", "2 x (b + h)", "l x l"];
+    const CORRECT = ["b × h", "2 × (b + h)", "l × l"];
     const [subtype] = params;
     return CORRECT[subtype % CORRECT.length];
   }
