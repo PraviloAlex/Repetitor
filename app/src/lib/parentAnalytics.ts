@@ -1,6 +1,7 @@
 import type { Language as Lang } from "../i18n/types";
 import { getSkillImprovementDelta, getSkillTimeSeries } from "../engine/skillAnalytics";
 import { SKILLS_BY_ID } from "../engine/skills";
+import { getSkillRepairText } from "../engine/skillRepairCatalog";
 import type { ProgressState } from "../storage/localProgress";
 
 export type RiskLevel = "low" | "medium" | "high";

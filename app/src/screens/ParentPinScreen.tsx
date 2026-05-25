@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { hashPin, loadProgress, setParentSettings } from "../storage/localProgress";
+import { hashPin, loadProgress, redeemPromoCode, setParentSettings } from "../storage/localProgress";
 import { useI18n } from "../i18n/I18nContext";
 
 export default function ParentPinScreen() {
@@ -11,6 +11,9 @@ export default function ParentPinScreen() {
   const [pin, setPin] = useState("");
   const [confirmPin, setConfirmPin] = useState("");
   const [error, setError] = useState("");
+  const [promo, setPromo] = useState("");
+  const [promoStatus, setPromoStatus] = useState<"idle" | "ok" | "err">("idle");
+  const [premiumUnlocked, setPremiumUnlocked] = useState(Boolean(state.parent.isPremium));
 
   function submit() {
     if (pin.length !== 4 || !/^\d{4}$/.test(pin)) {
@@ -31,6 +34,12 @@ export default function ParentPinScreen() {
     } else {
       setError(t("pin_err_wrong"));
     }
+  }
+
+  function applyPromo() {
+    const ok = redeemPromoCode(promo);
+    setPromoStatus(ok ? "ok" : "err");
+    if (ok) setPremiumUnlocked(true);
   }
 
   return (
@@ -71,7 +80,36 @@ export default function ParentPinScreen() {
         {t("lesson_back")}
       </button>
 
-      {/* DEV-only bypass: spinned out of production bundle via import.meta.env.DEV */}
+      <section className={`premium-card${premiumUnlocked ? " premium-card--active" : ""}`}>
+        <h2 className="premium-card__title">
+          {premiumUnlocked ? t("premium_active_label") : t("premium_locked_title")}
+        </h2>
+        <p className="premium-card__sub">
+          {premiumUnlocked ? t("premium_promo_ok") : t("premium_locked_sub")}
+        </p>
+        {!premiumUnlocked && (
+          <>
+            <div className="premium-card__label">{t("premium_promo_label")}</div>
+            <div className="promo-row">
+              <input
+                className="numeric-input"
+                placeholder={t("premium_promo_placeholder")}
+                value={promo}
+                onChange={(e) => {
+                  setPromo(e.target.value);
+                  if (promoStatus !== "idle") setPromoStatus("idle");
+                }}
+              />
+              <button className="btn" onClick={applyPromo}>
+                {t("premium_promo_btn")}
+              </button>
+            </div>
+            {promoStatus === "ok" && <div className="promo-status promo-status--ok">{t("premium_promo_ok")}</div>}
+            {promoStatus === "err" && <div className="promo-status promo-status--err">{t("premium_promo_err")}</div>}
+          </>
+        )}
+      </section>
+
       {import.meta.env.DEV && (
         <button
           className="dev-pin-bypass"
@@ -80,7 +118,7 @@ export default function ParentPinScreen() {
             navigate("/parent/dashboard");
           }}
         >
-          DEV: войти без PIN (PIN будет «0000»)
+          DEV: войти без PIN (PIN будет "0000")
         </button>
       )}
     </div>

@@ -54,12 +54,13 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-function selectStaticQuestions(all: Question[], mode: "primaria" | "ingreso", count: number): Question[] {
+function selectStaticQuestions(all: Question[], mode: "primaria" | "secundaria" | "ingreso", count: number): Question[] {
   if (mode === "primaria") {
     return shuffle(all.filter((q) => (q.difficulty ?? 2) <= 3)).slice(0, count);
   }
 
-  return [2, 3, 4, 5]
+  const ladder = mode === "secundaria" ? [3, 4, 5] : [2, 3, 4, 5];
+  return ladder
     .flatMap((difficulty) => shuffle(all.filter((q) => (q.difficulty ?? 2) === difficulty)))
     .slice(0, count);
 }
@@ -67,7 +68,7 @@ function selectStaticQuestions(all: Question[], mode: "primaria" | "ingreso", co
 function buildSessionQuestions(
   topicId: string,
   all: Question[],
-  mode: "primaria" | "ingreso",
+  mode: "primaria" | "secundaria" | "ingreso",
   seed: number,
   generatorOptions: GeneratorOptions
 ): Question[] {
@@ -105,10 +106,12 @@ export default function LessonScreen() {
   const metrics = useSessionTracker();
   const progressState = loadProgress();
 
-  const mode: "primaria" | "ingreso" =
+  const mode: "primaria" | "secundaria" | "ingreso" =
     progressState.parent.goal === "ingreso" || progressState.parent.level === "C"
       ? "ingreso"
-      : "primaria";
+      : progressState.parent.goal === "secundaria"
+        ? "secundaria"
+        : "primaria";
 
   const sessionSeed = createSessionSeed(topicId, progressState.sessions.length);
   const adaptiveProfile = useMemo(() => buildAdaptiveProfile(topicId, progressState), [topicId]);
@@ -122,11 +125,26 @@ export default function LessonScreen() {
       ? Array.from(new Set([dailyMission.focusSkillId, ...(adaptiveProfile.focusSkillTags ?? [])]))
       : adaptiveProfile.focusSkillTags;
     const missionShift = dailyMission?.kind === "repair" ? -1 : dailyMission?.kind === "challenge" ? 1 : adaptiveProfile.difficultyShift;
+    const secundariaAllowlist: Record<string, GeneratorOptions["templateAllowlist"]> = {
+      operaciones: ["order-of-operations", "shopping-change", "exact-division", "mul", "sub"],
+      divisibilidad: ["conditional-number", "missing-digit-divisibility", "divisibility-select-all", "divisibility-trap", "divisibility-gcd", "divisibility-lcm"],
+      fracciones: ["fraction-compare", "fraction-equivalent-missing", "fraction-of-number", "fraction-add-diff-den", "fraction-sub-diff-den", "fraction-word-add", "fraction-mul", "fraction-div"],
+      decimales: ["decimal-money-change", "decimal-round", "decimal-measure-convert", "decimal-compare", "decimal-sub"],
+      porcentajes: ["percent-find-rate", "discount-budget", "discount-leftover-money", "compare-discounts", "double-discount", "reverse-discount", "discount-quantity-total", "discount-quantity-savings"],
+      geometria: ["compound-area", "area-compare", "perimeter-fence-cost", "rect-missing-side-area", "rect-missing-side-perimeter", "square-area", "square-perimeter"],
+    };
+    const minDifficulty =
+      mode === "ingreso" ? 3 :
+      mode === "secundaria" ? 3 :
+      undefined;
+    const templateAllowlist = mode === "secundaria" ? secundariaAllowlist[topicId] : undefined;
     return {
       difficultyShift: missionShift,
       focusSkillTags,
+      minDifficulty,
+      templateAllowlist,
     };
-  }, [adaptiveProfile, dailyMission]);
+  }, [adaptiveProfile, dailyMission, mode, topicId]);
   const questions = useMemo(() => {
     const all = questionsByTopic[topicId] ?? [];
     return buildSessionQuestions(topicId, all, mode, sessionSeed, generatorOptions);

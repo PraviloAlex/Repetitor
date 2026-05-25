@@ -32,6 +32,8 @@ export type TemplateId =
   | "fraction-add-whole-and-fraction"
   | "fraction-of-number"
   | "fraction-of-number-remainder"
+  | "fraction-part-of-set"
+  | "fraction-complement-to-whole"
   | "mixed-to-improper"
   | "decimal-add"
   | "decimal-sub"
@@ -49,6 +51,8 @@ export type TemplateId =
   | "discount-leftover-money"
   | "percent-find-rate"
   | "discount-amount"
+  | "discount-quantity-total"
+  | "discount-quantity-savings"
   | "double-discount"
   | "increase-budget-gap"
   | "rect-area"
@@ -86,17 +90,19 @@ const TOPIC_TEMPLATES: Record<string, TemplateId[]> = {
     "fraction-simplify", "fraction-compare", "fraction-compare-to-unit", "fraction-compare-same-den",
     "fraction-equivalent-missing", "fraction-equivalent-true-false",
     "fraction-add-same-den", "fraction-sub-same-den", "fraction-add-whole-and-fraction",
-    "fraction-of-number", "fraction-of-number-remainder", "mixed-to-improper",
+    "fraction-of-number", "fraction-of-number-remainder", "fraction-part-of-set", "fraction-complement-to-whole", "mixed-to-improper",
     "fraction-add-diff-den", "fraction-sub-diff-den", "fraction-mul", "fraction-div", "fraction-word-add",
   ],
   decimales: ["decimal-add", "decimal-sub", "decimal-compare", "decimal-times-10", "decimal-money-change", "decimal-round", "decimal-measure-convert"],
-  porcentajes: ["percent-of", "percent-find-rate", "discount-price", "discount-amount", "increase-price", "increase-budget-gap", "compare-discounts", "discount-budget", "discount-leftover-money", "double-discount", "reverse-discount"],
+  porcentajes: ["percent-of", "percent-find-rate", "discount-price", "discount-amount", "discount-quantity-total", "discount-quantity-savings", "increase-price", "increase-budget-gap", "compare-discounts", "discount-budget", "discount-leftover-money", "double-discount", "reverse-discount"],
   geometria: ["rect-area", "rect-perimeter", "compound-area", "area-compare", "perimeter-fence-cost", "rect-missing-side-area", "square-area", "rect-missing-side-perimeter", "rect-missing-side-perimeter-with-half", "square-perimeter"],
 };
 
 export type GeneratorOptions = {
   difficultyShift?: -1 | 0 | 1;
   focusSkillTags?: string[];
+  minDifficulty?: 1 | 2 | 3 | 4 | 5;
+  templateAllowlist?: TemplateId[];
 };
 
 function mulberry32(seed: number): () => number {
@@ -262,6 +268,14 @@ function hashText(value: string): number {
     hash = Math.imul(hash, 16777619);
   }
   return hash >>> 0;
+}
+
+function promptPatternKey(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/\d+[.,]?\d*/g, "#")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function parseGeneratedId(id: string):
@@ -1281,6 +1295,83 @@ function buildFracciones(template: TemplateId, difficulty: number, params: numbe
     };
   }
 
+  if (template === "fraction-part-of-set") {
+    const [part, total] = params;
+    const g = gcd(part, total);
+    const answer = fraction(part / g, total / g);
+    const setContext = phraseVariant("fracciones", `${template}-ctx` as TemplateId, difficulty, params, [
+      "tarjetas",
+      "figuritas",
+      "alumnos",
+      "bloques",
+      "entradas",
+      "misiones",
+    ]);
+    const highlighted = phraseVariant("fracciones", `${template}-hl` as TemplateId, difficulty, params, [
+      "raras",
+      "completadas",
+      "seleccionadas",
+      "argentinas",
+      "correctas",
+      "premium",
+    ]);
+    const prompt = phraseVariant("fracciones", template, difficulty, params, [
+      { es: `En una coleccion hay ${total} ${setContext} y ${part} son ${highlighted}. Que fraccion representan?`, ru: `В наборе ${total} ${setContext}, из них ${part} — ${highlighted}. Какую дробь это составляет?` },
+      { es: `De ${total} ${setContext}, ${part} quedaron ${highlighted}. Expresa esa parte como fraccion simplificada.`, ru: `Из ${total} ${setContext} ${part} оказались ${highlighted}. Запиши эту часть сокращенной дробью.` },
+      { es: `Hay ${part} ${highlighted} sobre un total de ${total} ${setContext}. Escribe la fraccion en forma mas simple.`, ru: `Есть ${part} ${highlighted} из ${total} ${setContext}. Запиши дробь в простейшем виде.` },
+      { es: `En el grupo, ${part} de ${total} ${setContext} cumplen la condicion. Cual es la fraccion simplificada?`, ru: `В группе ${part} из ${total} ${setContext} подходят под условие. Какая сокращенная дробь?` },
+      { es: `Se marcaron ${part} ${setContext} de un total de ${total}. Representa la parte marcada como fraccion irreducible.`, ru: `Отмечено ${part} ${setContext} из ${total}. Представь отмеченную часть несократимой дробью.` },
+      { es: `Si ${part} de ${total} ${setContext} son ${highlighted}, que fraccion del total es esa?`, ru: `Если ${part} из ${total} ${setContext} — ${highlighted}, какая это доля от целого?` },
+    ]);
+    return {
+      ...baseQuestion("fracciones", template, difficulty, params),
+      prompt,
+      answer,
+      explanation: {
+        es: `La fraccion es ${fraction(part, total)}. Simplificando por ${g} queda ${answer}.`,
+        ru: `Доля равна ${fraction(part, total)}. Сокращаем на ${g} и получаем ${answer}.`,
+      },
+      hint: { es: "Primero arma parte/total y despues simplifica.", ru: "Сначала составь часть/целое, затем сократи дробь." },
+      commonMistake: { es: "Poner total/parte al reves.", ru: "Поменять местами часть и целое." },
+      skillTags: ["fraction-of-number", "fraction-simplify"],
+    };
+  }
+
+  if (template === "fraction-complement-to-whole") {
+    const [num, den] = params;
+    const remaining = den - num;
+    const g = gcd(remaining, den);
+    const answer = fraction(remaining / g, den / g);
+    const progressContext = phraseVariant("fracciones", `${template}-ctx` as TemplateId, difficulty, params, [
+      "la tarea",
+      "el album",
+      "la mision",
+      "el nivel",
+      "la pagina",
+      "la coleccion",
+    ]);
+    const prompt = phraseVariant("fracciones", template, difficulty, params, [
+      { es: `Si ya completaste ${fraction(num, den)} de ${progressContext}, que fraccion falta para llegar al total?`, ru: `Если уже сделано ${fraction(num, den)} от ${progressContext}, какая дробь осталась до целого?` },
+      { es: `Una botella esta llena en ${fraction(num, den)}. Que parte falta para llenarla completa?`, ru: `Бутылка заполнена на ${fraction(num, den)}. Какая часть нужна до полного объема?` },
+      { es: `Queda por completar la parte faltante de 1 si ya hay ${fraction(num, den)}.`, ru: `Найди дополнение до 1, если уже есть ${fraction(num, den)}.` },
+      { es: `En el album esta lleno ${fraction(num, den)}. Que fraccion queda vacia?`, ru: `В альбоме заполнено ${fraction(num, den)}. Какая доля осталась пустой?` },
+      { es: `En una barra de progreso avanzaste ${fraction(num, den)}. Que parte falta para 1 entero?`, ru: `По полосе прогресса пройдено ${fraction(num, den)}. Какая часть нужна до целого 1?` },
+      { es: `Ya se resolvio ${fraction(num, den)} del desafio. Expresa la fraccion que falta.`, ru: `Уже решено ${fraction(num, den)} задания. Запиши дробь, которая осталась.` },
+    ]);
+    return {
+      ...baseQuestion("fracciones", template, difficulty, params),
+      prompt,
+      answer,
+      explanation: {
+        es: `Lo que falta es 1 - ${fraction(num, den)} = ${fraction(remaining, den)} = ${answer}.`,
+        ru: `Остаток: 1 - ${fraction(num, den)} = ${fraction(remaining, den)} = ${answer}.`,
+      },
+      hint: { es: "Resta numeradores sobre el mismo denominador.", ru: "Вычти числители при том же знаменателе." },
+      commonMistake: { es: "Restar denominadores tambien.", ru: "Вычитать еще и знаменатели." },
+      skillTags: ["fraction-subtract", "fraction-compare"],
+    };
+  }
+
   if (template === "fraction-add-whole-and-fraction") {
     const [whole, num, den] = params;
     const top = whole * den + num;
@@ -1780,6 +1871,74 @@ function buildPorcentajes(template: TemplateId, difficulty: number, params: numb
     };
   }
 
+  if (template === "discount-quantity-total") {
+    const [price, quantity, pct] = params;
+    const discountedUnit = price - (price * pct) / 100;
+    const answer = cleanDecimal(discountedUnit * quantity);
+    const item = phraseVariant("porcentajes", `${template}-item` as TemplateId, difficulty, params, [
+      "pack",
+      "entrada infantil",
+      "album",
+      "pelota",
+      "kit",
+      "camiseta",
+    ]);
+    const prompt = phraseVariant("porcentajes", template, difficulty, params, [
+      { es: `Cada ${item} cuesta $${price} y hay ${pct}% de descuento. Si compras ${quantity}, cuanto pagas en total?`, ru: `Каждый ${item} стоит $${price}, скидка ${pct}%. Если купить ${quantity}, сколько заплатишь всего?` },
+      { es: `Un ${item} vale $${price}. Con promo de ${pct}%, cual es el total por ${quantity} unidades?`, ru: `${item} стоит $${price}. По акции ${pct}% сколько будет за ${quantity} штук?` },
+      { es: `${item} de $${price} con ${pct}% off, cantidad ${quantity}. Calcula el pago final total.`, ru: `${item} за $${price} со скидкой ${pct}%, количество ${quantity}. Найди итоговую оплату.` },
+      { es: `Compras ${quantity} ${item}s. El precio base es $${price} y hoy hay ${pct}% de rebaja. Cuanto cuesta la compra?`, ru: `Покупаешь ${quantity} ${item}. Базовая цена $${price}, сегодня скидка ${pct}%. Сколько стоит покупка?` },
+      { es: `Promo del dia: ${pct}% para ${item}. Si cada uno cuesta $${price} y llevas ${quantity}, cual es el total?`, ru: `Акция дня: ${pct}% на ${item}. Если один стоит $${price}, а берешь ${quantity}, какой итог?` },
+      { es: `Precio unitario de ${item}: $${price}. Descuento: ${pct}%. Cantidad: ${quantity}. Cuanto pagas?`, ru: `Цена за ${item}: $${price}. Скидка: ${pct}%. Количество: ${quantity}. Сколько к оплате?` },
+    ]);
+    return {
+      ...baseQuestion("porcentajes", template, difficulty, params),
+      prompt,
+      answer,
+      explanation: {
+        es: `Precio por unidad con descuento: ${cleanDecimal(discountedUnit)}. Multiplicando por ${quantity}: ${answer}.`,
+        ru: `Цена за единицу со скидкой: ${cleanDecimal(discountedUnit)}. Умножаем на ${quantity}: ${answer}.`,
+      },
+      hint: { es: "Primero baja el precio unitario, despues multiplica por la cantidad.", ru: "Сначала уменьши цену за штуку, потом умножь на количество." },
+      commonMistake: { es: "Aplicar descuento al total mal calculado.", ru: "Неправильно применить скидку к общей сумме." },
+      skillTags: ["discount", "budget", "multiplication"],
+    };
+  }
+
+  if (template === "discount-quantity-savings") {
+    const [price, quantity, pct] = params;
+    const savings = ((price * pct) / 100) * quantity;
+    const answer = cleanDecimal(savings);
+    const item = phraseVariant("porcentajes", `${template}-item` as TemplateId, difficulty, params, [
+      "pack",
+      "entrada",
+      "album",
+      "pelota",
+      "kit",
+      "combo",
+    ]);
+    const prompt = phraseVariant("porcentajes", template, difficulty, params, [
+      { es: `Un ${item} cuesta $${price} y tiene ${pct}% de descuento. Si compras ${quantity}, cuanto ahorras en total?`, ru: `${item} стоит $${price} и имеет скидку ${pct}%. Если купить ${quantity}, сколько сэкономишь всего?` },
+      { es: `Promo ${pct}% sobre $${price} por unidad. Calcula el ahorro total en ${quantity} ${item}s.`, ru: `Скидка ${pct}% от $${price} за единицу. Найди общую экономию для ${quantity} ${item}.` },
+      { es: `Por cada ${item} de $${price} ahorras ${pct}%. Cuanto se ahorra comprando ${quantity}?`, ru: `За каждый ${item} по $${price} экономишь ${pct}%. Сколько экономии при покупке ${quantity}?` },
+      { es: `Descuento del ${pct}% en ${item}. Si llevas ${quantity} y cada uno vale $${price}, cual es el ahorro total?`, ru: `Скидка ${pct}% на ${item}. Если берешь ${quantity}, а каждый стоит $${price}, какая общая экономия?` },
+      { es: `Oferta especial: ${pct}% menos por ${item}. Con precio $${price} y ${quantity} unidades, cuanto te ahorras?`, ru: `Спецпредложение: минус ${pct}% на ${item}. Цена $${price}, количество ${quantity} — сколько сбережешь?` },
+      { es: `Si el descuento por ${item} es ${pct}% sobre $${price}, calcula el ahorro total para ${quantity} unidades.`, ru: `Если скидка на ${item} составляет ${pct}% от $${price}, посчитай экономию для ${quantity} штук.` },
+    ]);
+    return {
+      ...baseQuestion("porcentajes", template, difficulty, params),
+      prompt,
+      answer,
+      explanation: {
+        es: `Ahorro por unidad: ${cleanDecimal((price * pct) / 100)}. Por ${quantity} unidades: ${answer}.`,
+        ru: `Экономия на единицу: ${cleanDecimal((price * pct) / 100)}. Для ${quantity} штук: ${answer}.`,
+      },
+      hint: { es: "Calcula el descuento de una unidad y multiplica por cantidad.", ru: "Найди скидку на одну единицу и умножь на количество." },
+      commonMistake: { es: "Dar el precio final en vez del ahorro.", ru: "Выдать итоговую цену вместо экономии." },
+      skillTags: ["discount", "percent-of", "multiplication"],
+    };
+  }
+
   if (template === "discount-leftover-money") {
     const [budget, price, pct] = params;
     const finalPrice = price - (price * pct) / 100;
@@ -2185,8 +2344,9 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
 
   if (template === "sub") {
     const [lo, hi] = operandRange(difficulty);
-    const a = randInt(rng, lo, hi);
-    return buildQuestion(topicId, template, difficulty, [a, randInt(rng, lo, a)]);
+    const a = randInt(rng, lo + 2, hi);
+    const bMax = Math.max(lo, a - 2);
+    return buildQuestion(topicId, template, difficulty, [a, randInt(rng, lo, bMax)]);
   }
 
   if (template === "shopping-change") {
@@ -2244,18 +2404,30 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
     const divB = pick(rng, difficulty >= 4 ? [3, 4, 6, 8, 9] : [3, 4, 5, 6]);
     const step = lcm(divA, divB);
     const answer = step * randInt(rng, 3, difficulty >= 4 ? 18 : 10);
-    const min = Math.max(1, answer - randInt(rng, 4, step));
-    const max = answer + randInt(rng, 3, step);
+    // Keep the interval narrow enough so only one valid multiple can exist.
+    const min = Math.max(1, answer - randInt(rng, 1, Math.max(1, step - 1)));
+    const max = answer + randInt(rng, 0, Math.max(0, step - 1));
     const maybeExclude = pick(rng, [0, 0, 5, 10]);
     const exclude = maybeExclude !== 0 && answer % maybeExclude !== 0 ? maybeExclude : 0;
     return buildQuestion(topicId, template, difficulty, [divA, divB, min, max, exclude]);
   }
 
   if (template === "missing-digit-divisibility") {
-    const divisor = pick(rng, difficulty >= 4 ? [3, 4, 6, 9] : [2, 3, 5]);
-    const hundreds = randInt(rng, 1, 9);
-    const tens = randInt(rng, 0, 9);
-    return buildQuestion(topicId, template, difficulty, [hundreds, tens, divisor]);
+    // Generate only cases with a unique valid last digit (0..9).
+    for (let attempts = 0; attempts < 40; attempts += 1) {
+      const divisor = pick(rng, difficulty >= 4 ? [3, 4, 6, 9] : [2, 3, 5]);
+      const hundreds = randInt(rng, 1, 9);
+      const tens = randInt(rng, 0, 9);
+      let validCount = 0;
+      for (let digit = 0; digit <= 9; digit += 1) {
+        if ((hundreds * 100 + tens * 10 + digit) % divisor === 0) validCount += 1;
+      }
+      if (validCount === 1) {
+        return buildQuestion(topicId, template, difficulty, [hundreds, tens, divisor]);
+      }
+    }
+    // Deterministic safe fallback with unique digit (only 114 works for divisor 6).
+    return buildQuestion(topicId, template, difficulty, [1, 1, 6]);
   }
 
   if (template === "divisibility-select-all") {
@@ -2389,6 +2561,18 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
       total = Math.max(den, Math.round(capacity / den) * den);
     }
     return buildQuestion(topicId, template, difficulty, [num, den, total]);
+  }
+
+  if (template === "fraction-part-of-set") {
+    const total = randInt(rng, difficulty >= 4 ? 16 : 10, difficulty >= 4 ? 96 : 40);
+    const part = randInt(rng, 2, total - 1);
+    return buildQuestion(topicId, template, difficulty, [part, total]);
+  }
+
+  if (template === "fraction-complement-to-whole") {
+    const den = randInt(rng, 3, difficulty >= 4 ? 16 : 10);
+    const num = randInt(rng, 1, den - 1);
+    return buildQuestion(topicId, template, difficulty, [num, den]);
   }
 
   if (template === "fraction-add-whole-and-fraction") {
@@ -2557,6 +2741,13 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
     return buildQuestion(topicId, template, difficulty, [amount, pct]);
   }
 
+  if (template === "discount-quantity-total" || template === "discount-quantity-savings") {
+    const pct = pick(rng, difficulty >= 4 ? [10, 15, 20, 25, 30, 50] : [10, 15, 20, 25, 30]);
+    const price = pickRealWorldPrice(rng);
+    const quantity = randInt(rng, 2, difficulty >= 4 ? 6 : 4);
+    return buildQuestion(topicId, template, difficulty, [price, quantity, pct]);
+  }
+
   if (template === "percent-find-rate") {
     const total = randInt(rng, 10, difficulty >= 4 ? 120 : 60) * 10;
     const pct = pick(rng, difficulty >= 4 ? [5, 10, 12.5, 15, 20, 25, 30, 40, 50, 75] : [10, 20, 25, 50, 75]);
@@ -2687,34 +2878,52 @@ export function generateForTopicWithOptions(
 ): Question[] {
   const templates = TOPIC_TEMPLATES[topicId];
   if (!templates || count <= 0) return [];
+  const allowedTemplates =
+    options.templateAllowlist && options.templateAllowlist.length > 0
+      ? options.templateAllowlist.filter((template) => templates.includes(template))
+      : templates;
+  if (allowedTemplates.length === 0) return [];
 
   const focusedTemplates = (options.focusSkillTags ?? [])
     .flatMap((tag) => getTemplatesForSkillTags([tag]))
-    .filter((template): template is TemplateId => templates.includes(template));
+    .filter((template): template is TemplateId => allowedTemplates.includes(template));
   const uniqueFocused = Array.from(new Set(focusedTemplates));
   const templatePool = uniqueFocused.length > 0
-    ? [...uniqueFocused, ...uniqueFocused, ...templates.filter((template) => !uniqueFocused.includes(template))]
-    : templates;
+    ? [...uniqueFocused, ...uniqueFocused, ...allowedTemplates.filter((template) => !uniqueFocused.includes(template))]
+    : allowedTemplates;
 
   const difficulties = [1, 2, 2, 3, 3, 4];
   const difficultyShift = options.difficultyShift ?? 0;
+  const minDifficulty = options.minDifficulty ?? 1;
   const out: Question[] = [];
   const seen = new Set<string>();
+  const templateUsage = new Map<TemplateId, number>();
+  const promptPatternUsage = new Map<string, number>();
   const recentContextHistory: string[] = [];
+  const maxTemplatePerSession = Math.max(2, Math.ceil(count / 4));
+  const maxPromptPatternPerSession = 2;
 
   let attempt = 0;
-  while (out.length < count && attempt < count * 16) {
+  while (out.length < count && attempt < count * 64) {
     const index = out.length;
     const template = templatePool[index % templatePool.length];
+    if ((templateUsage.get(template) ?? 0) >= maxTemplatePerSession) {
+      attempt += 1;
+      continue;
+    }
     const baseDifficulty = difficulties[index % difficulties.length] ?? 3;
-    const difficulty = clampDifficulty(baseDifficulty + difficultyShift);
+    const difficulty = clampDifficulty(Math.max(minDifficulty, baseDifficulty + difficultyShift));
     const baseQuestion = instantiate(topicId, template, difficulty, seed + attempt * 7919 + index * 104729);
     const parsedBase = parseGeneratedId(baseQuestion.id);
     if (!parsedBase) continue;
     const q = withPromptVariation(applyStoryEngine(baseQuestion, parsedBase, recentContextHistory));
     attempt += 1;
     if (seen.has(q.id)) continue;
+    const patternKey = promptPatternKey(q.prompt.es);
+    if ((promptPatternUsage.get(patternKey) ?? 0) >= maxPromptPatternPerSession) continue;
     seen.add(q.id);
+    templateUsage.set(template, (templateUsage.get(template) ?? 0) + 1);
+    promptPatternUsage.set(patternKey, (promptPatternUsage.get(patternKey) ?? 0) + 1);
     out.push(q);
   }
 

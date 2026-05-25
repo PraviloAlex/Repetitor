@@ -37,10 +37,10 @@ function riskLabel(risk: RiskLevel, lang: "ru" | "es"): string {
 
 function trendLabel(trend: ProgressTrend, lang: "ru" | "es"): string {
   if (lang === "ru") {
-    if (trend === "improving") return "Растет";
-    if (trend === "declining") return "Падает";
+    if (trend === "improving") return "Растёт";
+    if (trend === "declining") return "Снижается";
     if (trend === "stable") return "Стабильно";
-    return "Мало данных";
+    return "Недостаточно данных";
   }
   if (trend === "improving") return "Mejorando";
   if (trend === "declining") return "Bajando";
@@ -63,44 +63,47 @@ export default function ParentDashboard() {
   }
 
   const ui = {
-    title: lang === "ru" ? "Родительская панель" : "Panel para familias",
+    title: lang === "ru" ? "Кабинет родителя" : "Panel para familias",
     sub:
       lang === "ru"
-        ? "Понимание за 10 секунд: что происходит и что делать дальше."
-        : "Entende en 10 segundos: como va y que conviene hacer ahora.",
-    trust: lang === "ru" ? "Сегодняшний вывод" : "Resumen de hoy",
+        ? "Короткий вывод за 10 секунд: что сейчас, где риск и что делать дальше."
+        : "Lectura en 10 segundos: como va, donde esta el riesgo y que conviene hacer.",
+    trust: lang === "ru" ? "Вывод сегодня" : "Resumen de hoy",
     next: lang === "ru" ? "Следующий шаг" : "Proximo paso",
-    weak: lang === "ru" ? "Навыки на усиление" : "Habilidades a reforzar",
+    weak: lang === "ru" ? "Навыки для усиления" : "Habilidades a reforzar",
     trend: lang === "ru" ? "Динамика" : "Tendencia",
-    explain: lang === "ru" ? "Как мы считаем" : "Como calculamos",
+    explain: lang === "ru" ? "Как считаем" : "Como calculamos",
     noData:
       lang === "ru"
-        ? "Пока мало данных. После 1-2 занятий здесь появятся выводы."
+        ? "Пока мало данных. После 1-2 занятий появятся выводы."
         : "Todavia hay pocos datos. Despues de 1-2 sesiones apareceran conclusiones.",
     metricAccuracy: lang === "ru" ? "Точность" : "Precision",
     metricDays: lang === "ru" ? "Активные дни" : "Dias activos",
     metricTasks: lang === "ru" ? "Решено задач" : "Tareas resueltas",
-    metricWeak: lang === "ru" ? "Skills в риске" : "Skills en riesgo",
+    metricWeak: lang === "ru" ? "Навыки в риске" : "Skills en riesgo",
     weakReason: lang === "ru" ? "Почему" : "Por que",
-    weakAction: lang === "ru" ? "Действие" : "Accion",
+    weakAction: lang === "ru" ? "Что делать" : "Accion",
     weakPractice: lang === "ru" ? "Исправить сейчас" : "Practicar ahora",
     dashboardHome: lang === "ru" ? "На главную" : "Inicio",
     weakTrend: lang === "ru" ? "Изменение слабого навыка" : "Cambio del skill en riesgo",
-    recommendation: lang === "ru" ? "Рекомендация недели" : "Recomendación de la semana",
-    recMaintenance: lang === "ru" ? "Всё стабильно — поддерживайте 1 сессию в неделю." : "Todo estable — mantené 1 sesión por semana.",
-    weakTrendDelta: lang === "ru" ? "Δ 7 дней" : "Δ 7 dias",
+    recommendation: lang === "ru" ? "Рекомендация недели" : "Recomendacion de la semana",
+    recMaintenance:
+      lang === "ru"
+        ? "Пока всё стабильно. Держите 1 короткую сессию в неделю."
+        : "Todo estable por ahora. Manten una sesion corta por semana.",
+    weakTrendDelta: lang === "ru" ? "Дельта за 7 дней" : "Delta 7 dias",
     weakTrendNoPoint: lang === "ru" ? "нет данных" : "sin datos",
-    noAccuracy: lang === "ru" ? "—" : "—",
-    noDelta: lang === "ru" ? "—" : "—",
-    pointsUnit: lang === "ru" ? "п.п." : "pp",
+    noAccuracy: "-",
+    noDelta: "-",
+    pointsUnit: "pp",
     activeDaysCaption:
       lang === "ru"
         ? "Дни с реальной практикой за последнюю неделю."
         : "Dias con practica real en la ultima semana.",
     explainText:
       lang === "ru"
-        ? "Мы учитываем ошибки, точность, повторения и последние занятия. Вывод строится на реальных данных прогресса."
-        : "Combinamos errores, precision, repaso y sesiones recientes. La conclusion sale de datos reales de aprendizaje.",
+        ? "Учитываем точность, повторяющиеся ошибки, недавние сессии и статус повторения. Вывод строится на реальных данных прогресса."
+        : "Combinamos precision, errores repetidos, sesiones recientes y estado de repaso. La conclusion usa datos reales de progreso.",
   };
 
   const targetTopic = insight.nextStep.targetSkill
@@ -115,16 +118,12 @@ export default function ParentDashboard() {
   const primaryWeakName = insight.weakSkills[0]?.skillName ?? "";
   const recSessionsText =
     n === 1
-      ? (lang === "ru"
-          ? `Рекомендуем 1 сессию на этой неделе по навыку «${primaryWeakName}».`
-          : `Recomendamos 1 sesión esta semana para el tema «${primaryWeakName}».`)
-      : n <= 2
-      ? (lang === "ru"
-          ? `Рекомендуем ${n} сессии на этой неделе по навыку «${primaryWeakName}».`
-          : `Recomendamos ${n} sesiones esta semana para el tema «${primaryWeakName}».`)
-      : (lang === "ru"
-          ? `Рекомендуем ${n} сессий на этой неделе по навыку «${primaryWeakName}».`
-          : `Recomendamos ${n} sesiones esta semana para el tema «${primaryWeakName}».`);
+      ? lang === "ru"
+        ? `Рекомендуем 1 сессию на этой неделе по навыку "${primaryWeakName}".`
+        : `Recomendamos 1 sesion esta semana para el tema "${primaryWeakName}".`
+      : lang === "ru"
+        ? `Рекомендуем ${n} сессии на этой неделе по навыку "${primaryWeakName}".`
+        : `Recomendamos ${n} sesiones esta semana para el tema "${primaryWeakName}".`;
 
   return (
     <div className="screen-enter parent-trust-screen">
@@ -203,7 +202,6 @@ export default function ParentDashboard() {
         )}
       </section>
 
-      {/* ── Рекомендация недели ──────────────────────────────────────────── */}
       <section className="parent-trust-card" style={{ borderLeft: "4px solid var(--brand)", paddingLeft: 14 }}>
         <div className="parent-trust-card__title" style={{ marginBottom: 6 }}>
           {ui.recommendation}
@@ -212,15 +210,15 @@ export default function ParentDashboard() {
           <p style={{ margin: 0, fontSize: 14 }}>{ui.recMaintenance}</p>
         ) : (
           <p style={{ margin: 0, fontSize: 14 }}>
-            {childNick && (
-              <strong>{childNick}: </strong>
-            )}
+            {childNick && <strong>{childNick}: </strong>}
             {recSessionsText}
           </p>
         )}
         <div style={{ marginTop: 10 }}>
           <Link to={lessonUrl}>
-            <PrimaryButton variant="ghost" style={{ fontSize: 13 }}>{insight.nextStep.actionLabel}</PrimaryButton>
+            <PrimaryButton variant="ghost" style={{ fontSize: 13 }}>
+              {insight.nextStep.actionLabel}
+            </PrimaryButton>
           </Link>
         </div>
       </section>

@@ -3,6 +3,7 @@ import type { Question } from "../engine/types";
 import { checkAnswer } from "../engine/answerChecker";
 import { getSkillRepairExplanation } from "../engine/skills";
 import { getSkillRepairRu } from "../i18n/skillLabels";
+import { getSkillRepairText } from "../engine/skillRepairCatalog";
 import { useI18n } from "../i18n/I18nContext";
 import {
   RARITY_VISUALS,
@@ -33,6 +34,7 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
   const repairExplanationEs = primarySkillTag ? getSkillRepairExplanation(primarySkillTag) : "";
   const repairExplanationRu = primarySkillTag ? getSkillRepairRu(primarySkillTag, repairExplanationEs) : "";
   const repairExplanation = lang === "ru" ? repairExplanationRu : repairExplanationEs;
+  const repairPack = primarySkillTag ? getSkillRepairText(primarySkillTag, lang) : null;
 
   function submit(answer = userAnswer) {
     if (!answer || submitted) return;
@@ -217,6 +219,11 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
                 <div className="feedback-block feedback-block--tip" style={{ marginTop: 6 }}>
                   <span style={{ fontSize: 12, fontWeight: 700, color: "var(--text-soft)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t("q_repair_label")}</span>
                   <p style={{ margin: "4px 0 0", fontSize: 13 }}>{repairExplanation}</p>
+                  {consecutiveWrong >= 1 && repairPack && (
+                    <p style={{ margin: "6px 0 0", fontSize: 13, color: "var(--text-soft)" }}>
+                      {repairPack.whyWrong} {repairPack.howToFix} {repairPack.miniHint}
+                    </p>
+                  )}
                 </div>
               )}
             </>

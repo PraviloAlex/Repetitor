@@ -5,6 +5,7 @@ import ts from "typescript";
 const root = process.cwd();
 const generatorPath = path.join(root, "src", "engine", "generator.ts");
 const skillsPath = path.join(root, "src", "engine", "skills.ts");
+const skillRepairCatalogPath = path.join(root, "src", "engine", "skillRepairCatalog.ts");
 const contextEnginePath = path.join(root, "src", "engine", "contextEngine.ts");
 const contextBankPath = path.join(root, "src", "engine", "contextBank.ts");
 const realWorldConstantsPath = path.join(root, "src", "data", "realWorldConstants.ts");
@@ -27,6 +28,7 @@ function loadTsModule(filePath, cache = new Map()) {
 
   function localRequire(specifier) {
     if (specifier === "./skills") return loadTsModule(skillsPath, cache);
+    if (specifier === "./skillRepairCatalog") return loadTsModule(skillRepairCatalogPath, cache);
     if (specifier === "./generator") return loadTsModule(generatorPath, cache);
     if (specifier === "./contextEngine") return loadTsModule(contextEnginePath, cache);
     if (specifier === "./contextBank") return loadTsModule(contextBankPath, cache);
@@ -189,6 +191,15 @@ function expectedAnswer(question) {
     const part = (params[2] / params[1]) * params[0];
     return String(params[2] - part);
   }
+  if (template === "fraction-part-of-set") {
+    const g = gcd(params[0], params[1]);
+    return fraction(params[0] / g, params[1] / g);
+  }
+  if (template === "fraction-complement-to-whole") {
+    const top = params[1] - params[0];
+    const g = gcd(top, params[1]);
+    return fraction(top / g, params[1] / g);
+  }
   if (template === "fraction-add-whole-and-fraction") {
     const top = params[0] * params[2] + params[1];
     const g = gcd(top, params[2]);
@@ -207,6 +218,14 @@ function expectedAnswer(question) {
   if (template === "percent-find-rate") return cleanDecimal((params[0] * 100) / params[1]);
   if (template === "discount-price") return cleanDecimal(params[0] - (params[0] * params[1]) / 100);
   if (template === "discount-amount") return cleanDecimal((params[0] * params[1]) / 100);
+  if (template === "discount-quantity-total") {
+    const unit = params[0] - (params[0] * params[2]) / 100;
+    return cleanDecimal(unit * params[1]);
+  }
+  if (template === "discount-quantity-savings") {
+    const savingsPerUnit = (params[0] * params[2]) / 100;
+    return cleanDecimal(savingsPerUnit * params[1]);
+  }
   if (template === "increase-price") return cleanDecimal(params[0] + (params[0] * params[1]) / 100);
   if (template === "compare-discounts") {
     const finalA = params[0] - (params[0] * params[1]) / 100;
@@ -353,11 +372,39 @@ function assertQuestionShape(question) {
   }
 }
 
+function promptPatternKey(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/\d+[.,]?\d*/g, "#")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function countConditionalSolutions(params) {
+  const [divA, divB, min, max, exclude] = params;
+  let count = 0;
+  for (let n = min; n <= max; n += 1) {
+    if (n % divA === 0 && n % divB === 0 && (exclude === 0 || n % exclude !== 0)) count += 1;
+  }
+  return count;
+}
+
+function countMissingDigitSolutions(params) {
+  const [hundreds, tens, divisor] = params;
+  let count = 0;
+  for (let digit = 0; digit <= 9; digit += 1) {
+    if ((hundreds * 100 + tens * 10 + digit) % divisor === 0) count += 1;
+  }
+  return count;
+}
+
 const generator = loadTsModule(generatorPath);
 const skills = loadTsModule(skillsPath);
 const topics = ["operaciones", "divisibilidad", "fracciones", "decimales", "porcentajes", "geometria"];
 const seeds = [1, 7, 42, 12345, 20270523, 987654321];
 const questionsPerTopic = 12;
+const antiGlitchSeeds = Array.from({ length: 80 }, (_, i) => 1000 + i * 97);
+const antiGlitchQuestionsPerTopic = 18;
 
 const skillIds = new Set(skills.SKILLS.map((skill) => skill.id));
 assert(skillIds.size === skills.SKILLS.length, "Skill ids must be unique");
@@ -403,21 +450,37 @@ for (const topic of topics) {
     const questions = generator.generateForTopic(topic, questionsPerTopic, seed);
     assert(questions.length === questionsPerTopic, `${topic}/${seed}: expected ${questionsPerTopic} generated questions`);
     assert(new Set(questions.map((q) => q.id)).size === questions.length, `${topic}/${seed}: duplicate generated ids`);
+    const templateCounts = new Map();
+    const promptPatternCounts = new Map();
 
     for (const question of questions) {
       assertQuestionShape(question);
       assert(question.topicId === topic, `${question.id}: topic mismatch`);
+      const parsedForRepetition = parseGeneratedId(question.id);
+      templateCounts.set(
+        parsedForRepetition.template,
+        (templateCounts.get(parsedForRepetition.template) ?? 0) + 1
+      );
+      const pKey = promptPatternKey(question.prompt.es);
+      promptPatternCounts.set(pKey, (promptPatternCounts.get(pKey) ?? 0) + 1);
       for (const skillTag of question.skillTags) {
         assert(skills.isKnownSkillTag(skillTag), `${question.id}: unknown skill tag ${skillTag}`);
       }
       assert(question.answer === expectedAnswer(question), `${question.id}: expected ${expectedAnswer(question)}, got ${question.answer}`);
       assertFractionIsSimplified(question);
+      const parsed = parseGeneratedId(question.id);
+      const coreParams = coreTemplateParams(parsed.template, parsed.params);
+      if (parsed.template === "conditional-number") {
+        assert(countConditionalSolutions(coreParams) === 1, `${question.id}: conditional-number must have exactly one valid answer`);
+      }
+      if (parsed.template === "missing-digit-divisibility") {
+        assert(countMissingDigitSolutions(coreParams) === 1, `${question.id}: missing-digit-divisibility must have exactly one valid digit`);
+      }
 
       const reconstructed = generator.tryReconstructGenerated(question.id);
       assert(reconstructed, `${question.id}: failed to reconstruct`);
       assert(reconstructed.id === question.id, `${question.id}: reconstructed id mismatch`);
       assert(reconstructed.answer === question.answer, `${question.id}: reconstructed answer mismatch`);
-      const parsed = parseGeneratedId(question.id);
       const storyTemplates = new Set([
         "fraction-of-number",
         "fraction-of-number-remainder",
@@ -436,7 +499,62 @@ for (const topic of topics) {
         assert(reconstructed.prompt.es === question.prompt.es, `${question.id}: reconstructed prompt mismatch`);
       }
     }
+
+    const maxTemplatePerSession = Math.max(2, Math.ceil(questionsPerTopic / 4));
+    for (const [template, countByTemplate] of templateCounts.entries()) {
+      assert(
+        countByTemplate <= maxTemplatePerSession,
+        `${topic}/${seed}: template ${template} repeated too much (${countByTemplate})`
+      );
+    }
+    for (const [pattern, countByPattern] of promptPatternCounts.entries()) {
+      assert(
+        countByPattern <= 2,
+        `${topic}/${seed}: prompt pattern repeated too much (${countByPattern}) :: ${pattern}`
+      );
+    }
   }
+}
+
+// Anti-glitch layer: avoid too many trivial answers (0/1) on core numeric templates.
+const trivialSensitiveTemplates = new Set([
+  "add", "sub", "mul", "exact-division", "order-of-operations", "shopping-change",
+  "fraction-of-number", "fraction-of-number-remainder", "fraction-part-of-set", "fraction-complement-to-whole",
+  "decimal-add", "decimal-sub", "decimal-times-10", "decimal-money-change", "decimal-round", "decimal-measure-convert",
+  "percent-of", "percent-find-rate", "discount-price", "discount-amount", "discount-quantity-total", "discount-quantity-savings",
+  "increase-price", "discount-budget", "discount-leftover-money", "double-discount", "increase-budget-gap", "reverse-discount",
+  "rect-area", "rect-perimeter", "compound-area", "perimeter-fence-cost", "rect-missing-side-area", "rect-missing-side-perimeter",
+  "rect-missing-side-perimeter-with-half", "square-area", "square-perimeter",
+]);
+
+function isTrivialAnswer(raw) {
+  const v = String(raw).trim();
+  if (v === "0" || v === "1" || v === "0.0" || v === "1.0") return true;
+  if (v === "0/1" || v === "1/1") return true;
+  return false;
+}
+
+const trivialStats = new Map(); // template -> { total, trivial }
+for (const topic of topics) {
+  for (const seed of antiGlitchSeeds) {
+    const batch = generator.generateForTopic(topic, antiGlitchQuestionsPerTopic, seed);
+    for (const q of batch) {
+      const parsed = parseGeneratedId(q.id);
+      const template = parsed.template;
+      if (!trivialSensitiveTemplates.has(template)) continue;
+      const stat = trivialStats.get(template) ?? { total: 0, trivial: 0 };
+      stat.total += 1;
+      if (isTrivialAnswer(q.answer)) stat.trivial += 1;
+      trivialStats.set(template, stat);
+    }
+  }
+}
+
+for (const [template, stat] of trivialStats.entries()) {
+  if (stat.total < 20) continue;
+  const rate = stat.trivial / stat.total;
+  // Hard cap: no more than 12% trivial answers for sensitive templates.
+  assert(rate <= 0.12, `${template}: trivial-answer rate too high (${Math.round(rate * 100)}%)`);
 }
 
 const adaptive = generator.generateForTopicWithOptions("fracciones", 6, 12345, {

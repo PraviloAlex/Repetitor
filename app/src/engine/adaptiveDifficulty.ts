@@ -7,6 +7,41 @@ export type AdaptiveProfile = GeneratorOptions & {
   reason: "baseline" | "repair" | "challenge";
 };
 
+function twoRecentSessionsStrong(topicId: string, state: ProgressState): boolean {
+  const recent = state.sessions.filter((session) => session.topicId === topicId).slice(-2);
+  if (recent.length < 2) return false;
+  return recent.every((session) => {
+    if (session.questionsAnswered <= 0) return false;
+    const acc = session.correctAnswers / session.questionsAnswered;
+    const pace = session.activeSeconds / session.questionsAnswered;
+    return acc >= 0.85 && session.hintsUsed === 0 && pace <= 50;
+  });
+}
+
+function normalizeRepairTags(topicId: string, tags: string[], state: ProgressState): string[] {
+  const lastMissionSkill = state.sessions[state.sessions.length - 1]?.missionSkillId;
+  const scoped = tags.filter((skillId) => SKILLS_BY_ID.get(skillId)?.topicId === topicId);
+  const withoutImmediateRepeat =
+    scoped.length > 1 && lastMissionSkill ? scoped.filter((skillId) => skillId !== lastMissionSkill) : scoped;
+
+  const normalized = withoutImmediateRepeat.map((skillId) => {
+    const progress = state.skillProgress[skillId];
+    const skill = SKILLS_BY_ID.get(skillId);
+    const tooHard =
+      !!progress &&
+      (progress.status === "needs_repair" || progress.streakCorrect === 0) &&
+      progress.wrong >= 2 &&
+      progress.correct <= 1;
+    if (tooHard && skill && skill.prerequisiteSkillIds.length > 0) {
+      const fallback = skill.prerequisiteSkillIds.find((pr) => SKILLS_BY_ID.get(pr)?.topicId === topicId);
+      return fallback ?? skillId;
+    }
+    return skillId;
+  });
+
+  return Array.from(new Set(normalized)).slice(0, 3);
+}
+
 export function buildAdaptiveProfile(topicId: string, state: ProgressState): AdaptiveProfile {
   const dueSkillTags = getSkillsDueForReview(state.skillProgress)
     .map((item) => item.skillId)
@@ -43,15 +78,17 @@ export function buildAdaptiveProfile(topicId: string, state: ProgressState): Ada
     .slice(0, 2)
     .map(([tag]) => tag);
 
-  const carryOverRepairTags = Array.from(
-    new Set([...dueSkillTags, ...focusSkillTags])
-  ).slice(0, 3);
+  const carryOverRepairTags = normalizeRepairTags(
+    topicId,
+    Array.from(new Set([...dueSkillTags, ...focusSkillTags])),
+    state
+  );
 
   if (carryOverRepairTags.length > 0 && (accuracy < 0.8 || dueSkillTags.length > 0)) {
     return { difficultyShift: -1, focusSkillTags: carryOverRepairTags, reason: "repair" };
   }
 
-  if (accuracy >= 0.85 && hints === 0 && secondsPerQuestion <= 45) {
+  if (twoRecentSessionsStrong(topicId, state) && accuracy >= 0.85 && hints === 0 && secondsPerQuestion <= 45) {
     return { difficultyShift: 1, focusSkillTags: [], reason: "challenge" };
   }
 
