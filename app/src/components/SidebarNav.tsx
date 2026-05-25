@@ -4,6 +4,7 @@ import Icon from "./Icon";
 import { HIDDEN_NAV_ON, NAV_ITEMS, isNavActive } from "./navItems";
 import { loadProgress, getOverdueReviewIds } from "../storage/localProgress";
 import { useI18n } from "../i18n/I18nContext";
+import { APP_BUILD_VERSION } from "../buildMeta";
 
 export default function SidebarNav() {
   const location = useLocation();
@@ -18,7 +19,7 @@ export default function SidebarNav() {
   return (
     <aside className="desktop-sidebar" aria-label="Main navigation">
       <button className="desktop-sidebar__brand" onClick={() => navigate("/")}>
-        Durillo
+        Durillo <span style={{ fontSize: 12, opacity: 0.72, marginLeft: 6 }}>v{APP_BUILD_VERSION}</span>
       </button>
 
       <nav className="desktop-sidebar__nav">

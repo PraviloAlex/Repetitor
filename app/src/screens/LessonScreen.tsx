@@ -11,7 +11,7 @@ import type { Question, StudySession, Topic } from "../engine/types";
 import { checkAnswer } from "../engine/answerChecker";
 import { buildAdaptiveProfile } from "../engine/adaptiveDifficulty";
 import { buildDailyMission, buildMissionForSkill, type DailyMissionKind } from "../engine/dailyMission";
-import { createSessionSeed, generateForTopicWithOptions, type GeneratorOptions } from "../engine/generator";
+import { createSessionSeed, generateForTopicWithOptions, type GeneratorOptions, type TemplateId } from "../engine/generator";
 import { formatMinutes, useSessionTracker } from "../engine/sessionTracker";
 import { loadProgress, recordSession } from "../storage/localProgress";
 import { useI18n } from "../i18n/I18nContext";
@@ -35,6 +35,7 @@ const questionsByTopic: Record<string, Question[]> = {
 const SESSION_SIZE = 10;
 const GENERATED_QUESTIONS_COUNT = 8;
 const TARGET_CORRECT = 7;
+const MAX_REPAIR_INSERTIONS = 3;
 
 function hashText(raw: string): number {
   let hash = 2166136261;
@@ -74,10 +75,35 @@ function buildSessionQuestions(
 ): Question[] {
   const generated = generateForTopicWithOptions(topicId, GENERATED_QUESTIONS_COUNT, seed, generatorOptions);
   const staticQuestions = selectStaticQuestions(all, mode, SESSION_SIZE - generated.length);
-
-  return [...staticQuestions, ...generated]
+  const anchor = buildAnchorQuestion(topicId, mode);
+  const mixed = [...staticQuestions, ...generated]
     .sort((a, b) => (a.difficulty ?? 2) - (b.difficulty ?? 2))
     .slice(0, SESSION_SIZE);
+
+  if (!anchor) return mixed;
+  const filtered = mixed.filter((q) => q.id !== anchor.id);
+  return [anchor, ...filtered].slice(0, SESSION_SIZE);
+}
+
+function buildAnchorQuestion(topicId: string, mode: "primaria" | "secundaria" | "ingreso"): Question | null {
+  const anchorTemplateByTopic: Record<string, GeneratorOptions["templateAllowlist"]> = {
+    operaciones: ["order-of-operations"],
+    divisibilidad: ["divisibility-rule"],
+    fracciones: ["fraction-of-number"],
+    decimales: ["decimal-compare"],
+    porcentajes: ["percent-find-rate"],
+    geometria: ["rect-area"],
+  };
+  const templateAllowlist = anchorTemplateByTopic[topicId];
+  if (!templateAllowlist) return null;
+  const minDifficulty = mode === "ingreso" || mode === "secundaria" ? 3 : 2;
+  const anchorSeed = hashText(`anchor:${topicId}:${mode}`);
+  const anchor = generateForTopicWithOptions(topicId, 1, anchorSeed, {
+    templateAllowlist,
+    minDifficulty: minDifficulty as 1 | 2 | 3 | 4 | 5,
+    difficultyShift: 0,
+  })[0];
+  return anchor ?? null;
 }
 
 function difficultyStars(d: number): string {
@@ -160,6 +186,7 @@ export default function LessonScreen() {
   const [skillOutcomeMap, setSkillOutcomeMap] = useState<Record<string, { attempts: number; correct: number; wrong: number }>>({});
   const [skillWrongStreakMap, setSkillWrongStreakMap] = useState<Record<string, number>>({});
   const [repairInsertedBySkill, setRepairInsertedBySkill] = useState<Record<string, number>>({});
+  const [repairInsertedByQuestion, setRepairInsertedByQuestion] = useState<Record<string, boolean>>({});
   const [sessionQuestions, setSessionQuestions] = useState<Question[]>(questions);
 
   const fmtParts = {
@@ -226,10 +253,15 @@ export default function LessonScreen() {
         setSkillWrongStreakMap((prev) => ({ ...prev, [primarySkill]: nextSkillStreak }));
 
         const insertedCount = repairInsertedBySkill[primarySkill] ?? 0;
-        if (nextSkillStreak >= 2 && insertedCount < 2) {
+        const alreadyInsertedForThisQuestion = repairInsertedByQuestion[question.id] === true;
+        if (!alreadyInsertedForThisQuestion && insertedCount < MAX_REPAIR_INSERTIONS) {
+          const repairTemplate = question.generator?.template ? [question.generator.template as TemplateId] : undefined;
+          const baseDifficulty = Math.max(1, (question.difficulty ?? 2) - 1) as 1 | 2 | 3 | 4 | 5;
           const repair = generateForTopicWithOptions(question.topicId, 1, hashText(question.id + primarySkill + nextSkillStreak), {
             difficultyShift: -1,
             focusSkillTags: skillTags,
+            minDifficulty: baseDifficulty,
+            templateAllowlist: repairTemplate,
           })[0];
           if (repair) {
             setSessionQuestions((current) => {
@@ -239,6 +271,7 @@ export default function LessonScreen() {
               return next;
             });
             setRepairInsertedBySkill((prev) => ({ ...prev, [primarySkill]: insertedCount + 1 }));
+            setRepairInsertedByQuestion((prev) => ({ ...prev, [question.id]: true }));
           }
         }
       }

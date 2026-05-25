@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite --host",
     "test:generator": "node scripts/test-generator.mjs",
+    "bump:build-version": "node scripts/bump-build-version.mjs",
     "build": "npm run test:generator && tsc -b && vite build",
+    "build:release": "npm run bump:build-version && npm run build",
     "preview": "vite preview --host",
     "test": "vitest run"
   },

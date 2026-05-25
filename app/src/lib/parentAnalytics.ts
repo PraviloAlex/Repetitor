@@ -1,7 +1,6 @@
 import type { Language as Lang } from "../i18n/types";
 import { getSkillImprovementDelta, getSkillTimeSeries } from "../engine/skillAnalytics";
 import { SKILLS_BY_ID } from "../engine/skills";
-import { getSkillRepairText } from "../engine/skillRepairCatalog";
 import type { ProgressState } from "../storage/localProgress";
 
 export type RiskLevel = "low" | "medium" | "high";
@@ -24,7 +23,6 @@ export type ParentNextStep = {
   actionLabel: string;
   targetSkill?: string;
   difficulty?: "easy" | "normal" | "hard";
-  /** How many sessions to recommend this week for the primary weak skill */
   sessionsRecommended: number;
 };
 
@@ -155,40 +153,41 @@ export function explainMetric(metric: "accuracy" | "streak", value: number, lang
     if (value >= 80) {
       return txt(
         lang,
-        `${value}% точности — хороший рабочий уровень: тема в целом понимается.`,
-        `${value}% de precision: nivel solido para avanzar sin apuro.`
+        `${value}% точности — хороший уровень: ребенок уверенно решает.`,
+        `${value}% de precision: nivel solido para avanzar con calma.`
       );
     }
     if (value >= 60) {
       return txt(
         lang,
-        `${value}% точности — тема понята частично, но ошибки пока мешают двигаться дальше.`,
+        `${value}% точности — база есть, но ошибки пока частые.`,
         `${value}% de precision: la base esta, pero todavia hay errores frecuentes.`
       );
     }
     return txt(
       lang,
-      `${value}% точности — сейчас слишком много ошибок, лучше вернуться к базовым шагам.`,
+      `${value}% точности — сейчас лучше вернуться к более простым шагам.`,
       `${value}% de precision: conviene volver a ejercicios base antes de subir dificultad.`
     );
   }
+
   if (value >= 5) {
     return txt(
       lang,
-      `${value} ответов подряд без ошибок — сильный сигнал закрепления.`,
-      `${value} respuestas correctas seguidas: buena señal de consolidacion.`
+      `${value} правильных подряд — сильный сигнал закрепления.`,
+      `${value} respuestas correctas seguidas: buena senal de consolidacion.`
     );
   }
   if (value >= 3) {
     return txt(
       lang,
-      `${value} ответа подряд — хороший знак, но нужно ещё немного практики.`,
-      `${value} respuestas seguidas: buen progreso, falta un poco para estabilizar.`
+      `${value} подряд — хороший прогресс, нужно еще немного практики.`,
+      `${value} seguidas: buen progreso, falta un poco para estabilizar.`
     );
   }
   return txt(
     lang,
-    `${value} подряд — пока рано считать навык закреплённым.`,
+    `${value} подряд — пока рано считать навык закрепленным.`,
     `${value} seguidas: todavia es temprano para considerar el skill estable.`
   );
 }
@@ -217,13 +216,13 @@ export function getWeakSkills(state: ProgressState, lang: Lang, limit = 3): Weak
       item.recentWrongStreak >= 3
         ? txt(
             lang,
-            `Серия ошибок: ${item.recentWrongStreak} подряд в последних занятиях.`,
+            `Серия ошибок: ${item.recentWrongStreak} подряд в недавних сессиях.`,
             `Hubo ${item.recentWrongStreak} errores seguidos en sesiones recientes.`
           )
         : accuracy < 65
           ? txt(
               lang,
-              `Точность ${accuracy}%, это ниже комфортного уровня.`,
+              `Точность ${accuracy}% — это ниже комфортного уровня.`,
               `La precision es ${accuracy}%, por debajo del nivel comodo.`
             )
           : item.needsRepair
@@ -233,6 +232,7 @@ export function getWeakSkills(state: ProgressState, lang: Lang, limit = 3): Weak
                 "Есть повторяющиеся ошибки в этом типе задач.",
                 "Hay errores repetidos en este tipo de ejercicios."
               );
+
     const nextStep =
       risk === "high"
         ? txt(
@@ -304,18 +304,18 @@ export function getParentNextStep(input: {
   const { lang } = input;
   const primaryWeak = input.weakSkills[0];
 
-  // Compute sessions-per-week recommendation based on skillProgress status
   const primarySkillStatus = primaryWeak
     ? (input.skillProgress[primaryWeak.skillId]?.status ?? "learning")
     : null;
   const sessionsRecommended =
     primarySkillStatus === "needs_repair" ? 3 :
-    primarySkillStatus === "learning"     ? 2 :
-    primarySkillStatus === "stable"       ? 1 :
+    primarySkillStatus === "learning" ? 2 :
+    primarySkillStatus === "stable" ? 1 :
     primaryWeak ? 2 : 1;
+
   if (primaryWeak) {
     return {
-      title: txt(lang, "Повторить слабый навык", "Reforzar skill debil"),
+      title: txt(lang, "Повторить слабый навык", "Reforzar habilidad debil"),
       description: txt(
         lang,
         `Лучше начать с простых заданий по теме "${primaryWeak.skillName}", потому что там больше всего ошибок.`,
@@ -331,12 +331,13 @@ export function getParentNextStep(input: {
       sessionsRecommended,
     };
   }
+
   if (input.overallStatus === "stable") {
     return {
       title: txt(lang, "Закрепить успех", "Consolidar avance"),
       description: txt(
         lang,
-        "Результат стабильный. Дайте короткую тренировку без повышения сложности.",
+        "Результат стабильный. Подойдет короткая тренировка без повышения сложности.",
         "El resultado es estable. Conviene una practica corta sin subir dificultad."
       ),
       actionLabel: txt(lang, "Закрепить текущий уровень", "Consolidar nivel actual"),
@@ -344,12 +345,13 @@ export function getParentNextStep(input: {
       sessionsRecommended,
     };
   }
+
   if (input.trend === "declining") {
     return {
       title: txt(lang, "Снизить сложность на шаг", "Bajar dificultad un paso"),
       description: txt(
         lang,
-        "Точность падает. Лучше временно упростить задания и вернуть уверенность.",
+        "Точность снижается. Лучше временно упростить задания и вернуть уверенность.",
         "La precision viene bajando. Mejor simplificar un poco para recuperar confianza."
       ),
       actionLabel: txt(lang, "Запустить мягкое повторение", "Iniciar repaso suave"),
@@ -357,6 +359,7 @@ export function getParentNextStep(input: {
       sessionsRecommended,
     };
   }
+
   return {
     title: txt(lang, "Поддержать темп", "Mantener ritmo"),
     description: txt(
@@ -402,14 +405,14 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
           delta7d == null
             ? txt(
                 lang,
-                "Пока недостаточно данных по этому навыку, нужно ещё 1-2 занятия.",
-                "Todavia faltan datos en este skill; hacen falta 1-2 sesiones mas."
+                "Пока недостаточно данных по этому навыку, нужно еще 1-2 занятия.",
+                "Todavia faltan datos en esta habilidad; hacen falta 1-2 sesiones mas."
               )
             : delta7d >= 6
               ? txt(
                   lang,
                   `Навык улучшается: за неделю точность выросла на ${delta7d} п.п.`,
-                  `El skill mejora: en 7 dias la precision subio ${delta7d} pp.`
+                  `La habilidad mejora: en 7 dias la precision subio ${delta7d} pp.`
                 )
               : delta7d <= -6
                 ? txt(
@@ -419,8 +422,8 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
                   )
                 : txt(
                     lang,
-                    "Динамика почти ровная: навык пока держится на одном уровне.",
-                    "La dinamica esta estable: el skill se mantiene sin cambios fuertes."
+                    "Динамика ровная: навык пока держится на одном уровне.",
+                    "La dinamica es estable: la habilidad se mantiene sin cambios fuertes."
                   );
         return {
           skillId: primaryWeak.skillId,
@@ -442,7 +445,7 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
       : trend === "stable"
         ? txt(
             lang,
-            "Результат держится на одном уровне: продолжайте короткие регулярные тренировки.",
+            "Результат держится примерно на одном уровне: продолжайте короткие регулярные тренировки.",
             "El rendimiento se mantiene parejo: conviene seguir con practicas cortas y constantes."
           )
         : trend === "declining"
@@ -459,7 +462,7 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
 
   const statusTitle =
     status === "stable"
-      ? txt(lang, "Всё стабильно", "Todo estable")
+      ? txt(lang, "Все стабильно", "Todo estable")
       : status === "attention"
         ? txt(lang, "Есть зона внимания", "Hay una zona de atencion")
         : status === "needs_help"
@@ -470,19 +473,19 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
     status === "stable"
       ? txt(
           lang,
-          "Ребёнок уверенно справляется с текущим уровнем.",
+          "Ребенок уверенно справляется с текущим уровнем.",
           "Tu hijo/a viene resolviendo con seguridad el nivel actual."
         )
       : status === "attention"
         ? txt(
             lang,
             "Прогресс есть, но один из навыков пока нестабилен.",
-            "Hay progreso, pero un skill aun no esta estable."
+            "Hay progreso, pero una habilidad aun no esta estable."
           )
         : status === "needs_help"
           ? txt(
               lang,
-              "Слишком много ошибок в одном типе задач, лучше вернуться к базе.",
+              "Слишком много ошибок в одном типе задач. Лучше вернуться к базе.",
               "Se concentran muchos errores en un tipo de ejercicio: mejor volver a base."
             )
           : txt(
@@ -527,13 +530,14 @@ export function buildParentDashboardInsight(state: ProgressState, lang: Lang): P
       streak: explainMetric("streak", streak, lang),
       weakSkills:
         weakSkills.length === 0
-          ? txt(lang, "Критичных провалов по навыкам не видно.", "No aparecen riesgos criticos por skill.")
+          ? txt(lang, "Критичных провалов по навыкам не видно.", "No aparecen riesgos criticos por habilidad.")
           : txt(
               lang,
-              "Риски считаются по точности, повторяющимся ошибкам, последним сессиям и статусу повторения.",
+              "Риск считаем по точности, повторяющимся ошибкам, недавним сессиям и статусу повторения.",
               "El riesgo combina precision, errores repetidos, sesiones recientes y estado de repaso."
             ),
     },
     weakSkillTrend,
   };
 }
+

@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import LangSwitch from "./LangSwitch";
 import { loadProgress, getOverdueReviewIds } from "../storage/localProgress";
 import { useI18n } from "../i18n/I18nContext";
+import { APP_BUILD_VERSION } from "../buildMeta";
 
 type TopNavItem = {
   path: string;
@@ -32,7 +33,7 @@ export default function TopBar() {
   return (
     <div className="top-bar">
       <button className="top-bar__brand" onClick={() => navigate("/")}>
-        Durillo
+        Durillo <span style={{ fontSize: 12, opacity: 0.72, marginLeft: 6 }}>v{APP_BUILD_VERSION}</span>
       </button>
 
       {showDesktopNav && (

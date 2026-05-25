@@ -602,6 +602,78 @@ function withPromptVariation(question: Question): Question {
   };
 }
 
+function withHintMicroSteps(question: Question): Question {
+  const parsed = parseGeneratedId(question.id);
+  if (!parsed) return question;
+
+  if (parsed.template === "decimal-compare") {
+    const [rawA, rawB] = parsed.params;
+    const a = rawA / 100;
+    const b = rawB / 100;
+    return {
+      ...question,
+      hint: {
+        es: `Paso 1: compara enteros (${Math.trunc(a)} vs ${Math.trunc(b)}). Paso 2: si empatan, compara decimales.`,
+        ru: `Шаг 1: сравни целые части (${Math.trunc(a)} и ${Math.trunc(b)}). Шаг 2: если равны — сравни десятые/сотые.`,
+      },
+    };
+  }
+
+  if (parsed.template === "shopping-change") {
+    const [priceA, countA, priceB, countB] = parsed.params;
+    return {
+      ...question,
+      hint: {
+        es: `Paso 1: ${countA} x ${priceA} y ${countB} x ${priceB}. Paso 2: suma esos totales. Paso 3: resta al dinero pagado.`,
+        ru: `Шаг 1: ${countA} x ${priceA} и ${countB} x ${priceB}. Шаг 2: сложи суммы. Шаг 3: вычти из оплаты.`,
+      },
+    };
+  }
+
+  if (parsed.template === "divisibility-select-all") {
+    const [divisor] = parsed.params;
+    return {
+      ...question,
+      hint: {
+        es: `Paso 1: revisa cada opcion. Paso 2: divide por ${divisor}. Solo una opcion da resto 0.`,
+        ru: `Шаг 1: проверь каждый вариант. Шаг 2: раздели на ${divisor}. Только один вариант без остатка.`,
+      },
+    };
+  }
+
+  return question;
+}
+
+function withLanguagePolish(question: Question): Question {
+  const parsed = parseGeneratedId(question.id);
+  if (!parsed) return question;
+
+  if (parsed.template === "divisibility-lcm-word") {
+    const [a, b] = parsed.params;
+    return {
+      ...question,
+      prompt: {
+        es: `Dos ritmos: ${a} y ${b}. Si empiezan juntos, en cuanto vuelven a coincidir?`,
+        ru: question.prompt.ru,
+      },
+      hint: {
+        es: "Cuando dos ritmos coinciden, busca el MCM.",
+        ru: question.hint?.ru ?? "",
+      },
+      explanation: {
+        es: `Buscamos la primera coincidencia. Es el MCM de ${a} y ${b}.`,
+        ru: question.explanation.ru,
+      },
+      commonMistake: {
+        es: "Sumar los periodos en vez de buscar el MCM.",
+        ru: question.commonMistake?.ru ?? "",
+      },
+    };
+  }
+
+  return question;
+}
+
 function buildOperaciones(template: TemplateId, difficulty: number, params: number[]): Question {
   const [a, b] = params;
   const base = baseQuestion("operaciones", template, difficulty, params);
@@ -745,7 +817,23 @@ function buildDivisibilidad(template: TemplateId, difficulty: number, params: nu
   if (template === "divisibility-select-all") {
     const [divisor, start, step, answerIndex] = params;
     const values = [start, start + step, start + 2 * step, start + 3 * step];
-    const answer = values[answerIndex];
+    let answer = values[answerIndex];
+    const used = new Set<number>();
+
+    // Guardrail: single-choice question must have exactly one divisible option.
+    if (answer % divisor !== 0) {
+      answer = Math.ceil(answer / divisor) * divisor;
+      values[answerIndex] = answer;
+    }
+    used.add(values[answerIndex]);
+    for (let i = 0; i < values.length; i += 1) {
+      if (i === answerIndex) continue;
+      let candidate = values[i];
+      if (candidate % divisor === 0) candidate += 1;
+      while (candidate % divisor === 0 || used.has(candidate)) candidate += 1;
+      values[i] = candidate;
+      used.add(candidate);
+    }
     const prompt = phraseVariant("divisibilidad", template, difficulty, params, [
       { es: `Cual de estos numeros es divisible por ${divisor}?`, ru: `Какое из этих чисел делится на ${divisor}?` },
       { es: `Marca el numero que se divide exacto por ${divisor}.`, ru: `Отметь число, которое делится на ${divisor} без остатка.` },
@@ -2350,12 +2438,13 @@ function instantiate(topicId: string, template: TemplateId, difficulty: number, 
   }
 
   if (template === "shopping-change") {
-    const priceA = randInt(rng, 4, difficulty >= 4 ? 24 : 12) * 100;
-    const countA = randInt(rng, 2, difficulty >= 4 ? 5 : 3);
-    const priceB = randInt(rng, 2, difficulty >= 4 ? 16 : 9) * 100;
-    const countB = randInt(rng, 1, difficulty >= 4 ? 4 : 2);
+    // Argentina-first practical prices: avoid toy amounts.
+    const priceA = randInt(rng, 35, difficulty >= 4 ? 55 : 45) * 100;
+    const countA = randInt(rng, 1, difficulty >= 4 ? 3 : 2);
+    const priceB = randInt(rng, 20, difficulty >= 4 ? 45 : 35) * 100;
+    const countB = randInt(rng, 1, difficulty >= 4 ? 3 : 2);
     const total = priceA * countA + priceB * countB;
-    const paid = Math.ceil((total + randInt(rng, 100, 900)) / 500) * 500;
+    const paid = Math.ceil((total + randInt(rng, 500, 4500)) / 500) * 500;
     return buildQuestion(topicId, template, difficulty, [priceA, countA, priceB, countB, paid]);
   }
 
@@ -2916,7 +3005,9 @@ export function generateForTopicWithOptions(
     const baseQuestion = instantiate(topicId, template, difficulty, seed + attempt * 7919 + index * 104729);
     const parsedBase = parseGeneratedId(baseQuestion.id);
     if (!parsedBase) continue;
-    const q = withPromptVariation(applyStoryEngine(baseQuestion, parsedBase, recentContextHistory));
+    const q = withLanguagePolish(
+      withHintMicroSteps(withPromptVariation(applyStoryEngine(baseQuestion, parsedBase, recentContextHistory)))
+    );
     attempt += 1;
     if (seen.has(q.id)) continue;
     const patternKey = promptPatternKey(q.prompt.es);
@@ -2941,5 +3032,5 @@ export function tryReconstructGenerated(id: string): Question | null {
   if (params.some((value) => !Number.isFinite(value))) return null;
   const reconstructed = buildQuestion(parsed.topicId, parsed.template, parsed.difficulty, params);
   const storyReady = applyStoryEngine({ ...reconstructed, id }, parsed, []);
-  return withPromptVariation(storyReady);
+  return withLanguagePolish(withHintMicroSteps(withPromptVariation(storyReady)));
 }

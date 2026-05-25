@@ -1,3 +1,6 @@
-app/vite.config.ts.timestamp* 
-app/dist 
-node_modules 
+app/vite.config.ts.timestamp*
+app/dist
+node_modules
+Materials (Примеры)/
+*.pdf
+app/tsconfig.tsbuildinfo

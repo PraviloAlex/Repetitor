@@ -1,58 +1,52 @@
-# Next Sprint Backlog
+# Next Sprint Backlog (2026-05-25)
 
-> После Product Quality Sprint v2 | 2026-05-23
+По реальному коду. Пункты про XP computation и RU/ES смешение удалены — они закрыты.
 
-## P0 — Критично (блокирует полноценный релиз)
+---
 
-### XP computation в LessonScreen
-Файл: `src/screens/LessonScreen.tsx`, функция `finishSession()`  
-Что сделать: суммировать `(q.xp ?? 10)` за каждый правильный ответ, записать в `session.xpEarned`.  
-Оценка: 30 мин.
+## P0 — Reward Dispatch (блокирует замыкание игрового цикла)
 
-### Оценить и заполнить xp/rarity на вопросах в JSON
-Файлы: `src/content/questions/*.json`  
-Что сделать: добавить поля `"xp": N` и `"rarity": "..."` на сложные вопросы.  
-Оценка: 2-3 часа.
+### Создать `src/engine/rewardEngine.ts`
+Что сделать: при `recordSession()` проверять `session.missionReward` и `session.skillMasteryReward` (поля уже объявлены в `types.ts`), начислять XP, разблокировать карточки.
+Оценка: 1–2 часа.
 
-## P1 — Важно (улучшает качество)
+### Создать `src/engine/cardPackDrop.ts`
+Что сделать: фильтрация вопросов с `packEligible !== false`, генерация пак-дропа по теме при завершении миссии.
+Оценка: 1–2 часа.
 
-### ¡ и ¿ в ES строках
-Файл: `src/i18n/strings.ts`  
-Что сделать: добавить открывающие ¡ и ¿ в восклицательных и вопросительных ES строках.
+---
 
-### ES акценты в dailyMission.ts
-Файл: `src/engine/dailyMission.ts`  
-Что сделать: все inline ES строки ("todavia", "practica", "mision") заменить на варианты с диакритикой.
-
-### Визуальный QA на реальных устройствах
-Проверить 375px и 430px вручную. Особое внимание: SkillMapScreen grid, LessonScreen mission bar, ParentDashboard trends.
+## P1 — Важно (улучшает качество сессий)
 
 ### ReviewSession — показать навыки и статус после повтора
-Файл: `src/screens/ReviewSession.tsx`  
-Что сделать: по аналогии с SessionSummary добавить итог навыков.
+Файл: `src/screens/ReviewSession.tsx`
+Что сделать: в экране `done` добавить breakdown по skills — какие улучшились, какие ещё слабые. По аналогии с `SessionSummary`.
+Оценка: 1 час.
 
-## P2 — Желательно
+### SkillMapScreen — подсказка для blocked-навыка
+Файл: `src/screens/SkillMapScreen.tsx`
+Что сделать: в expanded panel заблокированного навыка показать, какой prerequisite нужно освоить сначала (данные есть в `skill.prerequisiteSkillIds` → `SKILLS_BY_ID`).
+Оценка: 30 мин.
 
-### Reward dispatch
-Файл: новый `src/engine/rewardEngine.ts`  
-Что сделать: при `recordSession()` проверять `missionReward` и `skillMasteryReward`, начислять XP, разблокировать карточки.
+### OnboardingScreen — inline строка в i18n
+Файл: `src/screens/OnboardingScreen.tsx`, строка 157
+Что сделать: `{lang === "ru" ? "Пропустить пока" : "Saltar por ahora"}` → добавить ключ в `strings.ts` и использовать `t()`.
+Оценка: 15 мин.
 
-### Pack eligibility
-Файл: `src/engine/cardPackDrop.ts` (новый)  
-Что сделать: фильтрация вопросов с `packEligible !== false`, генерация пак-дропа по теме.
+---
 
-### blocked — визуальная подсказка что нужно сделать
-Файл: `src/screens/SkillMapScreen.tsx`  
-Что сделать: в expanded-панели заблокированного навыка показать какой prerequisite нужно освоить сначала.
+## P2 — Визуальный QA
 
-### Онбординг — финальная i18n проверка
-Файл: `src/screens/OnboardingScreen.tsx`  
-Что сделать: убедиться что все inline строки уже через t(), или перевести.
+### QA на реальных устройствах
+Проверить 375px и 430px вручную.
+Особое внимание: SkillMapScreen grid, LessonScreen mission bar, ParentDashboard trends.
+
+---
 
 ## P3 — Будущее
 
-- Отдельные файлы `src/i18n/ru.ts` и `src/i18n/es.ts` (если strings.ts > 800 строк)
-- Тесты для `buildSkillMastery` и `buildDailyMission` (jest/vitest)
-- Тест генератора вопросов на выходные типы (уже частично есть в `test-generator.mjs`)
 - Analytics: отправлять события сессии (topic, kind, accuracy, xpEarned) в Amplitude/PostHog
 - A/B тест: boss-миссия с анимацией vs без
+- Отдельные файлы `src/i18n/ru.ts` и `src/i18n/es.ts` (если strings.ts > 800 строк)
+- Тесты для `buildSkillMastery` и `buildDailyMission` (jest/vitest)
+- Mercado Pago Link + one-time pack (Stage 3)

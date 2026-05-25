@@ -365,11 +365,40 @@ function assertQuestionShape(question) {
   if (question.type === "multiple_choice") {
     const options = question.options?.map((opt) => opt.es) ?? [];
     assert(options.includes(question.answer), `Multiple-choice answer must be present in options: ${question.id}`);
+    assert(new Set(options).size === options.length, `Multiple-choice options must be unique: ${question.id}`);
   }
 
   if (question.type === "true_false") {
     assert(question.answer === "true" || question.answer === "false", `True/false answer must be boolean string: ${question.id}`);
   }
+}
+
+function countSemanticallyCorrectOptions(question, parsed) {
+  if (question.type !== "multiple_choice") return null;
+  const options = question.options?.map((opt) => String(opt.es).trim()) ?? [];
+  const params = coreTemplateParams(parsed.template, parsed.params);
+
+  if (parsed.template === "divisibility-select-all") {
+    const [divisor] = params;
+    return options.filter((value) => Number(value) % divisor === 0).length;
+  }
+
+  if (
+    parsed.template === "fraction-compare" ||
+    parsed.template === "fraction-compare-to-unit" ||
+    parsed.template === "fraction-compare-same-den" ||
+    parsed.template === "decimal-compare"
+  ) {
+    const expected = expectedAnswer(question);
+    return options.filter((value) => value === expected).length;
+  }
+
+  if (parsed.template === "compare-discounts" || parsed.template === "area-compare") {
+    const expected = expectedAnswer(question);
+    return options.filter((value) => value.toUpperCase() === expected.toUpperCase()).length;
+  }
+
+  return null;
 }
 
 function promptPatternKey(text) {
@@ -396,6 +425,76 @@ function countMissingDigitSolutions(params) {
     if ((hundreds * 100 + tens * 10 + digit) % divisor === 0) count += 1;
   }
   return count;
+}
+
+function normalizeTextForAudit(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/[¿?¡!.,:;()[\]"]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function wordCount(text) {
+  return normalizeTextForAudit(text).split(" ").filter(Boolean).length;
+}
+
+function hasLongToken(text, maxTokenLength = 16) {
+  return normalizeTextForAudit(text)
+    .split(" ")
+    .some((token) => token.length > maxTokenLength);
+}
+
+function assertSimpleLanguage(question) {
+  const targets = [
+    { field: "prompt.es", value: question.prompt?.es, maxWords: 28 },
+    { field: "prompt.ru", value: question.prompt?.ru, maxWords: 28 },
+    { field: "hint.es", value: question.hint?.es, maxWords: 22 },
+    { field: "hint.ru", value: question.hint?.ru, maxWords: 22 },
+  ];
+
+  const bannedComplexEs = [
+    "metodologia",
+    "procedimiento algebraico",
+    "sistematizacion",
+    "argumentacion",
+    "formalizacion",
+    "deduccion",
+    "axioma",
+  ];
+  const bannedComplexRu = [
+    "методология",
+    "алгебраическая",
+    "систематизация",
+    "аргументация",
+    "формализация",
+    "дедукция",
+    "аксиома",
+  ];
+
+  for (const target of targets) {
+    if (!target.value) continue;
+    const wc = wordCount(target.value);
+    assert(
+      wc <= target.maxWords,
+      `${question.id}: ${target.field} too long for kid-friendly language (${wc} words > ${target.maxWords})`
+    );
+    if (target.field.endsWith(".es")) {
+      assert(
+        !hasLongToken(target.value),
+        `${question.id}: ${target.field} contains overly long words/tokens`
+      );
+    }
+
+    const normalized = normalizeTextForAudit(target.value);
+    const banned = target.field.endsWith(".es") ? bannedComplexEs : bannedComplexRu;
+    for (const complexWord of banned) {
+      assert(
+        !normalized.includes(complexWord),
+        `${question.id}: ${target.field} contains complex wording "${complexWord}"`
+      );
+    }
+  }
 }
 
 const generator = loadTsModule(generatorPath);
@@ -455,6 +554,7 @@ for (const topic of topics) {
 
     for (const question of questions) {
       assertQuestionShape(question);
+      assertSimpleLanguage(question);
       assert(question.topicId === topic, `${question.id}: topic mismatch`);
       const parsedForRepetition = parseGeneratedId(question.id);
       templateCounts.set(
@@ -475,6 +575,25 @@ for (const topic of topics) {
       }
       if (parsed.template === "missing-digit-divisibility") {
         assert(countMissingDigitSolutions(coreParams) === 1, `${question.id}: missing-digit-divisibility must have exactly one valid digit`);
+      }
+      if (parsed.template === "divisibility-select-all") {
+        const [divisor] = coreParams;
+        const validOptions = (question.options ?? [])
+          .map((opt) => Number(opt.es))
+          .filter((value) => Number.isFinite(value) && value % divisor === 0);
+        assert(
+          validOptions.length === 1,
+          `${question.id}: single-choice divisibility question must have exactly one divisible option`
+        );
+      }
+      if (question.type === "multiple_choice") {
+        const semanticCorrectCount = countSemanticallyCorrectOptions(question, parsed);
+        if (semanticCorrectCount != null) {
+          assert(
+            semanticCorrectCount === 1,
+            `${question.id}: single-choice ambiguity detected (${semanticCorrectCount} semantically correct options)`
+          );
+        }
       }
 
       const reconstructed = generator.tryReconstructGenerated(question.id);

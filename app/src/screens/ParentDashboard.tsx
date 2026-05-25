@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { SKILLS_BY_ID } from "../engine/skills";
 import { useI18n } from "../i18n/I18nContext";
@@ -9,7 +9,7 @@ import {
   type ProgressTrend,
   type RiskLevel,
 } from "../lib/parentAnalytics";
-import { loadProgress } from "../storage/localProgress";
+import { loadProgress, setParentSettings } from "../storage/localProgress";
 
 function statusClass(status: ParentStatus): string {
   if (status === "stable") return "is-stable";
@@ -37,25 +37,28 @@ function riskLabel(risk: RiskLevel, lang: "ru" | "es"): string {
 
 function trendLabel(trend: ProgressTrend, lang: "ru" | "es"): string {
   if (lang === "ru") {
-    if (trend === "improving") return "Растёт";
-    if (trend === "declining") return "Снижается";
-    if (trend === "stable") return "Стабильно";
-    return "Недостаточно данных";
+    if (trend === "improving") return "растет";
+    if (trend === "declining") return "снижается";
+    if (trend === "stable") return "стабильно";
+    return "мало данных";
   }
-  if (trend === "improving") return "Mejorando";
-  if (trend === "declining") return "Bajando";
-  if (trend === "stable") return "Estable";
-  return "Pocos datos";
+  if (trend === "improving") return "mejorando";
+  if (trend === "declining") return "bajando";
+  if (trend === "stable") return "estable";
+  return "pocos datos";
 }
 
 export default function ParentDashboard() {
   const navigate = useNavigate();
-  const { lang } = useI18n();
+  const [searchParams] = useSearchParams();
+  const { lang, t } = useI18n();
   const state = loadProgress();
+  const [mode, setMode] = useState<"primaria" | "ingreso">(state.parent.mode === "ingreso" ? "ingreso" : "primaria");
   const insight = useMemo(
     () => buildParentDashboardInsight(state, lang),
     [lang, state.sessions.length, Object.keys(state.skillProgress).length]
   );
+  const hasLearningData = state.sessions.length > 0;
 
   if (!state.parent.pinHash) {
     navigate("/parent", { replace: true });
@@ -66,7 +69,7 @@ export default function ParentDashboard() {
     title: lang === "ru" ? "Кабинет родителя" : "Panel para familias",
     sub:
       lang === "ru"
-        ? "Короткий вывод за 10 секунд: что сейчас, где риск и что делать дальше."
+        ? "Короткий вывод за 10 секунд: как дела сейчас, где риск и что делать дальше."
         : "Lectura en 10 segundos: como va, donde esta el riesgo y que conviene hacer.",
     trust: lang === "ru" ? "Вывод сегодня" : "Resumen de hoy",
     next: lang === "ru" ? "Следующий шаг" : "Proximo paso",
@@ -80,16 +83,16 @@ export default function ParentDashboard() {
     metricAccuracy: lang === "ru" ? "Точность" : "Precision",
     metricDays: lang === "ru" ? "Активные дни" : "Dias activos",
     metricTasks: lang === "ru" ? "Решено задач" : "Tareas resueltas",
-    metricWeak: lang === "ru" ? "Навыки в риске" : "Skills en riesgo",
+    metricWeak: lang === "ru" ? "Навыки в риске" : "Habilidades en riesgo",
     weakReason: lang === "ru" ? "Почему" : "Por que",
     weakAction: lang === "ru" ? "Что делать" : "Accion",
     weakPractice: lang === "ru" ? "Исправить сейчас" : "Practicar ahora",
     dashboardHome: lang === "ru" ? "На главную" : "Inicio",
-    weakTrend: lang === "ru" ? "Изменение слабого навыка" : "Cambio del skill en riesgo",
+    weakTrend: lang === "ru" ? "Изменение слабого навыка" : "Cambio de la habilidad en riesgo",
     recommendation: lang === "ru" ? "Рекомендация недели" : "Recomendacion de la semana",
     recMaintenance:
       lang === "ru"
-        ? "Пока всё стабильно. Держите 1 короткую сессию в неделю."
+        ? "Пока все стабильно. Держите 1 короткую сессию в неделю."
         : "Todo estable por ahora. Manten una sesion corta por semana.",
     weakTrendDelta: lang === "ru" ? "Дельта за 7 дней" : "Delta 7 dias",
     weakTrendNoPoint: lang === "ru" ? "нет данных" : "sin datos",
@@ -109,8 +112,29 @@ export default function ParentDashboard() {
   const targetTopic = insight.nextStep.targetSkill
     ? SKILLS_BY_ID.get(insight.nextStep.targetSkill)?.topicId
     : undefined;
-  const lessonUrl = targetTopic
-    ? `/lesson/${targetTopic}?skill=${encodeURIComponent(insight.nextStep.targetSkill ?? "")}`
+  const linkedSkillId = searchParams.get("skill") ?? "";
+  const linkedSkill = SKILLS_BY_ID.get(linkedSkillId);
+  const effectiveNextStep =
+    linkedSkill != null
+      ? {
+          ...insight.nextStep,
+          title: lang === "ru" ? "Следующий шаг из последней сессии" : "Siguiente paso de la ultima sesion",
+          description:
+            lang === "ru"
+              ? `После последнего урока лучше сразу закрепить навык "${linkedSkill.titleEs}" на простом уровне.`
+              : `Despues de la ultima sesion conviene reforzar "${linkedSkill.titleEs}" con nivel simple.`,
+          actionLabel:
+            lang === "ru"
+              ? `Начать тренировку: ${linkedSkill.titleEs}`
+              : `Practicar ahora: ${linkedSkill.titleEs}`,
+          targetSkill: linkedSkill.id,
+          difficulty: "easy" as const,
+        }
+      : insight.nextStep;
+  const effectiveTargetSkill = effectiveNextStep.targetSkill;
+  const effectiveTargetTopic = effectiveTargetSkill ? SKILLS_BY_ID.get(effectiveTargetSkill)?.topicId : targetTopic;
+  const lessonUrl = effectiveTargetTopic
+    ? `/lesson/${effectiveTargetTopic}?skill=${encodeURIComponent(effectiveTargetSkill ?? "")}`
     : "/topics";
 
   const childNick = state.parent.childNick ?? "";
@@ -120,29 +144,74 @@ export default function ParentDashboard() {
     n === 1
       ? lang === "ru"
         ? `Рекомендуем 1 сессию на этой неделе по навыку "${primaryWeakName}".`
-        : `Recomendamos 1 sesion esta semana para el tema "${primaryWeakName}".`
+        : `Recomendamos 1 sesion esta semana para "${primaryWeakName}".`
       : lang === "ru"
         ? `Рекомендуем ${n} сессии на этой неделе по навыку "${primaryWeakName}".`
-        : `Recomendamos ${n} sesiones esta semana para el tema "${primaryWeakName}".`;
+        : `Recomendamos ${n} sesiones esta semana para "${primaryWeakName}".`;
 
   return (
     <div className="screen-enter parent-trust-screen">
       <h1 className="screen-title">{ui.title}</h1>
       <p className="screen-sub">{ui.sub}</p>
 
+      <section className="card" style={{ marginBottom: 12 }}>
+        <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 8 }}>{t("pd_mode_title")}</div>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <button
+            className={`btn ${mode === "primaria" ? "" : "btn-ghost"}`}
+            style={{ minWidth: 130 }}
+            onClick={() => {
+              setParentSettings({ mode: "primaria", goal: "refuerzo", level: "B" });
+              setMode("primaria");
+            }}
+          >
+            {t("pd_mode_primaria")}
+          </button>
+          <button
+            className={`btn ${mode === "ingreso" ? "" : "btn-ghost"}`}
+            style={{ minWidth: 130 }}
+            onClick={() => {
+              setParentSettings({ mode: "ingreso", goal: "ingreso", level: "C" });
+              setMode("ingreso");
+            }}
+          >
+            {t("pd_mode_ingreso")}
+          </button>
+        </div>
+        <div style={{ marginTop: 8, fontSize: 12, color: "var(--text-soft)" }}>
+          {mode === "primaria" ? t("pd_mode_primaria_note") : t("pd_mode_ingreso_note")}
+        </div>
+      </section>
+
       <section className={`parent-trust-summary ${statusClass(insight.status)}`}>
         <div className="parent-trust-summary__head">{ui.trust}</div>
         <h2>{insight.statusTitle}</h2>
         <p>{insight.statusReason}</p>
         <div className="parent-trust-summary__next">
-          <strong>{ui.next}:</strong> {insight.nextStep.description}
+          <strong>{ui.next}:</strong> {effectiveNextStep.description}
         </div>
+        {linkedSkill && (
+          <p style={{ marginTop: 8, fontSize: 12, color: "var(--text-soft)" }}>
+            {t("pd_source_from_session", { skill: linkedSkill.titleEs })}
+          </p>
+        )}
         <div className="parent-trust-summary__cta">
           <Link to={lessonUrl}>
-            <PrimaryButton>{insight.nextStep.actionLabel}</PrimaryButton>
+            <PrimaryButton>{effectiveNextStep.actionLabel}</PrimaryButton>
           </Link>
         </div>
       </section>
+
+      {!hasLearningData && (
+        <section className="parent-trust-card">
+          <div className="parent-trust-card__title">{lang === "ru" ? "Пока мало данных" : "Aun hay pocos datos"}</div>
+          <p>
+            {lang === "ru"
+              ? "Чтобы появилась понятная аналитика, сделайте 1 короткую сессию на 8-12 минут. После этого здесь появятся слабые навыки, динамика и следующий шаг."
+              : "Para ver analitica clara, hace 1 sesion corta de 8-12 minutos. Despues vas a ver habilidades en riesgo, tendencia y siguiente paso."}
+          </p>
+        </section>
+      )}
 
       <section className="parent-trust-grid parent-trust-numbers">
         <div className="parent-trust-card">
@@ -217,7 +286,7 @@ export default function ParentDashboard() {
         <div style={{ marginTop: 10 }}>
           <Link to={lessonUrl}>
             <PrimaryButton variant="ghost" style={{ fontSize: 13 }}>
-              {insight.nextStep.actionLabel}
+              {effectiveNextStep.actionLabel}
             </PrimaryButton>
           </Link>
         </div>

@@ -4,6 +4,7 @@ import { checkAnswer } from "../engine/answerChecker";
 import { getSkillRepairExplanation } from "../engine/skills";
 import { getSkillRepairRu } from "../i18n/skillLabels";
 import { getSkillRepairText } from "../engine/skillRepairCatalog";
+import { getRuleMicro } from "../engine/rulesMicro";
 import { useI18n } from "../i18n/I18nContext";
 import {
   RARITY_VISUALS,
@@ -26,6 +27,8 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
   const [submitted, setSubmitted] = useState(false);
   const [hintShown, setHintShown] = useState(false);
   const [numeric, setNumeric] = useState("");
+  const [submittedAt, setSubmittedAt] = useState<number | null>(null);
+  const [repairViewMode, setRepairViewMode] = useState<"short" | "full">("short");
 
   const userAnswer = question.type === "numeric_input" ? numeric : selected;
   const isCorrect = submitted ? checkAnswer(question, userAnswer) : false;
@@ -35,10 +38,25 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
   const repairExplanationRu = primarySkillTag ? getSkillRepairRu(primarySkillTag, repairExplanationEs) : "";
   const repairExplanation = lang === "ru" ? repairExplanationRu : repairExplanationEs;
   const repairPack = primarySkillTag ? getSkillRepairText(primarySkillTag, lang) : null;
+  const microRule = getRuleMicro({
+    skillTag: primarySkillTag || undefined,
+    templateId: question.generator?.template,
+    lang,
+  });
+  const isChoiceQuestion = question.type === "multiple_choice" || question.type === "true_false";
+  function handleEnterKey() {
+    if (!submitted) {
+      submit();
+      return;
+    }
+    if (submittedAt != null && Date.now() - submittedAt < 600) return;
+    onNext();
+  }
 
   function submit(answer = userAnswer) {
     if (!answer || submitted) return;
     setSubmitted(true);
+    setSubmittedAt(Date.now());
     onAnswered(answer, hintShown);
   }
 
@@ -46,6 +64,11 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
     if (submitted) return;
     setSelected(answer);
     submit(answer);
+  }
+
+  function resetForNextQuestion() {
+    setRepairViewMode("short");
+    onNext();
   }
 
   const rarity = deriveRarity(question);
@@ -57,6 +80,34 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
     <div
       className={`card question-card${cardStateClass}`}
       style={{ borderColor: rarityVisual.border, borderWidth: 2 }}
+      onKeyDownCapture={(e) => {
+        const target = e.target instanceof HTMLElement ? e.target : null;
+        const isInputFocused = target?.tagName === "INPUT" || target?.tagName === "TEXTAREA";
+
+        if (isChoiceQuestion && !submitted && !isInputFocused && /^[1-4]$/.test(e.key)) {
+          const index = Number(e.key) - 1;
+          if (question.type === "multiple_choice" && question.options && question.options[index]) {
+            e.preventDefault();
+            chooseAnswer(question.options[index].es);
+            return;
+          }
+          if (question.type === "true_false") {
+            const tfOptions = ["true", "false"];
+            if (tfOptions[index]) {
+              e.preventDefault();
+              chooseAnswer(tfOptions[index]);
+              return;
+            }
+          }
+        }
+
+        if (e.key === "Enter" || e.key === " ") {
+          // Let native button behavior work when a button is focused.
+          if (target?.tagName === "BUTTON") return;
+          e.preventDefault();
+          handleEnterKey();
+        }
+      }}
     >
       <div className="card-meta-row">
         <span
@@ -76,6 +127,15 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
 
       <p style={{ fontSize: 18, fontWeight: 800, margin: "0 0 16px", lineHeight: 1.35 }}>
         {pick(question.prompt)}
+      </p>
+      <p style={{ margin: "0 0 10px", fontSize: 12, color: "var(--text-soft)" }}>
+        {question.type === "numeric_input"
+          ? (lang === "ru"
+              ? "Быстро: Enter/Пробел — проверить, потом Enter/Пробел — дальше."
+              : "Rapido: Enter/Espacio para revisar, luego Enter/Espacio para seguir.")
+          : (lang === "ru"
+              ? "Быстро: 1-4 выбрать, Enter/Пробел — дальше."
+              : "Rapido: 1-4 para elegir, Enter/Espacio para seguir.")}
       </p>
 
       {question.type === "multiple_choice" && question.options && (
@@ -141,6 +201,11 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
           value={numeric}
           disabled={submitted}
           onChange={(e) => setNumeric(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            e.preventDefault();
+            handleEnterKey();
+          }}
         />
       )}
 
@@ -218,6 +283,30 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
               {repairExplanation && (
                 <div className="feedback-block feedback-block--tip" style={{ marginTop: 6 }}>
                   <span style={{ fontSize: 12, fontWeight: 700, color: "var(--text-soft)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{t("q_repair_label")}</span>
+                  <p style={{ margin: "6px 0 0", fontSize: 13, fontWeight: 700 }}>{microRule.title}</p>
+                  <div style={{ marginTop: 6, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                    <button
+                      type="button"
+                      className={`btn ${repairViewMode === "short" ? "" : "btn-ghost"}`}
+                      style={{ minHeight: 34, padding: "6px 10px", fontSize: 12 }}
+                      onClick={() => setRepairViewMode("short")}
+                    >
+                      {lang === "ru" ? "Коротко (1 шаг)" : "Corto (1 paso)"}
+                    </button>
+                    <button
+                      type="button"
+                      className={`btn ${repairViewMode === "full" ? "" : "btn-ghost"}`}
+                      style={{ minHeight: 34, padding: "6px 10px", fontSize: 12 }}
+                      onClick={() => setRepairViewMode("full")}
+                    >
+                      {lang === "ru" ? "Подробно (3 шага)" : "Completo (3 pasos)"}
+                    </button>
+                  </div>
+                  <ul style={{ margin: "8px 0 0 18px", padding: 0, fontSize: 13, color: "var(--text-soft)" }}>
+                    {(repairViewMode === "short" ? microRule.steps.slice(0, 1) : microRule.steps).map((step) => (
+                      <li key={step} style={{ marginBottom: 2 }}>{step}</li>
+                    ))}
+                  </ul>
                   <p style={{ margin: "4px 0 0", fontSize: 13 }}>{repairExplanation}</p>
                   {consecutiveWrong >= 1 && repairPack && (
                     <p style={{ margin: "6px 0 0", fontSize: 13, color: "var(--text-soft)" }}>
@@ -229,7 +318,7 @@ export default function QuestionCard({ question, onAnswered, onNext, isLast, con
             </>
           )}
 
-          <button className="btn" onClick={onNext} style={{ marginTop: 12 }}>
+          <button className="btn" onClick={resetForNextQuestion} style={{ marginTop: 12 }}>
             {isLast ? t("q_finish") : t("q_next")}
           </button>
         </>

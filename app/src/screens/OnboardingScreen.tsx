@@ -53,7 +53,7 @@ function OptionCard({
 
 export default function OnboardingScreen() {
   const navigate = useNavigate();
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   const [step, setStep] = useState(1);
   const [mode, setMode] = useState<Mode | null>(null);
@@ -70,6 +70,17 @@ export default function OnboardingScreen() {
       goal,
       level,
       dailyGoalMinutes: time,
+      onboardingDone: true,
+    });
+    navigate("/", { replace: true });
+  }
+
+  function handleSkip() {
+    setParentSettings({
+      mode: "primaria",
+      goal: "refuerzo",
+      level: "B",
+      dailyGoalMinutes: 15,
       onboardingDone: true,
     });
     navigate("/", { replace: true });
@@ -137,6 +148,13 @@ export default function OnboardingScreen() {
             onClick={() => setStep(2)}
           >
             {t("ob_btn_next")}
+          </button>
+          <button
+            className="btn btn-ghost"
+            style={{ marginTop: 10 }}
+            onClick={handleSkip}
+          >
+            {lang === "ru" ? "Пропустить пока" : "Saltar por ahora"}
           </button>
         </>
       )}

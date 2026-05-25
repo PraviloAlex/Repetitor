@@ -36,8 +36,7 @@ export default function ChildHome() {
 
   const recommended = pickRecommendedTopic(state.topicAccuracy, isPremium);
   const sessionCount = sessionsToday.length;
-  const sessionWord =
-    sessionCount === 1 ? t("home_sessions_one") : t("home_sessions_many");
+  const sessionWord = sessionCount === 1 ? t("home_sessions_one") : t("home_sessions_many");
 
   const milestoneKey = streakMilestoneKey(streak);
   const reviewCount = getOverdueReviewIds(state).length;
@@ -46,8 +45,7 @@ export default function ChildHome() {
   const squadUnlocked = countUnlocked(squad);
   const squadTotal = squad.length;
 
-  const streakLabel =
-    streak === 1 ? t("home_streak_days_one") : t("home_streak_days_many");
+  const streakLabel = streak === 1 ? t("home_streak_days_one") : t("home_streak_days_many");
 
   const readiness = computeIngressoReadiness(state.skillProgress);
   const kaizenSummary = getKaizenSummary();
@@ -83,11 +81,8 @@ export default function ChildHome() {
         )}
       </section>
 
-      {milestoneKey && (
-        <div className="milestone-note streak-pulse">{t(milestoneKey)}</div>
-      )}
+      {milestoneKey && <div className="milestone-note streak-pulse">{t(milestoneKey)}</div>}
 
-      {/* ── Kaizen readiness + mini simulacro ───────────────────────────── */}
       <div
         className="card"
         style={{
@@ -99,12 +94,8 @@ export default function ChildHome() {
         }}
       >
         <div>
-          <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 2 }}>
-            {t("kaizen_readiness_label")}
-          </div>
-          <div style={{ fontSize: 20, fontWeight: 800, color: "var(--brand)" }}>
-            {readiness}%
-          </div>
+          <div style={{ fontSize: 12, color: "var(--text-soft)", marginBottom: 2 }}>{t("kaizen_readiness_label")}</div>
+          <div style={{ fontSize: 20, fontWeight: 800, color: "var(--brand)" }}>{readiness}%</div>
           {kaizenDelta !== 0 && (
             <div
               style={{
@@ -128,7 +119,6 @@ export default function ChildHome() {
         </button>
       </div>
 
-      {/* ── Today's composed mission ─────────────────────────────────────── */}
       {todaysMission && todaysMission.blocks.length > 0 && (
         <div className="card" style={{ borderLeft: "4px solid var(--brand)", paddingLeft: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14 }}>{t("mission_today_title")}</div>
@@ -145,10 +135,10 @@ export default function ChildHome() {
                   {block.type === "confidence_win"
                     ? "✅"
                     : block.type === "repair"
-                    ? "🔧"
-                    : block.type === "challenge"
-                    ? "🏆"
-                    : "📚"}
+                      ? "🔧"
+                      : block.type === "challenge"
+                        ? "🏆"
+                        : "📚"}
                 </span>{" "}
                 {block.skillTitleEs}
               </div>
@@ -158,12 +148,16 @@ export default function ChildHome() {
       )}
 
       <button className="academy-teaser" onClick={() => navigate("/academy")}>
-        <span className="academy-teaser__emoji" aria-hidden>⚽</span>
+        <span className="academy-teaser__emoji" aria-hidden>
+          ⚽
+        </span>
         <span className="academy-teaser__body">
           <span className="academy-teaser__title">{t("home_academy_title")}</span>
           <span className="academy-teaser__sub">{t("home_academy_sub")}</span>
         </span>
-        <span className="academy-teaser__count">{squadUnlocked}/{squadTotal}</span>
+        <span className="academy-teaser__count">
+          {squadUnlocked}/{squadTotal}
+        </span>
       </button>
 
       <RecommendedTopicCard
@@ -201,12 +195,8 @@ function pickRecommendedTopic(
     const a = accuracy[topic.id];
     if (!a || a.total === 0) continue;
     const ratio = a.correct / a.total;
-    if (worst === null || ratio < worst.ratio) {
-      worst = { id: topic.id, ratio };
-    }
+    if (worst === null || ratio < worst.ratio) worst = { id: topic.id, ratio };
   }
-  if (worst) {
-    return available.find((topic) => topic.id === worst.id) ?? available[0];
-  }
+  if (worst) return available.find((topic) => topic.id === worst.id) ?? available[0];
   return available[0];
 }

@@ -169,6 +169,15 @@ export default function SessionSummary() {
     <div className="card">
       <strong>{t("sum_for_family")}</strong>
       <p style={{ marginTop: 8 }}>{recText}</p>
+      {primaryWeakSkill && (
+        <button
+          className="btn btn-ghost"
+          style={{ marginTop: 10 }}
+          onClick={() => navigate(`/parent/dashboard?skill=${encodeURIComponent(primaryWeakSkill.skillId)}&from=${encodeURIComponent(session.id)}`)}
+        >
+          {t("sum_parent_next_step")}
+        </button>
+      )}
     </div>
   );
 
