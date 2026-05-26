@@ -177,6 +177,24 @@ export const SKILL_LABELS_RU: Record<string, SkillLabel> = {
     titleRu: "Неизвестная сторона по периметру",
     repairExplanationRu: "Периметр = 2 x (длина + ширина). Найди сумму сторон, потом вычти известную.",
   },
+
+  // Новые шаблоны
+  "inequality-read": {
+    titleRu: "Неравенства и диапазоны",
+    repairExplanationRu: "Больше A — знак <, A не входит. Не меньше A — знак ≤, A входит.",
+  },
+  "division-with-remainder": {
+    titleRu: "Деление с остатком: найти n",
+    repairExplanationRu: "n = делитель × частное + остаток. Проверь, умножив обратно.",
+  },
+  "geometry-formulas": {
+    titleRu: "Формулы площади и периметра",
+    repairExplanationRu: "Площадь = перемножить два размера. Периметр = сложить все стороны.",
+  },
+  "multi-step-reasoning": {
+    titleRu: "Задачи в несколько шагов",
+    repairExplanationRu: "Решай пошагово: записывай каждый промежуточный результат.",
+  },
 };
 
 export function getSkillTitleRu(skillId: string, fallbackEs: string): string {
